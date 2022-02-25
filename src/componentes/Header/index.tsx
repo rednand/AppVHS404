@@ -1,12 +1,12 @@
 import React from "react";
-import {Title} from "./styles";
+import { Title, Menu, TitleBackground } from "./styles";
 
 const Header = () => {
-
   return (
-    <div>
+    <TitleBackground>
       <Title>Morning Horror</Title>
-    </div>
+      <Menu>Movies</Menu>
+    </TitleBackground>
   );
 };
 
