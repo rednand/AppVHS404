@@ -1,31 +1,45 @@
 import React from "react";
-import {
-  MainTeste,
-  Main,
-  GridLayout,
-  MainTeste2,
-  MainTeste3,
-  AsideLeft,
-  AsideRight,
-  Content1,
-  Content2,
-  ContentBox,
-} from "./styles";
+import { MainTeste1, MainTeste2, MainTeste3, Section } from "./styles";
+import { makeStyles } from "@material-ui/core/styles";
+import { Box } from "@material-ui/core";
 
-const Footer = () => {
+const useStyles = makeStyles({
+  some: {
+    display: "flex",
+    margin: "20%",
+    backgroundColor: "red",
+  },
+  containerBox: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    width: "80%",
+  },
+  childBox0: {
+    backgroundColor: "red",
+    display: "flex",
+    flexDirection: "column",
+    flexBasis: "100%",
+    flex: "1",
+  },
+});
+
+const Main = () => {
+  const classes = useStyles();
+
   return (
-    <MainTeste>
+    <MainTeste1>
       <MainTeste2>
         <MainTeste3>
-          <ContentBox>
-            <Content1>dssf</Content1>
-            <Content2>sfsfsf</Content2>
-            <Content1>dssf</Content1>
-          </ContentBox>
+          <Box className={classes.some}>
+            <Box className={classes.childBox0}><h2>sffsdfs</h2>
+            <p>wfedbrfgtdnrh6uyjrnfxhgd</p></Box>
+          </Box>
         </MainTeste3>
       </MainTeste2>
-    </MainTeste>
+      <Section>Horror</Section>
+    </MainTeste1>
   );
 };
 
-export default Footer;
+export default Main;

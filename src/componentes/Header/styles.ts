@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const TitleBackground = styled.div`
-  background-image: url("../../assets/imgs/posterTheExorcist.jpg");
+  background-color: #000000;
+  background-image: url("../../assets/imagens/posterTheExorcist.jpg");
   background-repeat: no-repeat;
   background-position: 100%;
   background-size: contain;
