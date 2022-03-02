@@ -25,3 +25,17 @@ export const Section = styled.div`
   margin: auto;
   height: 100vh;
 `;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+`;
+
+export const Card = styled.div`
+  flex: 1;
+  outline: none;
+  min-width: 80px;
+  background: #a6b8b9;
+  display: flex;
+  flex-wrap: wrap;
+`;
