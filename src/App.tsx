@@ -10,7 +10,7 @@ const App = () => {
     <div
       className="phase1"
       style={{
-        backgroundColor: "#d8d49a",
+        backgroundColor: "#6C757D",
         backgroundImage: `url(${imageFilePath})`,
       }}
     >

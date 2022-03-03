@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const Bottom = styled.div`
   width: 100%;
   margin: 0;
-  background: #8773ba;
+  background: #212223;
   height: 10rem;
   float: right;
-  color: white;
+  color: #c7c7c7;
 `;
 
 export const UnorderedList = styled(({ children, ...rest }) => (

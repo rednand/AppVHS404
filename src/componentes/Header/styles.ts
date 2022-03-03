@@ -10,14 +10,15 @@ export const TitleBackground = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #d8d49a;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-style: normal;
+  color: #8E0F14;
+  font-family: "Rock 3d", cursive;
+  word-spacing: -0px;
+  letter-spacing: -10px;
   font-size: 100px;
   text-align: center;
   font-weight: 900;
   padding-top: 5%;
-  text-shadow: 5px 5px #8773ba;
+  text-shadow: 5px 5px #212223;
 `;
 
 export const Menu = styled.div`
@@ -25,14 +26,12 @@ export const Menu = styled.div`
   width: 100%;
   margin-top: -2%;
   height: 41px;
-  color: #d8d49a;
+  color: #929293;
   -webkit-text-stroke-width: 1px;
   /* largura da borda */
-  -webkit-text-stroke-color: #8773ba;
+  -webkit-text-stroke-color: #212223;
   /* cor da borda */
   font-size: 35px;
   text-align: left;
-  background: #8773ba;
+  background: #212223;
 `;
-
-

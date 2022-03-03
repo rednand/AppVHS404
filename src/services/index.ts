@@ -12,7 +12,8 @@ export const requestMovies = async () => {
       },
     })
     .then((response) => {
-      console.log("requestMovieData:", response.data.results);
+      console.log("teste");
+      return response.data.results;
     });
 };
 
@@ -23,7 +24,7 @@ export const requestGenres = async () => {
         Authorization: `token ${token}`,
       },
     })
-    .then((response) => console.log("Genres", response.data));
+    .then((response) => response.data);
 };
 
 export const requestSearch = async () => {
@@ -45,13 +46,5 @@ export const requestSearchMovie = async () => {
         Authorization: `token ${token}`,
       },
     })
-    .then((response) => console.log("searchMovieName:", response.data.results));
+    .then((response) => response.data.results);
 };
-
-requestGenres();
-
-requestMovies();
-
-requestSearch();
-
-requestSearchMovie();
