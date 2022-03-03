@@ -12,10 +12,10 @@ export const MainTeste2 = styled.div`
 `;
 
 export const MainTeste3 = styled.div`
-  width: 90%;
+  width: 50%;
   height: 100vh;
   color: #000000;
-  margin: auto;
+  margin: 10% auto;
   background: #d8d49a;
 `;
 

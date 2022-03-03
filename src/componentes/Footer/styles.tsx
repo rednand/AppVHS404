@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Bottom = styled.div`
-  width: 80%;
-  margin: 0 10%;
+  width: 100%;
+  margin: 0;
   background: #8773ba;
-  grid-area: footer;
   height: 10rem;
   float: right;
   color: white;

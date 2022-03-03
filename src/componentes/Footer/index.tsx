@@ -19,3 +19,5 @@ const Footer = () => {
     </Bottom>
   );
 };
+
+export default Footer;
