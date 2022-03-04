@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { genres, options } from "../../api/axios";
-import { requestMovies, requestSearchMovie } from "../../services/index";
+import { requestSearchMovie } from "../../services/index";
 import { MainTeste1, Container, Card, MainTeste3, Section } from "./styles";
 
 const token =
@@ -12,13 +12,17 @@ const Main = () => {
 
   useEffect(() => {
     options
-      .get(``, {
+      .get(`&page=1`, {
         headers: {
           Authorization: `token ${token}`,
         },
       })
-      .then((response) => setTeste(response.data));
+      .then((response) => {
+        setTeste(response.data);
+      });
   }, []);
+
+  console.log("teste", teste.results);
 
   useEffect(() => {
     genres
@@ -27,7 +31,9 @@ const Main = () => {
           Authorization: `token ${token}`,
         },
       })
-      .then((response) => setGenero(response.data));
+      .then((response) => {
+        setGenero(response.data);
+      });
   }, []);
 
   return (
@@ -35,12 +41,14 @@ const Main = () => {
       <MainTeste3>
         <Container>
           <>
-            <h2>Ultimos lançamentos:</h2>
-            {teste.results.map((item, index) => {
+            <h1 className="h2Class">Ultimos lançamentos:</h1>
+            {teste.results.map((item) => {
               return (
                 <Card key={item["id"]}>
-                  <h2 className="pItem">{item["title"]}</h2>
-                  <div className="cardItem">{item["overview"]}</div>
+                  <div className="divCard">
+                    <h2 className="pItem">{item["title"]}</h2>
+                    <p className="cardItem">{item["overview"]}</p>
+                  </div>
                   <img
                     className="imageItem"
                     src={`https://image.tmdb.org/t/p/original${item["poster_path"]}`}

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const options = axios.create({
   baseURL:
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=5b6359b14c6e1170ef068fa513554317&language=en-US&page=1",
+    "https://api.themoviedb.org/3/movie/upcoming?api_key=5b6359b14c6e1170ef068fa513554317&language=en-US",
 });
 
 export const genres = axios.create({

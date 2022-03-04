@@ -7,24 +7,29 @@ export const MainTeste1 = styled.div`
 export const MainTeste3 = styled.div`
   width: 50%;
   color: #000000;
-  margin: 5% auto;
+  margin: 5rem auto;
   background: #f8f9fa;
 `;
 
 export const Section = styled.div`
   width: 20%;
   background: #f8f9fa;
-  margin: 5% auto;
+  margin: 5rem auto;
   color: #121212;
 
   .itens {
-    margin: 5%;
+    margin: 2rem;
   }
 `;
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem;
+
+  .h2Class {
+    font-size: 20px;
+    margin: 2rem;
+  }
 `;
 
 export const Card = styled.div`
@@ -34,21 +39,23 @@ export const Card = styled.div`
   outline: none;
   min-width: 10px;
   background: #3d3f40;
-  margin: 1%;
+  margin: 2rem;
   display: flex;
   flex-wrap: wrap;
 
+  .divCard {
+    width: 50%;
+  }
   .pItem {
     font-size: 2rem;
-    width: 100%;
-    margin: 2% 4%;
+    margin: 2rem;
   }
   .cardItem {
-    width: 40%;
-    margin: 2% auto;
+    width: 100%;
+    margin: 1rem 2rem;
   }
   .imageItem {
     width: 30%;
-    margin: 2% auto;
+    margin: 2rem auto;
   }
 `;
