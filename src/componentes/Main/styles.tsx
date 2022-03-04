@@ -13,10 +13,10 @@ export const MainTeste3 = styled.div`
 
 export const Section = styled.div`
   width: 20%;
-  background: #f8f9fa;
   margin: 5rem auto;
-  color: #121212;
-
+  color: #f8f9fa;
+  background-image: url("../../assets/imagens/Untitled design24.png");
+  background-size: contain;
   .itens {
     margin: 2rem;
   }

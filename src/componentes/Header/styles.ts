@@ -10,10 +10,11 @@ export const TitleBackground = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #8E0F14;
-  font-family: "Rock 3d", cursive;
-  word-spacing: -0px;
-  letter-spacing: -10px;
+  color: #8e0f14;
+  font-family: "UnifrakturMaguntia", cursive;
+  word-spacing: 10px;
+  font-weight: bold;
+  letter-spacing: 10px;
   font-size: 100px;
   text-align: center;
   font-weight: 900;

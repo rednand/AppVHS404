@@ -4,7 +4,7 @@ import { Title, Menu, TitleBackground } from "./styles";
 const Header = () => {
   return (
     <TitleBackground>
-      <Title>Horror do dia</Title>
+      <Title>Profundum</Title>
       <Menu>Movies</Menu>
     </TitleBackground>
   );

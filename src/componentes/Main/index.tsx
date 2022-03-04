@@ -22,7 +22,7 @@ const Main = () => {
       });
   }, []);
 
-  console.log("teste", teste.results);
+  console.log(teste.results);
 
   useEffect(() => {
     genres
@@ -32,6 +32,7 @@ const Main = () => {
         },
       })
       .then((response) => {
+        console.log("genres:", response.data);
         setGenero(response.data);
       });
   }, []);
@@ -41,7 +42,7 @@ const Main = () => {
       <MainTeste3>
         <Container>
           <>
-            <h1 className="h2Class">Ultimos lançamentos:</h1>
+            <h1 className="h2Class">Lançamentos do mês:</h1>
             {teste.results.map((item) => {
               return (
                 <Card key={item["id"]}>
