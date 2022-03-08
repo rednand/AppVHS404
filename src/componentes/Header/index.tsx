@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <TitleBackground>
       <Title>Profundum</Title>
-      <Menu>Movies</Menu>
+      <Menu></Menu>
     </TitleBackground>
   );
 };

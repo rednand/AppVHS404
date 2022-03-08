@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MainTeste1 = styled.div`
   width: 100%;
   display: inline-flex;
+  min-height: 100vh;
 `;
 export const MainTeste3 = styled.div`
   width: 50%;
@@ -49,6 +50,12 @@ export const Card = styled.div`
   .pItem {
     font-size: 2rem;
     margin: 2rem;
+    width: 50%;
+  }
+  .releaseItem {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    width: 100%;
   }
   .cardItem {
     width: 100%;
@@ -56,6 +63,11 @@ export const Card = styled.div`
   }
   .imageItem {
     width: 30%;
+    margin: 2rem auto;
+  }
+  .videoItem {
+    width: 70%;
+    height: 25rem;
     margin: 2rem auto;
   }
 `;
