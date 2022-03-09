@@ -1,38 +1,37 @@
 import styled from "styled-components";
 
 export const TitleBackground = styled.div`
-  background-color: #000000;
-  background-image: url("../../assets/imagens/posterTheExorcist.jpg");
-  background-repeat: no-repeat;
-  background-position: 100%;
+  background-color: var(--bg900);
+  background-image: url("assets/imagens/hand.png");
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 95%;
   margin-top: 0%;
 `;
 
-export const Title = styled.h1`
-  color: #8e0f14;
-  font-family: "UnifrakturMaguntia", cursive;
-  word-spacing: 10px;
-  font-weight: bold;
-  letter-spacing: 10px;
-  font-size: 100px;
-  text-align: center;
-  font-weight: 900;
-  padding-top: 5%;
-  text-shadow: 5px 5px #212223;
+export const Title = styled.div`
+  width: 50%;
+  background-color: var(--bg900);
+  height: 12rem;
+  color: var(--bg800);
+  background-image: url("assets/imagens/title.png");
+  background-repeat: no-repeat;
+  background-position: -1% 37%;
 `;
 
 export const Menu = styled.div`
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   width: 100%;
-  margin-top: -2%;
-  height: 41px;
+  height: 2rem;
   color: #929293;
+  background-image: url("assets/imagens/danger255.png");
+  background-color: #212223;
+  background-repeat: repeat;
+  background-size: contain;
   -webkit-text-stroke-width: 1px;
   /* largura da borda */
   -webkit-text-stroke-color: #212223;
   /* cor da borda */
   font-size: 35px;
   text-align: left;
-  background: #212223;
 `;

@@ -4,7 +4,7 @@ import { Title, Menu, TitleBackground } from "./styles";
 const Header = () => {
   return (
     <TitleBackground>
-      <Title>Profundum</Title>
+      <Title></Title>
       <Menu></Menu>
     </TitleBackground>
   );

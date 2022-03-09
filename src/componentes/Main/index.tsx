@@ -49,24 +49,20 @@ const Main = () => {
               const teste = dateIsoToLocal(item["release_date"]);
               return (
                 <Card key={item["id"]}>
-                  <div className="divCard">
+                  <div className="card">
                     <div>
-                      <h2 className="pItem">{item["title"]}</h2>
+                      <h2 className="titleItem">{item["title"]}</h2>
                       <p className="releaseItem">Lançamento: {teste}</p>
                     </div>
-                    <p className="cardItem">{item["overview"]}</p>
+                    <p className="overviewItem">{item["overview"]}</p>
+                    <iframe
+                      className="videoItem"
+                      src={`https://www.youtube.com/embed/${item["trailer"]}`}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
                   </div>
-                  <img
-                    className="imageItem"
-                    src={`https://image.tmdb.org/t/p/original${item["poster"]}`}
-                    alt=""
-                  />{" "}
-                  <iframe
-                    className="videoItem"
-                    src={`https://www.youtube.com/embed/${item["trailer"]}`}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
+                  <img className="posterItem" src={`${item["poster"]}`} alt="" />{" "}
                 </Card>
               );
             })}
@@ -74,7 +70,8 @@ const Main = () => {
         </Container>
       </MainTeste3>
       <Section>
-        <>
+        <div className="itens">
+          teste
           {/* {genero.movies.map((item) => {
             let teste = `https://www.youtube.com/embed/${item["trailer"]}`;
 
@@ -91,7 +88,7 @@ const Main = () => {
               </p>
             );
           })} */}
-        </>
+        </div>
       </Section>
     </MainTeste1>
   );

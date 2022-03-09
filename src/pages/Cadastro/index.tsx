@@ -1,7 +1,9 @@
 import React from "react";
-
+import Header from "../../componentes/Header";
 const Cadastro = () => {
-  return <div>teste</div>;
+  return (
+      <Header />
+  );
   // https://dev.to/jucian0/reactjs-formularios-55mo
 };
 

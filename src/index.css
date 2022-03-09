@@ -138,3 +138,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+:root {
+  --bg900: #06070a;
+  --bg800: #0e0f0d;
+  --bg700: #464745;
+  --bg600: #6c95b0;
+  --bg500: #a8a9a6;
+  --bg400: #bebfbb;
+  --bg300: #cacac6;
+  --bg200: rgba(248, 248, 248, 0.8);
+  --bg100: #dfe0dc;
+}

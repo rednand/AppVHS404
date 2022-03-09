@@ -5,49 +5,72 @@ export const MainTeste1 = styled.div`
   display: inline-flex;
   min-height: 100vh;
 `;
+
 export const MainTeste3 = styled.div`
   width: 50%;
   color: #000000;
   margin: 5rem auto;
-  background: #f8f9fa;
+  background-color: rgba(248, 248, 248, 0.8);
+  border: 0.2rem solid #3d3f40;
 `;
 
 export const Section = styled.div`
   width: 20%;
   margin: 5rem auto;
+  position: relative;
   color: #f8f9fa;
-  background-image: url("../../assets/imagens/Untitled design24.png");
-  background-size: contain;
+  background-color: var(--bg200);
+  border: 0.2rem solid var(--bg800);
+
+  ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
   .itens {
     margin: 2rem;
   }
 `;
 export const Container = styled.div`
+  font-family: "Bebas Neue", cursive;
+  font-weight: 100;
   display: flex;
   flex-direction: column;
-  margin: 2rem;
-
+  margin: 0;
   .h2Class {
-    font-size: 20px;
+    color: #d41d24;
+    font-size: 3rem;
     margin: 2rem;
   }
 `;
 
 export const Card = styled.div`
-  width: 100%;
+  width: 110%;
   flex: 1;
-  color: #f8f9fa;
+  word-spacing: 5px;
+  color: var(--bg100);
   outline: none;
   min-width: 10px;
-  background: #3d3f40;
-  margin: 2rem;
+  border: 0.2rem solid #f8f9fa;
+  background: var(--bg900);
+  margin: 3rem;
   display: flex;
   flex-wrap: wrap;
 
-  .divCard {
+  .card {
     width: 50%;
   }
-  .pItem {
+  .titleItem {
     font-size: 2rem;
     margin: 2rem;
     width: 50%;
@@ -57,17 +80,20 @@ export const Card = styled.div`
     margin-left: 2rem;
     width: 100%;
   }
-  .cardItem {
+  .overviewItem {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 19px;
     width: 100%;
     margin: 1rem 2rem;
   }
-  .imageItem {
-    width: 30%;
-    margin: 2rem auto;
+  .posterItem {
+    width: 38%;
+    margin: 7rem auto 2.5rem;
   }
   .videoItem {
-    width: 70%;
+    width: 100%;
     height: 25rem;
-    margin: 2rem auto;
+    margin: 2rem 2rem;
   }
 `;
