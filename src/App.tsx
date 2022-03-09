@@ -1,23 +1,20 @@
 import React from "react";
-import Header from "./componentes/Header";
-import Footer from "./componentes/Footer";
-import Main from "./componentes/Main";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cadastro from "./pages/Cadastro";
+import Exclusao from "./pages/Exclusao";
+import Home from "./pages/Home";
 import "./index";
 const imageFilePath = "./assets/imagens/main.png";
 
 const App = () => {
   return (
-    <div
-      className="phase1"
-      style={{
-        backgroundColor: "#6C757D",
-        backgroundImage: `url(${imageFilePath})`,
-      }}
-    >
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route element={<Home />} path="/"></Route>
+        <Route element={<Exclusao />} path="/buscar"></Route>
+        <Route element={<Cadastro />} path="/cadastro"></Route>
+      </Routes>
+    </Router>
   );
 };
 
