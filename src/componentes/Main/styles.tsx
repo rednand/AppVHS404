@@ -4,6 +4,28 @@ export const MainTeste1 = styled.div`
   width: 100%;
   display: inline-flex;
   min-height: 100vh;
+  .hidden {
+    display: none;
+    visibility: hidden;
+  }
+  .show {
+    position: absolute;
+    left: -30rem;
+    width: 30rem;
+    height: 20rem;
+    -webkit-animation: slide-in 1s forwards;
+    animation: slide-in 1s forwards;
+  }
+  @-webkit-keyframes slide-in {
+    100% {
+      left: 0;
+    }
+  }
+  @keyframes slide-in {
+    100% {
+      left: 0;
+    }
+  }
 `;
 
 export const MainTeste3 = styled.div`

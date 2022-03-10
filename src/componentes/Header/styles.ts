@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 export const TitleBackground = styled.div`
   background-color: var(--bg900);
-  background-image: url("assets/imagens/hand.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 95%;
+ 
   margin-top: 0%;
 `;
 

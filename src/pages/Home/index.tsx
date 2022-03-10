@@ -5,7 +5,7 @@ import Main from "../../componentes/Main";
 import "./index";
 import { Back } from "./styles";
 
-const App = () => {
+const Home = () => {
   return (
     <Back>
       <Header />
@@ -15,4 +15,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
