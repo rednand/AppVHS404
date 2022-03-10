@@ -4,28 +4,6 @@ export const MainTeste1 = styled.div`
   width: 100%;
   display: inline-flex;
   min-height: 100vh;
-  .hidden {
-    display: none;
-    visibility: hidden;
-  }
-  .show {
-    position: absolute;
-    left: -30rem;
-    width: 30rem;
-    height: 20rem;
-    -webkit-animation: slide-in 1s forwards;
-    animation: slide-in 1s forwards;
-  }
-  @-webkit-keyframes slide-in {
-    100% {
-      left: 0;
-    }
-  }
-  @keyframes slide-in {
-    100% {
-      left: 0;
-    }
-  }
 `;
 
 export const MainTeste3 = styled.div`
@@ -44,20 +22,6 @@ export const Section = styled.div`
   background-color: var(--bg200);
   border: 0.2rem solid var(--bg800);
 
-  ::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-    z-index: 1;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
 
   .itens {
     margin: 2rem;
