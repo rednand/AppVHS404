@@ -5,6 +5,7 @@ interface initialState {}
 const Header = () => {
   const [scroll, setScroll] = useState({
     height: "100vh",
+    backgroundColor: "rgba(248, 248, 248, 0.2)",
     backgroundImage: "url('assets/imagens/sangue4.png')",
     backgroundPosition: "80%",
     backgroundSize: "contain",
@@ -15,10 +16,11 @@ const Header = () => {
     if (document.documentElement.scrollTop > 430) {
       setScroll({
         height: "12rem",
+        backgroundColor: "inherit",
         backgroundImage: "url('assets/imagens/hand.png')",
         backgroundPosition: "95%",
         backgroundSize: "contain",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
       });
     }
   }

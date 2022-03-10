@@ -2,15 +2,12 @@ import styled from "styled-components";
 
 export const TitleBackground = styled.div`
   background-color: var(--bg900);
- 
   margin-top: 0%;
 `;
 
 export const Title = styled.div`
   width: 50%;
-  background-color: var(--bg900);
   height: 12rem;
-  color: var(--bg800);
   background-image: url("assets/imagens/title.png");
   background-repeat: no-repeat;
   background-position: -1% 37%;
@@ -22,7 +19,6 @@ export const Menu = styled.div`
   height: 2rem;
   color: #929293;
   background-image: url("assets/imagens/danger255.png");
-  background-color: #212223;
   background-repeat: repeat;
   background-size: contain;
   -webkit-text-stroke-width: 1px;
