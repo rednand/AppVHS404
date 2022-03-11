@@ -6,16 +6,13 @@ const token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YjYzNTliMTRjNmUxMTcwZWYwNjhmYTUxMzU1NDMxNyIsInN1YiI6IjYyMWY3YmJmNzdiMWZiMDA2Y2ZjZDQ1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SfIvPM0qoY06fpwXNx8dG7piLbdb8Rvsnt6_U5rYu-o";
 
 const Main = () => {
-  const [teste, setTeste] = useState({ movies: [] });
+  const [teste, setTeste] = useState({ movies: [] as any[] });
 
   useEffect(() => {
     commingSoonMovies.get("").then((response) => {
-      console.log(response.data);
       setTeste(response.data);
     });
   }, []);
-
-  console.log(teste.movies);
 
   const dateIsoToLocal = (date: string): string => {
     const _date = new Date(date);
@@ -47,14 +44,22 @@ const Main = () => {
             <h1 className="h2Class">Lançamentos do mês:</h1>
             {teste.movies.map((item) => {
               const teste = dateIsoToLocal(item["release_date"]);
+
+              console.log(item["genre"]);
+
               return (
                 <Card key={item["id"]}>
                   <div className="card">
-                    <div>
-                      <h2 className="titleItem">{item["title"]}</h2>
-                      <p className="releaseItem">Lançamento: {teste}</p>
-                    </div>
+                    <h2 className="titleItem">{item["title"]}</h2>
+                    <p className="releaseItem">Lançamento: {teste}</p>
                     <p className="overviewItem">{item["overview"]}</p>
+                  </div>
+                  <div className="cardMedia">
+                    <img
+                      className="posterItem"
+                      src={`${item["poster"]}`}
+                      alt={`poster${item["poster"]}`}
+                    />
                     <iframe
                       className="videoItem"
                       src={`https://www.youtube.com/embed/${item["trailer"]}`}
@@ -62,7 +67,21 @@ const Main = () => {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     ></iframe>
                   </div>
-                  <img className="posterItem" src={`${item["poster"]}`} alt="" />{" "}
+                  <div className="buttonGenre">
+                    {item["genre"].map((x, index) => {
+                      console.log(x, index);
+                      return (
+                        <p key={item["genre"][index]}>
+                          <button
+                            className="pbuttonGenre"
+                            onClick={() => console.log("teste")}
+                          >
+                            {item["genre"][index]}
+                          </button>
+                        </p>
+                      );
+                    })}
+                  </div>
                 </Card>
               );
             })}

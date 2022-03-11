@@ -20,9 +20,7 @@ const Header = () => {
 
   useEffect(() => {
     window.onscroll = () => handleScroll();
-    console.log("scroll", scroll);
   }, []);
-  console.log("teste", document.documentElement);
 
   return (
     <HeaderBackground>

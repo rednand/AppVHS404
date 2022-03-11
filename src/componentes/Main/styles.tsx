@@ -22,7 +22,6 @@ export const Section = styled.div`
   background-color: var(--bg200);
   border: 0.2rem solid var(--bg800);
 
-
   .itens {
     margin: 2rem;
   }
@@ -41,24 +40,22 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 110%;
+  width: 100%;
   flex: 1;
   word-spacing: 5px;
   color: var(--bg100);
   outline: none;
-  min-width: 10px;
   border: 0.2rem solid #f8f9fa;
-  background: var(--bg900);
-  margin: 3rem;
+  background: var(--bg800);
+  margin: 2rem 5rem;
   display: flex;
   flex-wrap: wrap;
-
   .card {
-    width: 50%;
+    width: 100%;
   }
   .titleItem {
     font-size: 2rem;
-    margin: 2rem;
+    margin: 1.2rem 2rem;
     width: 50%;
   }
   .releaseItem {
@@ -70,16 +67,34 @@ export const Card = styled.div`
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 700;
     font-size: 19px;
-    width: 100%;
+    width: 93%;
     margin: 1rem 2rem;
   }
+  .cardMedia {
+    width: 100%;
+    margin: 2%;
+  }
   .posterItem {
-    width: 38%;
-    margin: 7rem auto 2.5rem;
+    width: 30%;
+    height: 25rem;
+    margin: auto 2%;
   }
   .videoItem {
-    width: 100%;
+    width: 60%;
     height: 25rem;
-    margin: 2rem 2rem;
+    margin: auto 3%;
+  }
+  .buttonGenre {
+    display: inline-flex;
+    margin: 4%;
+    .pbuttonGenre {
+      margin-right: 3rem;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 19px;
+      padding: 1rem 2rem;
+      color: var(--bg700);
+      border-color: #d41d24 transparent #d41d24 transparent;
+    }
   }
 `;
