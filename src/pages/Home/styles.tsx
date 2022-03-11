@@ -3,6 +3,6 @@ const imageFilePath = "assets/imagens/main.png";
 
 export const Back = styled.div`
   background-image: url("assets/imagens/crash.png");
-  background-repeat: nepeat;
+  background-size: contain;
   background-color: var(--bg500);
 `;

@@ -7,7 +7,7 @@ import {
   TitleBackground,
 } from "./styles";
 
-const Header = () => {
+const Header = (props) => {
   const [showBiggerHeader, setshowBiggerHeaderd] = useState(true);
   const [showNormalHeader, setShowNormalHeader] = useState(false);
 
@@ -21,6 +21,15 @@ const Header = () => {
   useEffect(() => {
     window.onscroll = () => handleScroll();
   }, []);
+
+  if (props.isIndex) {
+    return (
+      <TitleBackground emphasized={true}>
+        <Title emphasized={true}></Title>
+        <Menu></Menu>
+      </TitleBackground>
+    );
+  }
 
   return (
     <HeaderBackground>

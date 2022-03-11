@@ -8,13 +8,21 @@ const imageFilePath = "./assets/imagens/main.png";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route element={<Home />} path="/"></Route>
-        <Route element={<Exclusao />} path="/buscar"></Route>
-        <Route element={<Cadastro />} path="/cadastro"></Route>
-      </Routes>
-    </Router>
+    <div
+      style={{
+        backgroundImage: "url('assets/imagens/crash.png')",
+        backgroundSize: "contain",
+        backgroundColor: "var(--bg500)",
+      }}
+    >
+      <Router>
+        <Routes>
+          <Route element={<Home />} path="/"></Route>
+          <Route element={<Exclusao />} path="/buscar"></Route>
+          <Route element={<Cadastro />} path="/cadastro"></Route>
+        </Routes>
+      </Router>
+    </div>
   );
 };
 

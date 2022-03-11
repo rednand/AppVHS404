@@ -50,8 +50,10 @@ export const Card = styled.div`
   margin: 2rem 5rem;
   display: flex;
   flex-wrap: wrap;
+
   .card {
     width: 100%;
+    background: var(--bg800);
   }
   .titleItem {
     font-size: 2rem;
@@ -92,9 +94,12 @@ export const Card = styled.div`
       font-family: "Barlow Condensed", sans-serif;
       font-weight: 700;
       font-size: 19px;
-      padding: 1rem 2rem;
-      color: var(--bg700);
-      border-color: #d41d24 transparent #d41d24 transparent;
+      padding: .6rem 1.2rem;
+      color: var(--bg100);
+      background-color: var(--bg900);
+      border-width: 1px;
+      border-color: #d41d24;
     }
   }
 `;
+
