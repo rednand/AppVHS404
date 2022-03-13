@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import Input from "./Input";
 import { ValidationError } from "yup";
 import * as yup from "yup";
-import { Form } from "./styles";
+import { Form, ButtonForm } from "./styles";
 import axios from "axios";
 
 export const FormValidations = yup.object().shape({
-  name: yup.string().required("Name é obrigatório"),
-  overview: yup.string().required("Name é obrigatório"),
-  release_date: yup.date().required("Name é obrigatório"),
-  title: yup.string().required("Name é obrigatório"),
-  trailer: yup.string().required("Name é obrigatório"),
+  name: yup.string().required("Nome é obrigatório"),
+  overview: yup.string().required("Sinopse é obrigatório"),
+  release_date: yup.date().required("Data de lançamento é obrigatória"),
+  trailer: yup.string().required("Trailer é obrigatório"),
   original_language: yup.string(),
   original_title: yup.string(),
   poster: yup.string(),
+  genre: yup.array().notRequired().nullable(),
 });
 
 const initialFormState = {
@@ -22,9 +22,9 @@ const initialFormState = {
   original_title: "",
   overview: "",
   release_date: Date,
-  title: "",
   trailer: "",
   poster: "",
+  genre: [],
 };
 
 const UserForm = () => {
@@ -62,22 +62,18 @@ const UserForm = () => {
   console.log("form", form);
 
   const onSubmit = () => {
-    axios
-      .post("http://localhost:3000/movies", {
-        form,
-      })
+    axios.post("http://localhost:3000/movies", form);
   };
 
   return (
     <>
-      <h3>Form Controlled</h3>
       <Form>
         <div className="form-group">
           <Input
             name="name"
             error={errors["name"]}
             onChange={(e) => setInput({ name: e.target.value })}
-            label="Name"
+            label="Nome"
           />
         </div>
         <div className="form-group">
@@ -124,14 +120,6 @@ const UserForm = () => {
         </div>
         <div className="form-group">
           <Input
-            name="title"
-            onChange={(e) => setInput({ title: e.target.value })}
-            label="Título"
-            error={errors["title"]}
-          />
-        </div>
-        <div className="form-group">
-          <Input
             name="trailer"
             onChange={(e) => setInput({ trailer: e.target.value })}
             label="Trailer"
@@ -156,9 +144,13 @@ const UserForm = () => {
           />
         </div>
         <div className="form-group">
-          <button type="button" onClick={onSubmit} className="btn btn-primary">
-            Submit
-          </button>
+          <ButtonForm
+            type="button"
+            onClick={onSubmit}
+            className="btn btn-primary"
+          >
+            Cadastrar
+          </ButtonForm>
         </div>
       </Form>
     </>

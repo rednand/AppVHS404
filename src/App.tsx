@@ -10,9 +10,7 @@ const App = () => {
   return (
     <div
       style={{
-        backgroundImage: "url('assets/imagens/crash.png')",
-        backgroundSize: "contain",
-        backgroundColor: "var(--bg500)",
+        backgroundColor: "var(--bg900)",
       }}
     >
       <Router>

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import {SingleInput} from "./styles";
+import { SingleInput, Label } from "./styles";
 
 const Input = ({ error, label, ...rest }) => {
   const [touched, setTouched] = useState(false);
 
   return (
     <>
-      <label htmlFor={rest.name}>{label}</label>
+      <Label htmlFor={rest.name}>{label}</Label>
       <SingleInput
         className="form-control"
         {...rest}

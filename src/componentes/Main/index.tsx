@@ -3,9 +3,6 @@ import { commingSoonMovies, options } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
 import { MainTeste1, Container, Card, MainTeste3, Section } from "./styles";
 
-const token =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YjYzNTliMTRjNmUxMTcwZWYwNjhmYTUxMzU1NDMxNyIsInN1YiI6IjYyMWY3YmJmNzdiMWZiMDA2Y2ZjZDQ1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SfIvPM0qoY06fpwXNx8dG7piLbdb8Rvsnt6_U5rYu-o";
-
 const Main = () => {
   const [teste, setTeste] = useState({ movies: [] as any[] });
 
@@ -53,7 +50,7 @@ const Main = () => {
                   return (
                     <Card key={item["id"]}>
                       <div className="card">
-                        <h2 className="titleItem">{item["title"]}</h2>
+                        <h2 className="titleItem">{item["name"]}</h2>
                         <p className="releaseItem">Lançamento: {teste}</p>
                         <p className="overviewItem">{item["overview"]}</p>
                       </div>
