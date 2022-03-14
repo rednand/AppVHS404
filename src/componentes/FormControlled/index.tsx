@@ -8,7 +8,7 @@ import axios from "axios";
 export const FormValidations = yup.object().shape({
   name: yup.string().required("Nome é obrigatório"),
   overview: yup.string().required("Sinopse é obrigatório"),
-  release_date: yup.date().required("Data de lançamento é obrigatória"),
+  release_date: yup.date().notRequired(),
   trailer: yup.string().required("Trailer é obrigatório"),
   original_language: yup.string(),
   original_title: yup.string(),
@@ -62,9 +62,26 @@ const UserForm = () => {
   console.log("form", form);
 
   const onSubmit = () => {
-    axios.post("http://localhost:3000/movies", form);
-  };
+    var formData = new FormData();
+    formData.append("poster", form.poster);
+    formData.append("name", form.name);
+    formData.append("original_language", form.original_language);
+    formData.append("overview", form.overview);
+    // formData.append("release_date", form.release_date);
+    formData.append("trailer", form.trailer);
+    // bodyFormData.append(" genre", form.genre);
 
+    console.log("formData", formData);
+
+    axios
+      .post("http://localhost:3000/createteste", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data;",
+          Accept: "*/*",
+        },
+      
+      });
+  };
   return (
     <>
       <Form>
