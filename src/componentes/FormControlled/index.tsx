@@ -146,6 +146,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             type="file"
+            accept="image/*"
             name="poster"
             onChange={(e) => setInput({ poster: e.target.value })}
             label="Poster"
