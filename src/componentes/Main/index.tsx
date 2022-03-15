@@ -44,9 +44,6 @@ const Main = () => {
               <>
                 {teste.movies.map((item) => {
                   const teste = dateIsoToLocal(item["release_date"]);
-
-                  console.log(item["genre"]);
-
                   return (
                     <Card key={item["id"]}>
                       <div className="card">
@@ -69,7 +66,6 @@ const Main = () => {
                       </div>
                       <div className="buttonGenre">
                         {item["genre"].map((x, index) => {
-                          console.log(x, index);
                           return (
                             <p key={item["genre"][index]}>
                               <button

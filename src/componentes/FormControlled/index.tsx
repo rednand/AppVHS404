@@ -4,6 +4,7 @@ import { ValidationError } from "yup";
 import * as yup from "yup";
 import { Form, ButtonForm } from "./styles";
 import axios from "axios";
+import { date } from "yup/lib/locale";
 
 export const FormValidations = yup.object().shape({
   name: yup.string().required("Nome é obrigatório"),
@@ -21,7 +22,7 @@ const initialFormState = {
   original_language: "",
   original_title: "",
   overview: "",
-  release_date: Date,
+  release_date: date,
   trailer: "",
   poster: "",
   genre: [],
@@ -30,7 +31,17 @@ const initialFormState = {
 const UserForm = () => {
   const [form, setForm] = useState(initialFormState);
   const [errors, setErrors] = useState({});
+  const [picture, setPicture] = useState({});
 
+  const onChangePicture = (e) => {
+    console.log("picture: ", picture);
+    if (e.target.files.length) {
+      setPicture(URL.createObjectURL(e.target.files[0]));
+      setForm({ ...form, [e.target.name]: e.target.value });
+    } else {
+      return false;
+    }
+  };
   console.log("errors", errors);
   console.log("form", form);
 
@@ -49,10 +60,6 @@ const UserForm = () => {
     }
   };
 
-  const setInput = (newValue) => {
-    setForm((form) => ({ ...form, ...newValue }));
-  };
-
   useEffect(() => {
     validate();
   }, [form]);
@@ -61,42 +68,51 @@ const UserForm = () => {
 
   console.log("form", form);
 
-  const onSubmit = () => {
-    var formData = new FormData();
-    formData.append("poster", form.poster);
-    formData.append("name", form.name);
-    formData.append("original_language", form.original_language);
-    formData.append("overview", form.overview);
-    // formData.append("release_date", form.release_date);
-    formData.append("trailer", form.trailer);
-    // bodyFormData.append(" genre", form.genre);
+  const onChange = (e) => {
+    e.persist();
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-    console.log("formData", formData);
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-    axios
-      .post("http://localhost:3000/createteste", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data;",
-          Accept: "*/*",
-        },
-      
+    var bodyFormData = new FormData();
+    for (let key in form) {
+      bodyFormData.append(key, form[key]);
+    }
+
+    await axios({
+      method: "post",
+      url: "http://localhost:3000/create",
+      data: bodyFormData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
       });
   };
   return (
     <>
-      <Form>
+      <Form action="/profile" method="post" encType="multipart/form-data">
         <div className="form-group">
           <Input
             name="name"
             error={errors["name"]}
-            onChange={(e) => setInput({ name: e.target.value })}
+            onChange={onChange}
             label="Nome"
           />
         </div>
         <div className="form-group">
           <Input
             name="original_language"
-            onChange={(e) => setInput({ original_language: e.target.value })}
+            onChange={onChange}
             label="Língua original"
             error={errors["original_language"]}
           />
@@ -105,7 +121,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="original_title"
-            onChange={(e) => setInput({ original_title: e.target.value })}
+            onChange={onChange}
             label="Título Original"
             error={errors["original_title"]}
           />
@@ -113,7 +129,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="overview"
-            onChange={(e) => setInput({ overview: e.target.value })}
+            onChange={onChange}
             label="Sinopse"
             error={errors["overview"]}
           />
@@ -121,7 +137,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="original_title"
-            onChange={(e) => setInput({ original_title: e.target.value })}
+            onChange={onChange}
             label="Título Original"
             error={errors["original_title"]}
           />
@@ -130,7 +146,7 @@ const UserForm = () => {
           <Input
             type="date"
             name="release_date"
-            onChange={(e) => setInput({ release_date: e.target.value })}
+            onChange={onChange}
             label="Lançamento"
             error={errors["release_date"]}
           />
@@ -138,7 +154,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="trailer"
-            onChange={(e) => setInput({ trailer: e.target.value })}
+            onChange={onChange}
             label="Trailer"
             error={errors["trailer"]}
           />
@@ -148,7 +164,7 @@ const UserForm = () => {
             type="file"
             accept="image/*"
             name="poster"
-            onChange={(e) => setInput({ poster: e.target.value })}
+            onChange={onChangePicture}
             label="Poster"
             error={errors["poster"]}
           />
@@ -156,7 +172,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="genre"
-            onChange={(e) => setInput({ genre: e.target.value })}
+            onChange={onChange}
             label="Genero"
             error={errors["genre"]}
           />
