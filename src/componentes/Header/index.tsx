@@ -6,6 +6,7 @@ import {
   Menu,
   TitleBackground,
 } from "./styles";
+import Navbar from "../Navbar";
 
 const Header = (props) => {
   const [showBiggerHeader, setshowBiggerHeaderd] = useState(true);
@@ -22,10 +23,11 @@ const Header = (props) => {
     window.onscroll = () => handleScroll();
   }, []);
 
-  if (props.isIndex) {
+  if (!props.isIndex) {
     return (
-      <TitleBackground emphasized={true}>
-        <Title emphasized={true}></Title>
+      <TitleBackground showComponent={true}>
+        <Navbar />
+        <Title showComponent={true}></Title>
         <Menu></Menu>
       </TitleBackground>
     );
@@ -33,9 +35,10 @@ const Header = (props) => {
 
   return (
     <HeaderBackground>
-      <TitleBackground emphasized={showNormalHeader}>
-        <Title emphasized={showNormalHeader}></Title>
-        <BiggerHeader emphasized={showBiggerHeader}></BiggerHeader>
+      <TitleBackground showComponent={showNormalHeader}>
+        <Navbar />
+        <Title showComponent={showNormalHeader}></Title>
+        <BiggerHeader showComponent={showBiggerHeader}></BiggerHeader>
         <Menu></Menu>
       </TitleBackground>
     </HeaderBackground>

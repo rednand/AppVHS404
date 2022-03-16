@@ -1,7 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { commingSoonMovies, options } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
-import { MainTeste1, Container, Card, MainTeste3, Section } from "./styles";
+
+import {
+  MainTeste1,
+  Container,
+  Card,
+  MainTeste3,
+  Section,
+} from "./styles";
 
 const Main = () => {
   const [teste, setTeste] = useState({ movies: [] as any[] });

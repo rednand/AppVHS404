@@ -5,59 +5,71 @@ export const HeaderBackground = styled.div`
 `;
 
 interface IHeadingStyled {
-  emphasized: boolean;
+  showComponent: boolean;
 }
 
 export const TitleBackground = styled("div")<IHeadingStyled>`
   ${(props) =>
-    props.emphasized &&
+    props.showComponent &&
     `
   background-color: var(--bg900);
   margin-top: 0%;
+  display: "inline-flex";
   height: 12rem;
   width: 100%;
   background-image: url("assets/imagens/hand.png");
-  background-position: 95%;
+  background-position: 92%;
   background-size: contain;
   background-repeat: no-repeat;
   `}
 `;
 
 interface IHeadingStyled {
-  emphasized: boolean;
+  showComponent: boolean;
 }
 export const BiggerHeader = styled("div")<IHeadingStyled>`
   ${(props) =>
-    props.emphasized &&
+    props.showComponent &&
     `
-height: 100vh;
-margin-top: -5%;
+height: 115vh;
+margin-top: -10%;
 background-color: inherit;
 background-image: url("assets/imagens/placa3.png");
 background-position: 50%;
 background-size: contain;
 background-repeat: no-repeat;
 -webkit-transition: webkit-transform 2s;
-transition:  transform 3s;
-:hover {
-  -webkit-transform:  translateY(-5rem);
-  transform: translateY(-5rem);
+animation: transform 3s linear infinite;
+
+@keyframes transform {
+  0% {
+    transform: translateY(-5rem);
+  }
+  50% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(-5rem);
+  }
 }
-
-
 `}
 `;
 export const Title = styled("div")<IHeadingStyled>`
   ${(props) =>
-    props.emphasized &&
+    props.showComponent &&
     `
-  width: 50%;
+  width: 30%;
   height: 12rem;
   background-color: var(--bg900);
   background-image: url("assets/imagens/title.png");
   background-repeat: no-repeat;
   background-position: -1% 37%;
 `}
+
+@media screen and (min-width: 900px) and (max-width: 1500px) {
+  width: 30%;
+  background-position: 60% 37%;
+  }
 `;
 
 export const Menu = styled.div`

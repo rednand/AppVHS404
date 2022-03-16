@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cadastro from "./pages/Cadastro";
 import Exclusao from "./pages/Exclusao";
+import ScrollPage from './componentes/Scroll'
 import Home from "./pages/Home";
 import "./index";
 const imageFilePath = "./assets/imagens/main.png";
@@ -11,6 +12,7 @@ const App = () => {
     <div
       style={{
         backgroundColor: "var(--bg900)",
+        fontFamily: "'Barlow Condensed', sans-serif",
       }}
     >
       <Router>
@@ -20,6 +22,7 @@ const App = () => {
           <Route element={<Cadastro />} path="/cadastro"></Route>
         </Routes>
       </Router>
+      <ScrollPage/>
     </div>
   );
 };

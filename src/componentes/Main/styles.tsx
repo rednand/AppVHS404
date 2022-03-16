@@ -94,7 +94,7 @@ export const Card = styled.div`
       font-family: "Barlow Condensed", sans-serif;
       font-weight: 700;
       font-size: 19px;
-      padding: .6rem 1.2rem;
+      padding: 0.6rem 1.2rem;
       color: var(--bg100);
       background-color: var(--bg900);
       border-width: 1px;
@@ -102,4 +102,3 @@ export const Card = styled.div`
     }
   }
 `;
-

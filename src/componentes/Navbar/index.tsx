@@ -1,24 +1,35 @@
-import React from "react";
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./styles";
+import React, { useState, useEffect } from "react";
+import { Navigation, List, ItemLink } from "./styles";
 
 const Navbar = () => {
-  return (
-    <>
-      <Nav>
-        <Bars />
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
 
-        <NavMenu>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/events">Events</NavLink>
-          <NavLink to="/annual">Annual Report</NavLink>
-          <NavLink to="/team">Teams</NavLink>
-          <NavLink to="/blogs">Blogs</NavLink>
-        </NavMenu>
-        <NavBtn>
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
-        </NavBtn>
-      </Nav>
-    </>
+  return (
+    <Navigation>
+      <List>
+        <li>
+          <ItemLink onClick={handleClick} to="/">
+            Home
+          </ItemLink>
+        </li>
+        <li>
+          <ItemLink onClick={handleClick} to="/about">
+            Reviews
+          </ItemLink>
+        </li>
+        <li>
+          <ItemLink onClick={handleClick} to="/cadastro">
+            Informe um filme
+          </ItemLink>
+        </li>
+        <li>
+          <ItemLink onClick={handleClick} to="/blog">
+            Contato
+          </ItemLink>
+        </li>
+      </List>
+    </Navigation>
   );
 };
 

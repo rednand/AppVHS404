@@ -1,87 +1,54 @@
-import { FaBars } from "react-icons/fa";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Nav = styled.nav`
-  background: #63d471;
-  display: flex;
-  margin: auto;
-  width: 30%;
-  justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
-  /* Third Nav */
-  /* justify-content: flex-start; */
+const COLORS = {
+  primaryDark: "#ffffff",
+  primaryLight: "#d44d24",
+};
+
+export const Navigation = styled.nav`
+  width: auto;
+  float: right;
+  margin-top: .8%;
+  margin-right:28%;
+  width: ${(props) => (props ? "40%" : "0")};
+  opacity: ${(props) => (props ? "1" : "0")};
+  transition: width 0.8s, opacity 0.8s;
 `;
 
-export const NavLink = styled(Link)`
-  color: #808080;
-  display: flex;
-  align-items: center;
+export const List = styled.ul`
+  list-style: none;
+  text-align: center;
+`;
+
+export const ItemLink = styled(NavLink)`
+  background-color: var(--bg800);
+  width: 40%;
+  margin: .1%;
+  box-shadow: var(--navbarBord, 0 0 0 transparent);
+  border-color: var(--bg900);
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 900;
   text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-  &.active {
-    color: #000000;
-  }
-`;
-
-export const Bars = styled(FaBars)`
-  display: none;
-  color: #808080;
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-`;
-
-export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
-  margin-right: 24px;
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #808080;
-  padding: 10px 22px;
-  color: #000000;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #808080;
+  color: ${COLORS.primaryLight};
+  padding: 0.5rem 2rem;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    var(--bg700) 50%
+  );
+  background-size: 240%;
+  transition: all 0.4s;
+  &:hover,
+  &:active {
+    background-position: 100%;
+    color: ${COLORS.primaryDark};
+    background-color: var(--bg700);
+    width: 40%;
+    box-shadow: var(--navbarBordHover, 0 0 0 0);
+    border-color: var(--bg100);
+    transform: translateX(-1rem);
   }
 `;

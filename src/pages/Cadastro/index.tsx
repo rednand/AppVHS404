@@ -9,7 +9,7 @@ const Cadastro = () => {
 
   return (
     <>
-      <Header isIndex={true} />
+      <Header isIndex={false} />
       <UserForm></UserForm>
       <Footer></Footer>
     </>
