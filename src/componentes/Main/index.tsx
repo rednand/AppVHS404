@@ -2,13 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { commingSoonMovies, options } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
 
-import {
-  MainTeste1,
-  Container,
-  Card,
-  MainTeste3,
-  Section,
-} from "./styles";
+import { MainTeste1, Container, Card, MainTeste3, Section } from "./styles";
 
 const Main = () => {
   const [teste, setTeste] = useState({ movies: [] as any[] });
@@ -20,7 +14,7 @@ const Main = () => {
   }, []);
 
   const dateIsoToLocal = (date: string): string => {
-    const _date = new Date(date);
+    const _date = new Date(date + "T00:00");
     const day = `${_date.getDate()}`.padStart(2, "0");
     const month = `${_date.getMonth()}`.padStart(2, "0");
     const year = _date.getFullYear();
@@ -50,7 +44,9 @@ const Main = () => {
             {teste.movies.length > 0 ? (
               <>
                 {teste.movies.map((item) => {
-                  const teste = dateIsoToLocal(item["release_date"]);
+                  const teste = dateIsoToLocal(
+                    item["release_date"].toString().split("T")[0]
+                  );
                   return (
                     <Card key={item["id"]}>
                       <div className="card">
