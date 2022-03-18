@@ -31,8 +31,8 @@ export const BiggerHeader = styled("div")<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
-height: 115vh;
-margin-top: -10%;
+height: 125vh;
+margin-top: -15%;
 background-color: inherit;
 background-image: url("assets/imagens/placa3.png");
 background-position: 50%;

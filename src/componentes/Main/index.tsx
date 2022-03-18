@@ -13,11 +13,37 @@ const Main = () => {
     });
   }, []);
 
-  const dateIsoToLocal = (date: string): string => {
-    const _date = new Date(date + "T00:00");
-    const day = `${_date.getDate()}`.padStart(2, "0");
-    const month = `${_date.getMonth()}`.padStart(2, "0");
-    const year = _date.getFullYear();
+  // const dateIsoToLocal = (date: string): string => {
+  //   const _date = new Date(date + "T00:00");
+  //   const day = `${_date.getDate()}`.padStart(2, "0");
+  //   const month = `${_date.getMonth()}`.padStart(2, "0");
+  //   const year = _date.getFullYear();
+  //   const months = [
+  //     "Janeiro",
+  //     "Fevereiro",
+  //     "Março",
+  //     "Abril",
+  //     "Maio",
+  //     "Junho",
+  //     "Julho",
+  //     "Agosto",
+  //     "Setembro",
+  //     "Outubro",
+  //     "Novembro",
+  //     "Dezembro",
+  //   ];
+  //   return `${day} de ${months[Number(month)]} de ${year}`;
+  // };
+
+  function formatDate(date) {
+    var d = new Date(date),
+      month = "" + d.getMonth(),
+      day = "" + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+
     const months = [
       "Janeiro",
       "Fevereiro",
@@ -32,8 +58,9 @@ const Main = () => {
       "Novembro",
       "Dezembro",
     ];
+
     return `${day} de ${months[Number(month)]} de ${year}`;
-  };
+  }
 
   return (
     <MainTeste1>
@@ -44,9 +71,12 @@ const Main = () => {
             {teste.movies.length > 0 ? (
               <>
                 {teste.movies.map((item) => {
-                  const teste = dateIsoToLocal(
-                    item["release_date"].toString().split("T")[0]
-                  );
+                  console.log(item["release_date"]);
+
+                  const teste = formatDate(item["release_date"]);
+
+                  console.log(teste);
+
                   return (
                     <Card key={item["id"]}>
                       <div className="card">
