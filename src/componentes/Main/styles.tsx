@@ -10,8 +10,9 @@ export const MainTeste3 = styled.div`
   width: 50%;
   color: #000000;
   margin: 5rem auto;
+  background: linear-gradient(red, yellow);
+
   background-color: rgba(248, 248, 248, 0.8);
-  border: 0.2rem solid #3d3f40;
 `;
 
 export const Section = styled.div`

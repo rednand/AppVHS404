@@ -26,9 +26,8 @@ const Header = (props) => {
   if (!props.isIndex) {
     return (
       <TitleBackground showComponent={true}>
-        <Navbar />
         <Title showComponent={true}></Title>
-        <Menu></Menu>
+        <Menu><Navbar></Navbar></Menu>
       </TitleBackground>
     );
   }
@@ -36,10 +35,9 @@ const Header = (props) => {
   return (
     <HeaderBackground>
       <TitleBackground showComponent={showNormalHeader}>
-        <Navbar />
         <Title showComponent={showNormalHeader}></Title>
         <BiggerHeader showComponent={showBiggerHeader}></BiggerHeader>
-        <Menu></Menu>
+        <Menu><Navbar></Navbar></Menu>
       </TitleBackground>
     </HeaderBackground>
   );

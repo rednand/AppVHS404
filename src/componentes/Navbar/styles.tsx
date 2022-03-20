@@ -7,10 +7,7 @@ const COLORS = {
 };
 
 export const Navigation = styled.nav`
-  width: auto;
-  float: right;
-  margin-top: .8%;
-  margin-right:28%;
+  margin: auto 36%;
   width: ${(props) => (props ? "40%" : "0")};
   opacity: ${(props) => (props ? "1" : "0")};
   transition: width 0.8s, opacity 0.8s;
@@ -23,32 +20,29 @@ export const List = styled.ul`
 
 export const ItemLink = styled(NavLink)`
   background-color: var(--bg800);
-  width: 40%;
-  margin: .1%;
-  box-shadow: var(--navbarBord, 0 0 0 transparent);
+  margin: 0;
+  height: 3rem;
+  float: left;
   border-color: var(--bg900);
-  display: inline-block;
   font-size: 1.2rem;
   font-weight: 900;
   text-decoration: none;
   color: ${COLORS.primaryLight};
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 2rem;
   background-image: linear-gradient(
     120deg,
     transparent 0%,
     transparent 50%,
-    var(--bg700) 50%
+    var(--bg200) 50%
   );
   background-size: 240%;
   transition: all 0.4s;
   &:hover,
   &:active {
     background-position: 100%;
-    color: ${COLORS.primaryDark};
-    background-color: var(--bg700);
-    width: 40%;
-    box-shadow: var(--navbarBordHover, 0 0 0 0);
+    color: var(--bg900);
+    background-color: ${COLORS.primaryDark};
     border-color: var(--bg100);
-    transform: translateX(-1rem);
+    transform: translateY(.5rem);
   }
 `;

@@ -154,8 +154,7 @@ table {
   --bg100: #dfe0dc;
   --shd: -5px 5px 0px 0px rgb(247, 93, 93);
   --buttonForm: -5px 5px 0px 0px rgb(255, 255, 255);
-  --navbarBord: -5px 5px 0px 0px rgb(247, 93, 93, .8);
-  --navbarBordHover: 0px 0px 0px 0px rgb(255, 255, 255);
+  --navbarBord: 0px 1px 1px 1px rgba(176, 174, 174, 0.8);
   --rd: 0px;
   --textPadding: 3px 10px 3px 40px;
 }
