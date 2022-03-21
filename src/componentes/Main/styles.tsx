@@ -15,19 +15,25 @@ export const Teste = styled.div`
 `;
 
 export const MainTeste3 = styled.div`
-  width: 1.3%;
-  background-color: var(--bg900);
-  margin: 0 1rem;
+  width: 3%;
+  background: #a4161a;
+  margin: 0;
 `;
 
 export const Section = styled.div`
   width: 25%;
   margin-right: 3%;
-  color: #f8f9fa;
-  background-color: var(--bg900);
+  color: var(--bg900);
+  background: #f5f3f4;
   margin: 4% 8%;
-
+  text-decoration: none;
+  .sectionH3 {
+    font-size: 1.7rem;
+    font-weight: 900;
+  }
   .itens {
+    font-size: 1.2rem;
+    font-weight: 600;
     margin: 2rem;
   }
 `;
@@ -35,14 +41,14 @@ export const Container = styled.div`
   font-family: "Bebas Neue", cursive;
   font-weight: 100;
   width: 100%;
-  margin: 0 1%;
-
+  margin: 0;
   display: flex;
   flex-direction: column;
-  margin: 0;
   .h2Class {
-    color: #d41d24;
+    color: var(--bg900);
     font-size: 3rem;
+    text-align: center;
+    background: #f5f3f4;
     margin: 2rem;
   }
 `;
@@ -51,31 +57,31 @@ export const Card = styled.div`
   width: 100%;
   flex: 1;
   margin: 8% 0;
-  margin-left: 4%;
   word-spacing: 5px;
-  color: var(--bg100);
+  color: var(--bg900);
   outline: none;
-  background: var(--bg900);
+  background: #f5f3f4;
   display: flex;
   flex-wrap: wrap;
 
   .card {
-    background: var(--bg900);
+    border: none;
+    background: #f5f3f4;
   }
   .titleItem {
     font-size: 2rem;
-    margin: 1.2rem 2rem;
+    margin: 2rem 0 0 2rem;
     width: 50%;
   }
   .releaseItem {
     position: absolute;
-    top: -30%;
-    left: -7.2%;
-    padding-left: 1%;
-    text-decoration: overline 10px;
+    top: -10%;
+    left: -3%;
+    width: 50%;
+    text-align: center;
+    background: #a4161a;
     color: var(--bg900);
     font-size: 1.5rem;
-    width: 100%;
   }
   .overviewItem {
     font-family: "Barlow Condensed", sans-serif;

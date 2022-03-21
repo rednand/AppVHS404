@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const COLORS = {
-  primaryDark: "#ffffff",
+  primaryDark: "var(--bg200)",
   primaryLight: "#d44d24",
 };
 
@@ -19,7 +19,7 @@ export const List = styled.ul`
 `;
 
 export const ItemLink = styled(NavLink)`
-  background-color: var(--bg800);
+  background-color: var(--bg900);
   margin: 0;
   height: 3rem;
   float: left;
@@ -27,7 +27,7 @@ export const ItemLink = styled(NavLink)`
   font-size: 1.2rem;
   font-weight: 900;
   text-decoration: none;
-  color: ${COLORS.primaryLight};
+  color: ${COLORS.primaryDark};
   padding: 0.6rem 2rem;
   background-image: linear-gradient(
     120deg,
@@ -40,9 +40,9 @@ export const ItemLink = styled(NavLink)`
   &:hover,
   &:active {
     background-position: 100%;
-    color: var(--bg900);
+    color: ${COLORS.primaryLight};
     background-color: ${COLORS.primaryDark};
     border-color: var(--bg100);
-    transform: translateY(.5rem);
+    transform: translateY(0.5rem);
   }
 `;

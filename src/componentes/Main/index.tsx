@@ -2,7 +2,14 @@ import React, { Fragment, useEffect, useState } from "react";
 import { commingSoonMovies, options } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
 
-import { MainTeste1, Container, Teste, Card, MainTeste3, Section } from "./styles";
+import {
+  MainTeste1,
+  Container,
+  Teste,
+  Card,
+  MainTeste3,
+  Section,
+} from "./styles";
 
 const Main = () => {
   const [teste, setTeste] = useState({ movies: [] as any[] });
@@ -13,27 +20,13 @@ const Main = () => {
     });
   }, []);
 
-  // const dateIsoToLocal = (date: string): string => {
-  //   const _date = new Date(date + "T00:00");
-  //   const day = `${_date.getDate()}`.padStart(2, "0");
-  //   const month = `${_date.getMonth()}`.padStart(2, "0");
-  //   const year = _date.getFullYear();
-  //   const months = [
-  //     "Janeiro",
-  //     "Fevereiro",
-  //     "Março",
-  //     "Abril",
-  //     "Maio",
-  //     "Junho",
-  //     "Julho",
-  //     "Agosto",
-  //     "Setembro",
-  //     "Outubro",
-  //     "Novembro",
-  //     "Dezembro",
-  //   ];
-  //   return `${day} de ${months[Number(month)]} de ${year}`;
-  // };
+  teste.movies?.sort((a, b) =>
+    a["release_date"] > b["release_date"]
+      ? -1
+      : b["release_date"] > a["release_date"]
+      ? 1
+      : 0
+  );
 
   function formatDate(date) {
     var d = new Date(date),
@@ -68,15 +61,21 @@ const Main = () => {
         <MainTeste3 />
         <Container>
           <>
-            <h1 className="h2Class">Lançamentos do mês:</h1>
+            <h1 className="h2Class">Últimos lançamentos</h1>
             {teste.movies.length > 0 ? (
               <>
                 {teste.movies.map((item) => {
                   console.log(item["release_date"]);
 
                   const teste = formatDate(item["release_date"]);
+                  const teste2 = item["release_date"];
+                  const dateHoje = formatDate(Date.now());
+                  console.log("datehoje", dateHoje);
+                  console.log("teste2", teste2);
 
-                  console.log(teste);
+                  if (teste2 > dateHoje) {
+                    return teste;
+                  }
 
                   return (
                     <Card key={item["id"]}>
@@ -123,7 +122,7 @@ const Main = () => {
                   margin: 50,
                 }}
               >
-                <CircularProgress color="inherit" thickness={10} size={90} />
+                <CircularProgress color="secondary" thickness={10} size={90} />
               </Box>
             )}
           </>
@@ -131,23 +130,14 @@ const Main = () => {
       </Teste>
       <Section>
         <div className="itens">
-          teste
-          {/* {genero.movies.map((item) => {
-            let teste = `https://www.youtube.com/embed/${item["trailer"]}`;
-
+          <h3 className="sectionH3">Lançamentos anteriores</h3>
+          {teste.movies.map((item) => {
             return (
               <p className="itens" key={item["_id"]}>
                 <p>{item["name"]}</p>
-                <iframe
-                  width="100%"
-                  height="200"
-                  src={teste}
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
               </p>
             );
-          })} */}
+          })}
         </div>
       </Section>
     </MainTeste1>

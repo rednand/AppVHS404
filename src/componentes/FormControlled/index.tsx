@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Input from "./Input";
+import TextArea from './TextArea'
 import { ValidationError } from "yup";
 import * as yup from "yup";
 import { Form, ButtonForm } from "./styles";
@@ -101,45 +102,15 @@ const UserForm = () => {
   return (
     <>
       <Form action="/profile" method="post" encType="multipart/form-data">
+        <h2 className="formInfo">
+          Conte o que sabe sobre o lançamento de um filme:
+        </h2>
         <div className="form-group">
           <Input
             name="name"
             error={errors["name"]}
             onChange={onChange}
-            label="Nome"
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            name="original_language"
-            onChange={onChange}
-            label="Língua original"
-            error={errors["original_language"]}
-          />
-        </div>
-
-        <div className="form-group">
-          <Input
-            name="original_title"
-            onChange={onChange}
-            label="Título Original"
-            error={errors["original_title"]}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            name="overview"
-            onChange={onChange}
-            label="Sinopse"
-            error={errors["overview"]}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            name="original_title"
-            onChange={onChange}
-            label="Título Original"
-            error={errors["original_title"]}
+            label="Título"
           />
         </div>
         <div className="form-group">
@@ -151,14 +122,7 @@ const UserForm = () => {
             error={errors["release_date"]}
           />
         </div>
-        <div className="form-group">
-          <Input
-            name="trailer"
-            onChange={onChange}
-            label="Trailer"
-            error={errors["trailer"]}
-          />
-        </div>
+
         <div className="form-group">
           <Input
             type="file"
@@ -175,6 +139,24 @@ const UserForm = () => {
             onChange={onChange}
             label="Genero"
             error={errors["genre"]}
+          />
+        </div>
+        <div className="form-group">
+          <Input
+            type="text"
+            name="trailer"
+            onChange={onChange}
+            label="Trailer - link"
+            error={errors["trailer"]}
+          />
+        </div>
+        <div className="form-group">
+          <TextArea
+            type="textArea"
+            name="trailer"
+            onChange={onChange}
+            label="Outras Informações"
+            error={errors["trailer"]}
           />
         </div>
         <div className="form-group">
