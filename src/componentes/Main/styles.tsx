@@ -4,24 +4,28 @@ export const MainTeste1 = styled.div`
   width: 100%;
   display: inline-flex;
   min-height: 100vh;
+  justify-content: space-around;
+`;
+
+export const Teste = styled.div`
+  position: relative;
+  display: inline-flex;
+  width: 60%;
+  margin: 4% 8%;
 `;
 
 export const MainTeste3 = styled.div`
-  width: 50%;
-  color: #000000;
-  margin: 5rem auto;
-  background: linear-gradient(red, yellow);
-
-  background-color: rgba(248, 248, 248, 0.8);
+  width: 1.3%;
+  background-color: var(--bg900);
+  margin: 0 1rem;
 `;
 
 export const Section = styled.div`
-  width: 20%;
-  margin: 5rem auto;
-  position: relative;
+  width: 25%;
+  margin-right: 3%;
   color: #f8f9fa;
-  background-color: var(--bg200);
-  border: 0.2rem solid var(--bg800);
+  background-color: var(--bg900);
+  margin: 4% 8%;
 
   .itens {
     margin: 2rem;
@@ -30,6 +34,9 @@ export const Section = styled.div`
 export const Container = styled.div`
   font-family: "Bebas Neue", cursive;
   font-weight: 100;
+  width: 100%;
+  margin: 0 1%;
+
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -43,18 +50,17 @@ export const Container = styled.div`
 export const Card = styled.div`
   width: 100%;
   flex: 1;
+  margin: 8% 0;
+  margin-left: 4%;
   word-spacing: 5px;
   color: var(--bg100);
   outline: none;
-  border: 0.2rem solid #f8f9fa;
-  background: var(--bg800);
-  margin: 2rem 5rem;
+  background: var(--bg900);
   display: flex;
   flex-wrap: wrap;
 
   .card {
-    width: 100%;
-    background: var(--bg800);
+    background: var(--bg900);
   }
   .titleItem {
     font-size: 2rem;
@@ -62,8 +68,13 @@ export const Card = styled.div`
     width: 50%;
   }
   .releaseItem {
+    position: absolute;
+    top: -30%;
+    left: -7.2%;
+    padding-left: 1%;
+    text-decoration: overline 10px;
+    color: var(--bg900);
     font-size: 1.5rem;
-    margin-left: 2rem;
     width: 100%;
   }
   .overviewItem {

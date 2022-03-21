@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { commingSoonMovies, options } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
 
-import { MainTeste1, Container, Card, MainTeste3, Section } from "./styles";
+import { MainTeste1, Container, Teste, Card, MainTeste3, Section } from "./styles";
 
 const Main = () => {
   const [teste, setTeste] = useState({ movies: [] as any[] });
@@ -64,7 +64,8 @@ const Main = () => {
 
   return (
     <MainTeste1>
-      <MainTeste3>
+      <Teste>
+        <MainTeste3 />
         <Container>
           <>
             <h1 className="h2Class">Lançamentos do mês:</h1>
@@ -81,7 +82,7 @@ const Main = () => {
                     <Card key={item["id"]}>
                       <div className="card">
                         <h2 className="titleItem">{item["name"]}</h2>
-                        <p className="releaseItem">Lançamento: {teste}</p>
+                        <p className="releaseItem"> {teste}</p>
                         <p className="overviewItem">{item["overview"]}</p>
                       </div>
                       <div className="cardMedia">
@@ -127,7 +128,7 @@ const Main = () => {
             )}
           </>
         </Container>
-      </MainTeste3>
+      </Teste>
       <Section>
         <div className="itens">
           teste
