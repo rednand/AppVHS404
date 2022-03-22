@@ -1,21 +1,31 @@
 import React from "react";
-import { Bottom, UnorderedList } from "./styles";
-import { FaFacebook, FaInstagram, FaLinkedin} from "react-icons/fa";
+import { Bottom, FooterCenter, FooterA, UnorderedList } from "./styles";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <Bottom>
       <UnorderedList>
         <li>
-          <FaInstagram />
+          <FaInstagram size={30}>
+            <a href="www.facebook.com" />
+          </FaInstagram>
         </li>
         <li>
-          <FaLinkedin />
+          <FaLinkedin size={30}>
+            <a href="www.linkedin.com"></a>
+          </FaLinkedin>
         </li>
         <li>
-          <FaFacebook />
+          <FaFacebook size={30}>
+            <a href="www.instagram.com"></a>
+          </FaFacebook>
         </li>
       </UnorderedList>
+      <FooterCenter>
+        &copy; {new Date().getFullYear()} Copyright:
+        <FooterA href="/"> QUARTO 237 </FooterA>
+      </FooterCenter>
     </Bottom>
   );
 };
