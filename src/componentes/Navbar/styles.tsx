@@ -7,7 +7,7 @@ const COLORS = {
 };
 
 export const Navigation = styled.nav`
-  margin: auto 36%;
+  margin: auto 37%;
   width: ${(props) => (props ? "40%" : "0")};
   opacity: ${(props) => (props ? "1" : "0")};
   transition: width 0.8s, opacity 0.8s;

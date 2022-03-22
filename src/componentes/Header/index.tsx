@@ -12,22 +12,29 @@ const Header = (props) => {
   const [showBiggerHeader, setshowBiggerHeaderd] = useState(true);
   const [showNormalHeader, setShowNormalHeader] = useState(false);
 
-  function handleScroll() {
-    if (document.documentElement.scrollTop > 8) {
-      setshowBiggerHeaderd(false);
-      setShowNormalHeader(true);
-    }
+  // function handleScroll() {
+  //   if (document.documentElement.scrollTop > 8) {
+  //     setshowBiggerHeaderd(false);
+  //     setShowNormalHeader(true);
+  //   }
+  // }
+
+  function handleBiggerHeader() {
+    setshowBiggerHeaderd(false);
+    setShowNormalHeader(true);
   }
 
-  useEffect(() => {
-    window.onscroll = () => handleScroll();
-  }, []);
+  // useEffect(() => {
+  //   window.onclick = () => handleScroll();
+  // }, []);
 
   if (!props.isIndex) {
     return (
       <TitleBackground showComponent={true}>
         <Title showComponent={true}></Title>
-        <Menu><Navbar></Navbar></Menu>
+        <Menu>
+          <Navbar></Navbar>
+        </Menu>
       </TitleBackground>
     );
   }
@@ -36,8 +43,13 @@ const Header = (props) => {
     <HeaderBackground>
       <TitleBackground showComponent={showNormalHeader}>
         <Title showComponent={showNormalHeader}></Title>
-        <BiggerHeader showComponent={showBiggerHeader}></BiggerHeader>
-        <Menu><Navbar></Navbar></Menu>
+        <BiggerHeader
+          onClick={() => handleBiggerHeader()}
+          showComponent={showBiggerHeader}
+        ></BiggerHeader>
+        <Menu>
+          <Navbar></Navbar>
+        </Menu>
       </TitleBackground>
     </HeaderBackground>
   );

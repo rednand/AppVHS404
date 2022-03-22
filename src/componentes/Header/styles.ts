@@ -2,6 +2,23 @@ import styled from "styled-components";
 
 export const HeaderBackground = styled.div`
   background-color: var(--bg900);
+  background-image: url("assets/imagens/blood.png");
+  background-position: 100% 40%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: changeBackgroundColor 7s infinite;
+
+  @keyframes changeBackgroundColor {
+    0% {
+      background-color: #a5381b;
+    }
+    50% {
+      background-color: #a4161a;
+    }
+    100% {
+      background-color: #660708;
+    }
+  }
 `;
 
 interface IHeadingStyled {
@@ -13,12 +30,9 @@ export const TitleBackground = styled("div")<IHeadingStyled>`
     props.showComponent &&
     `
   background-color: var(--bg900);
-  margin-top: 0%;
-  display: "inline-flex";
   height: 12rem;
-  width: 100%;
-  background-image: url("assets/imagens/hand.png");
-  background-position: 92%;
+  background-image: url("assets/imagens/Sem título.png");
+  background-position: 100% 80%;
   background-size: contain;
   background-repeat: no-repeat;
   `}
@@ -31,10 +45,10 @@ export const BiggerHeader = styled("div")<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
-height: 125vh;
-margin-top: -15%;
+height: 135vh;
+margin-top: -20%;
 background-color: inherit;
-background-image: url("assets/imagens/placa3.png");
+background-image: url("assets/imagens/placabig(2).png");
 background-position: 50%;
 background-size: contain;
 background-repeat: no-repeat;
