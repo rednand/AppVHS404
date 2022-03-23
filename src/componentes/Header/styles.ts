@@ -5,7 +5,7 @@ export const HeaderBackground = styled.div`
   background-image: url("assets/imagens/Untitled design2.png");
   background-size: cover;
   background-repeat: repeat;
-  background-position:0 ;
+  background-position: 0;
 `;
 
 interface IHeadingStyled {
@@ -18,8 +18,8 @@ export const TitleBackground = styled("div")<IHeadingStyled>`
     `
   background-color: var(--bg900);
   height: 12rem;
-  background-image: url("assets/imagens/Sem título.png");
-  background-position: 100% 80%;
+  background-image: url("assets/imagens/smoke.png");
+  background-position: 100.8% 100%;
   background-size: contain;
   background-repeat: no-repeat;
   `}

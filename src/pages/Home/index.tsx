@@ -8,7 +8,7 @@ import { Back } from "./styles";
 const Home = () => {
   return (
     <Back>
-      <Header isIndex={true}/>
+      <Header isIndex={false}/>
       <Main />
       <Footer />
     </Back>
