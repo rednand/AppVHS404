@@ -1,10 +1,9 @@
 import styled from "styled-components";
-const imageFilePath = "assets/imagens/main.png";
 
 export const Back = styled.div`
-  margin-top: 2.7%;
+  margin-top: 2.5%;
+  background-image: url("assets/imagens/crash.png"),
+    linear-gradient(var(--bg400) 1%, var(--bg400) 10%, var(--bg900) 50%);
   background-size: 50%;
-  background: url("assets/imagens/crash.png"),
-    linear-gradient(#d41d24 1%, #d41d24 1%, var(--bg800) 10%);
-  background-position: 10% 50%;
+  background-repeat: repeat;
 `;

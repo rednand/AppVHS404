@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const HeaderBackground = styled.div`
-  background-color: var(--bg900);
-  background-image: url("assets/imagens/Untitled design2.png");
-  background-size: cover;
+  background: url("assets/imagens/Untitled design2.png") repeat;
+  background-size: contain;
+  box-shadow: inset -30px 380px 400px 200px var(--bg900);
   background-repeat: repeat;
-  background-position:0 ;
 `;
 
 interface IHeadingStyled {
@@ -18,11 +17,14 @@ export const TitleBackground = styled("div")<IHeadingStyled>`
     `
   background-color: var(--bg900);
   height: 12rem;
-  background-image: url("assets/imagens/Sem título.png");
-  background-position: 100% 80%;
-  background-size: contain;
-  background-repeat: no-repeat;
   `}
+`;
+
+export const ImagemFundo = styled.img`
+  width: 25%;
+  position: absolute;
+  right: 2%;
+  top: -1%;
 `;
 
 interface IHeadingStyled {
@@ -76,5 +78,6 @@ export const Title = styled("div")<IHeadingStyled>`
 export const Menu = styled.div`
   width: 100%;
   height: 3rem;
+  float: left;
   background: linear-gradient(5rad, var(--bg900), #d41d24, var(--bg900));
 `;

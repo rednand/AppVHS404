@@ -18,11 +18,7 @@ export const MainTeste3 = styled.div`
   width: 3%;
   z-index: 5;
   margin: 0;
-  background-image: linear-gradient(
-    var(--bg800) 1%,
-    var(--bg800) 1%,
-    #d41d24 10%
-  );
+  background-color: #d41d24;
 `;
 
 export const Section = styled.div`
@@ -75,7 +71,7 @@ export const Card = styled.div`
   }
   .titleItem {
     font-size: 2rem;
-    margin: 2rem 0 0 2rem;
+    margin: 3rem 0 0 2rem;
     width: 50%;
   }
   .releaseItem {
@@ -85,9 +81,9 @@ export const Card = styled.div`
     width: 50%;
     text-align: center;
     background: #d41d24;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.8);
     color: var(--bg900);
-    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    font-size: 1.9rem;
   }
 
   .overviewItem {

@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
+const img = "./assets/imagens/blood.png";
+
 import {
   Title,
   HeaderBackground,
   BiggerHeader,
   Menu,
   TitleBackground,
+  ImagemFundo,
 } from "./styles";
 import Navbar from "../Navbar";
 
 const Header = (props) => {
-  const [showBiggerHeader, setshowBiggerHeaderd] = useState(true);
-  const [showNormalHeader, setShowNormalHeader] = useState(false);
+  const [showBiggerHeader, setshowBiggerHeaderd] = useState(false);
+  const [showNormalHeader, setShowNormalHeader] = useState(true);
 
   // function handleScroll() {
   //   if (document.documentElement.scrollTop > 8) {
@@ -31,13 +34,14 @@ const Header = (props) => {
   return (
     <HeaderBackground>
       <TitleBackground showComponent={showNormalHeader}>
+        <ImagemFundo src={img} alt="imagem_de_sangue_escorrendo" />
         <Title showComponent={showNormalHeader} />
         <BiggerHeader
           onClick={() => handleBiggerHeader()}
           showComponent={showBiggerHeader}
         ></BiggerHeader>
         <Menu>
-          <Navbar/>
+          <Navbar />
         </Menu>
       </TitleBackground>
     </HeaderBackground>
