@@ -28,27 +28,16 @@ const Header = (props) => {
   //   window.onclick = () => handleScroll();
   // }, []);
 
-  if (!props.isIndex) {
-    return (
-      <TitleBackground showComponent={true}>
-        <Title showComponent={true}></Title>
-        <Menu>
-          <Navbar></Navbar>
-        </Menu>
-      </TitleBackground>
-    );
-  }
-
   return (
     <HeaderBackground>
       <TitleBackground showComponent={showNormalHeader}>
-        <Title showComponent={showNormalHeader}></Title>
+        <Title showComponent={showNormalHeader} />
         <BiggerHeader
           onClick={() => handleBiggerHeader()}
           showComponent={showBiggerHeader}
         ></BiggerHeader>
         <Menu>
-          <Navbar></Navbar>
+          <Navbar/>
         </Menu>
       </TitleBackground>
     </HeaderBackground>

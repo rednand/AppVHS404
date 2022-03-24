@@ -16,8 +16,13 @@ export const Teste = styled.div`
 
 export const MainTeste3 = styled.div`
   width: 3%;
-  background: #a4161a;
+  z-index: 5;
   margin: 0;
+  background-image: linear-gradient(
+    var(--bg800) 1%,
+    var(--bg800) 1%,
+    #d41d24 10%
+  );
 `;
 
 export const Section = styled.div`
@@ -79,10 +84,12 @@ export const Card = styled.div`
     left: -3%;
     width: 50%;
     text-align: center;
-    background: #a4161a;
+    background: #d41d24;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.8);
     color: var(--bg900);
     font-size: 1.5rem;
   }
+
   .overviewItem {
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 700;
