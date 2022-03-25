@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const HeaderBackground = styled.div`
-  background: url("assets/imagens/Untitled design2.png") repeat;
+  background: url("assets/imagens/initialwall2.png") repeat;
   background-size: contain;
   box-shadow: inset -30px 380px 400px 200px var(--bg900);
-  background-repeat: repeat;
 `;
 
 interface IHeadingStyled {
@@ -15,6 +14,7 @@ export const TitleBackground = styled("div")<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
+    position: relative;
   background-color: var(--bg900);
   height: 12rem;
   `}
@@ -24,7 +24,7 @@ export const ImagemFundo = styled.img`
   width: 25%;
   position: absolute;
   right: 2%;
-  top: -1%;
+  top: -50%;
 `;
 
 interface IHeadingStyled {
@@ -37,7 +37,7 @@ export const BiggerHeader = styled("div")<IHeadingStyled>`
 height: 155vh;
 margin-top: -25%;
 background-color: inherit;
-background-image: url("assets/imagens/placabig(2).png");
+background-image: url("assets/imagens/initialAlert.png");
 background-position: 50%;
 background-size: contain;
 background-repeat: no-repeat;

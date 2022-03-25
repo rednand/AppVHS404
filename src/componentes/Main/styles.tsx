@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
-export const MainTeste1 = styled.div`
+export const MainContainer = styled.div`
   width: 100%;
   display: inline-flex;
   min-height: 100vh;
   justify-content: space-around;
 `;
 
-export const Teste = styled.div`
+export const MainLeft = styled.div`
   position: relative;
   display: inline-flex;
   width: 60%;
   margin: 4% 8%;
 `;
 
-export const MainTeste3 = styled.div`
+export const TimeLine = styled.div`
   width: 3%;
   z-index: 5;
   margin: 0;
@@ -24,8 +24,8 @@ export const MainTeste3 = styled.div`
 export const Section = styled.div`
   width: 25%;
   margin-right: 3%;
-  color: var(--bg900);
-  background: #f5f3f4;
+  color: var(--bg200);
+  background: var(--bg900);
   margin: 4% 8%;
   text-decoration: none;
   .sectionH3 {
@@ -46,10 +46,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   .h2Class {
-    color: var(--bg900);
+    color: var(--bg200);
     font-size: 3rem;
     text-align: center;
-    background: #f5f3f4;
+    background: var(--bg900);
     margin: 2rem;
   }
 `;
@@ -59,15 +59,15 @@ export const Card = styled.div`
   flex: 1;
   margin: 8% 0;
   word-spacing: 5px;
-  color: var(--bg900);
+  color: var(--bg200);
   outline: none;
-  background: #f5f3f4;
+  background: var(--bg900);
   display: flex;
   flex-wrap: wrap;
 
   .card {
     border: none;
-    background: #f5f3f4;
+    background: var(--bg900);
   }
   .titleItem {
     font-size: 2rem;
@@ -81,7 +81,7 @@ export const Card = styled.div`
     width: 50%;
     text-align: center;
     background: #d41d24;
-    color: var(--bg900);
+    color: var(--bg200);
     letter-spacing: 0.2rem;
     font-size: 1.9rem;
   }

@@ -12,8 +12,8 @@ import {
 import Navbar from "../Navbar";
 
 const Header = (props) => {
-  const [showBiggerHeader, setshowBiggerHeaderd] = useState(false);
-  const [showNormalHeader, setShowNormalHeader] = useState(true);
+  const [showBiggerHeader, setshowBiggerHeaderd] = useState(true);
+  const [showNormalHeader, setShowNormalHeader] = useState(false);
 
   // function handleScroll() {
   //   if (document.documentElement.scrollTop > 8) {
