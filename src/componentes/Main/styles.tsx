@@ -23,34 +23,66 @@ export const TimeLine = styled.div`
 
 export const Section = styled.div`
   width: 25%;
-  margin-right: 3%;
-  color: var(--bg200);
   background: var(--bg900);
   margin: 4% 8%;
-  text-decoration: none;
+  color: var(--bg200);
+  word-spacing: 2px;
   .sectionH3 {
-    font-size: 1.7rem;
-    font-weight: 900;
+    letter-spacing: 0.2ch;
+    width: 100%;
+    font-family: "Bebas Neue", cursive;
+    margin: 8% 0;
+    text-align: center;
+    font-size: 2.5rem;
   }
-  .itens {
-    font-size: 1.2rem;
+
+  .OldMovieList {
+    position: relative;
+    height: 7rem;
+    margin-left: 10%;
+    font-size: 1.5rem;
+  }
+
+  .OldMovieData {
+    font-family: "Bebas Neue", cursive;
+    padding: 2%;
+    letter-spacing: 0.2ch;
+    text-align: start;
+    left: -11%;
+    margin: 10% 0;
+    height: 2.5rem;
+    text-indent: 4%;
+    background-color: #d41d24;
+  }
+
+  .MovieLink {
+    position: absolute;
+    top: 45%;
     font-weight: 600;
-    margin: 2rem;
+    height: 2.5rem;
+    left: 0%;
+    padding: 0.5rem;
+    color: var(--bg200);
   }
 `;
+
 export const Container = styled.div`
   font-family: "Bebas Neue", cursive;
   font-weight: 100;
   width: 100%;
-  margin: 0;
   display: flex;
   flex-direction: column;
+
   .h2Class {
     color: var(--bg200);
+    letter-spacing: 0.2ch;
     font-size: 3rem;
     text-align: center;
     background: var(--bg900);
-    margin: 2rem;
+    margin: 0 0 1rem 0;
+  }
+  .itemMes {
+    color: var(--palletered4);
   }
 `;
 
@@ -82,7 +114,7 @@ export const Card = styled.div`
     text-align: center;
     background: #d41d24;
     color: var(--bg200);
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.2ch;
     font-size: 1.9rem;
   }
 

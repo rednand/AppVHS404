@@ -3,9 +3,9 @@ import { commingSoonMovies } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
 import { formatMonth, formatDate } from "../../utils/data";
 import {
-  MainContainer as MainContainer,
+  MainContainer,
   Container,
-  MainLeft as MainLeft,
+  MainLeft,
   Card,
   TimeLine,
   Section,
@@ -13,6 +13,9 @@ import {
 
 const Main = () => {
   const [movieData, setMovieData] = useState({ movies: [] as any[] });
+
+  const itemDataHoje = new Date();
+  const itemMes = formatMonth(itemDataHoje);
 
   useEffect(() => {
     commingSoonMovies.get("").then((response) => {
@@ -28,19 +31,25 @@ const Main = () => {
       : 0
   );
 
+  const testea = movieData.movies.map((item) => {
+    return formatDate(item["release_date"]);
+  });
+
+  console.log(testea);
+
   return (
     <MainContainer>
       <MainLeft>
         <TimeLine />
         <Container>
           <>
-            <h1 className="h2Class">Lançamentos do mês</h1>
+            <h1 className="h2Class">
+              Lançamentos de <span className="itemMes">{itemMes}</span>
+            </h1>
             {movieData.movies.length > 0 ? (
               <>
                 {movieData.movies.map((item) => {
                   const itemData = formatDate(item["release_date"]);
-                  const itemDataHoje = new Date();
-                  const itemMes = formatMonth(itemDataHoje);               
 
                   if (itemData.includes(itemMes)) {
                     return (
@@ -93,29 +102,29 @@ const Main = () => {
               </Box>
             )}
           </>
+          <button>
+            <h3>Próximas estréias</h3>
+          </button>
         </Container>
       </MainLeft>
       <Section>
-        <div className="itens">
-          <h3 className="sectionH3">Lançamentos anteriores</h3>
-          <br />
-          <h4>{formatMonth(new Date())}</h4>
-
+        <div className="divSection">
+          <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
           {movieData.movies.map((item) => {
             const itemData = formatDate(item["release_date"]);
-            const itemDataHoje = new Date();
-            const itemMes = formatMonth(itemDataHoje);
-            const id = item["_id"]
-            console.log(id);
+            const id = item["_id"];
 
             if (!itemData.includes(itemMes)) {
               return (
                 <>
-                  <p className="itens" key={item["_id"]}>
-                    <a href={"/" + item["_id"]}>
-                      <p>{item["name"]}</p>
+                  <div className="OldMovieList" key={item["_id"]}>
+                    <p className="OldMovieData">
+                      {formatDate(item["release_date"])}
+                    </p>
+                    <a className="MovieLink" href={"/" + item["_id"]}>
+                      {item["name"]}
                     </a>
-                  </p>
+                  </div>
                 </>
               );
             }

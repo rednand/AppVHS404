@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 const img = "./assets/imagens/blood.png";
-
 import {
   Title,
   HeaderBackground,
@@ -12,24 +11,13 @@ import {
 import Navbar from "../Navbar";
 
 const Header = (props) => {
-  const [showBiggerHeader, setshowBiggerHeaderd] = useState(true);
-  const [showNormalHeader, setShowNormalHeader] = useState(false);
-
-  // function handleScroll() {
-  //   if (document.documentElement.scrollTop > 8) {
-  //     setshowBiggerHeaderd(false);
-  //     setShowNormalHeader(true);
-  //   }
-  // }
+  const [showBiggerHeader, setshowBiggerHeaderd] = useState(false);
+  const [showNormalHeader, setShowNormalHeader] = useState(true);
 
   function handleBiggerHeader() {
     setshowBiggerHeaderd(false);
     setShowNormalHeader(true);
   }
-
-  // useEffect(() => {
-  //   window.onclick = () => handleScroll();
-  // }, []);
 
   return (
     <HeaderBackground>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeaderBackground = styled.div`
   background: url("assets/imagens/initialwall2.png") repeat;
   background-size: contain;
+  background-position: 100% 100%;
   box-shadow: inset -30px 380px 400px 200px var(--bg900);
 `;
 
