@@ -54,6 +54,9 @@ export const Section = styled.div`
     text-indent: 4%;
     background-color: #d41d24;
   }
+  .NoOldMovieData {
+    display: none;
+  }
 
   .MovieLink {
     position: absolute;

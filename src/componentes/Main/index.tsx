@@ -37,6 +37,30 @@ const Main = () => {
 
   console.log(testea);
 
+  let uniqueNames = new Array();
+
+  for (let i = 0; i < testea.length; i++) {
+    if (uniqueNames.indexOf(testea[i]) === -1) {
+      uniqueNames.push(testea[i]);
+    }
+  }
+  console.log("uniqueNames", uniqueNames);
+
+  const xxxxxx = movieData.movies.map((item) => {
+    const itemData = formatDate(item["release_date"]);
+    const id = item["_id"];
+
+    if (!itemData.includes(itemMes)) {
+      return {
+        id: item["_id"],
+        name: item["name"],
+        data: formatDate(item["release_date"]),
+      };
+    }
+  });
+
+  console.log("xxx", xxxxxx);
+
   return (
     <MainContainer>
       <MainLeft>
@@ -110,19 +134,21 @@ const Main = () => {
       <Section>
         <div className="divSection">
           <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
-          {movieData.movies.map((item) => {
-            const itemData = formatDate(item["release_date"]);
-            const id = item["_id"];
+          {uniqueNames.map((data) => {
+            if (!data.includes(itemMes)) {
+              return <p className="OldMovieData">{data}</p>;
+            }
+          })}
+          {xxxxxx.map((item) => {
+            const itemData = formatDate(item?.data);
+            const id = item?.id;
 
-            if (!itemData.includes(itemMes)) {
+            if (!itemData.includes(itemMes) && item) {
               return (
                 <>
-                  <div className="OldMovieList" key={item["_id"]}>
-                    <p className="OldMovieData">
-                      {formatDate(item["release_date"])}
-                    </p>
-                    <a className="MovieLink" href={"/" + item["_id"]}>
-                      {item["name"]}
+                  <div className="OldMovieList" key={item?.id}>
+                    <a className="MovieLink" href={"/" + item?.id}>
+                      {item?.name}
                     </a>
                   </div>
                 </>
