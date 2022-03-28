@@ -23,3 +23,7 @@ export const searchMovie = axios.create({
 export const commingSoonMovies = axios.create({
   baseURL: "https://api-horror-movies.herokuapp.com/",
 });
+
+export const MovieGetId = axios.create({
+  baseURL: "http://localhost:3000/",
+});

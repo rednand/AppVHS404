@@ -64,8 +64,7 @@ export const Title = styled("div")<IHeadingStyled>`
     `
   width: 30%;
   height: 12rem;
-  background-color: var(--bg900);
-  background-image: url("assets/imagens/title.png");
+  background-image: url("assets/imagens/titletrans.png");
   background-repeat: no-repeat;
   background-position: -1% 37%;
 `}

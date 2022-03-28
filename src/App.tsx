@@ -6,6 +6,7 @@ import ScrollPage from "./componentes/Scroll";
 import Home from "./pages/Home";
 import Header from "./componentes/Header";
 import "./index";
+import MovieId from "./pages/Movie";
 const imageFilePath = "./assets/imagens/main.png";
 
 const App = () => {
@@ -16,14 +17,15 @@ const App = () => {
         fontFamily: "'Barlow Condensed', sans-serif",
       }}
     >
-        <Router>
-          <Header isIndex={false} />
-          <Routes>
-            <Route element={<Home />} path="/"></Route>
-            <Route element={<Exclusao />} path="/buscar"></Route>
-            <Route element={<Cadastro />} path="/cadastro"></Route>
-          </Routes>
-        </Router>
+      <Router>
+        <Header isIndex={false} />
+        <Routes>
+          <Route element={<Home />} path="/"></Route>
+          <Route element={<Exclusao />} path="/buscar"></Route>
+          <Route element={<Cadastro />} path="/cadastro"></Route>
+          <Route element={<MovieId />} path="/:id"></Route>
+        </Routes>
+      </Router>
       <ScrollPage />
     </div>
   );

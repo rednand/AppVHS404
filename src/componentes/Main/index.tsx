@@ -31,21 +31,6 @@ const Main = () => {
       : 0
   );
 
-  const testea = movieData.movies.map((item) => {
-    return formatDate(item["release_date"]);
-  });
-
-  console.log(testea);
-
-  let uniqueNames = new Array();
-
-  for (let i = 0; i < testea.length; i++) {
-    if (uniqueNames.indexOf(testea[i]) === -1) {
-      uniqueNames.push(testea[i]);
-    }
-  }
-  console.log("uniqueNames", uniqueNames);
-
   const xxxxxx = movieData.movies.map((item) => {
     const itemData = formatDate(item["release_date"]);
     const id = item["_id"];
@@ -58,8 +43,6 @@ const Main = () => {
       };
     }
   });
-
-  console.log("xxx", xxxxxx);
 
   return (
     <MainContainer>
@@ -134,11 +117,6 @@ const Main = () => {
       <Section>
         <div className="divSection">
           <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
-          {uniqueNames.map((data) => {
-            if (!data.includes(itemMes)) {
-              return <p className="OldMovieData">{data}</p>;
-            }
-          })}
           {xxxxxx.map((item) => {
             const itemData = formatDate(item?.data);
             const id = item?.id;
@@ -147,8 +125,9 @@ const Main = () => {
               return (
                 <>
                   <div className="OldMovieList" key={item?.id}>
+                    <p className="OldMovieData">{item?.data}</p>
                     <a className="MovieLink" href={"/" + item?.id}>
-                      {item?.name}
+                      {item?.name.toUpperCase()}
                     </a>
                   </div>
                 </>
