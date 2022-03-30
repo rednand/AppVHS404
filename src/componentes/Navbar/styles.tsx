@@ -7,8 +7,6 @@ const COLORS = {
 };
 
 export const Navigation = styled.nav`
-  margin: auto 37%;
-  width: ${(props) => (props ? "40%" : "0")};
   opacity: ${(props) => (props ? "1" : "0")};
   transition: width 0.8s, opacity 0.8s;
 `;
@@ -16,11 +14,12 @@ export const Navigation = styled.nav`
 export const List = styled.ul`
   list-style: none;
   text-align: center;
+  width: 50%;
+  margin: auto 34.2%;
 `;
 
 export const ItemLink = styled(NavLink)`
   background-color: var(--bg900);
-  margin: 0;
   height: 3rem;
   float: left;
   border-color: var(--bg900);

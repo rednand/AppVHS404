@@ -25,5 +25,5 @@ export const commingSoonMovies = axios.create({
 });
 
 export const MovieGetId = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "https://api-horror-movies.herokuapp.com/",
 });

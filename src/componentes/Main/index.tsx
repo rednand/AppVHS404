@@ -31,18 +31,59 @@ const Main = () => {
       : 0
   );
 
+  console.log("movieData", movieData.movies);
+
   const xxxxxx = movieData.movies.map((item) => {
     const itemData = formatDate(item["release_date"]);
     const id = item["_id"];
-
     if (!itemData.includes(itemMes)) {
-      return {
-        id: item["_id"],
-        name: item["name"],
-        data: formatDate(item["release_date"]),
-      };
+      let data2 = { data: formatDate(item["release_date"]), movies: item };
+      return data2;
     }
   });
+
+  console.log("xxx", xxxxxx);
+
+  function groupBy(data, key) {
+    return data.reduce(function (acc, item) {
+      (acc[item[key]] = acc[item[key]] || []).push(item);
+      return acc;
+    }, {});
+  }
+
+  const data = groupBy(movieData.movies, "release_date");
+
+  console.log("data", data);
+
+  Object.keys(data).map(function (key, value) {
+    console.log("A chave é: " + formatDate(key));
+    console.log("O valor é: " + value);
+  });
+
+  const testea = movieData.movies.map((item) => {
+    return formatDate(item["release_date"]);
+  });
+
+  console.log(testea);
+
+  let uniqueNames = new Array();
+
+  for (let i = 0; i < testea.length; i++) {
+    if (uniqueNames.indexOf(testea[i]) === -1) {
+      uniqueNames.push(testea[i]);
+    }
+  }
+
+  var obj = {
+    nome: "Matheus",
+    idade: 30,
+    profissao: "Programador",
+  };
+  Object.keys(obj).map(function (key, value) {
+    console.log("A chave é: " + key);
+    console.log("O valor é: " + value);
+  });
+  console.log("uniqueNames", uniqueNames);
 
   return (
     <MainContainer>
@@ -117,22 +158,13 @@ const Main = () => {
       <Section>
         <div className="divSection">
           <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
-          {xxxxxx.map((item) => {
-            const itemData = formatDate(item?.data);
-            const id = item?.id;
 
-            if (!itemData.includes(itemMes) && item) {
-              return (
-                <>
-                  <div className="OldMovieList" key={item?.id}>
-                    <p className="OldMovieData">{item?.data}</p>
-                    <a className="MovieLink" href={"/" + item?.id}>
-                      {item?.name.toUpperCase()}
-                    </a>
-                  </div>
-                </>
-              );
-            }
+          {Object.keys(data).map(function (key, value) {
+            return (
+              <div className="OldMovieList" key={value}>
+                {formatDate(key)}
+              </div>
+            );
           })}
         </div>
       </Section>
