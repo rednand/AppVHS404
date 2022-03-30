@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { commingSoonMovies } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
-import { formatMonth, formatDate } from "../../utils/data";
+import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import {
   MainContainer,
   Container,
@@ -135,6 +135,13 @@ const Main = () => {
                 </a>
               );
             });
+
+            console.log(filmValue);
+            var somente_numeros = filmValue
+              .replaceAll("de", "")
+              .replace("2022", "");
+
+            console.log(somente_numeros);
 
             if (!filmValue.includes(monthDate)) {
               return (

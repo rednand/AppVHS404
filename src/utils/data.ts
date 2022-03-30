@@ -51,3 +51,47 @@ export function formatMonth(date) {
 
   return `${months[Number(month)]}`;
 }
+
+export function formatMonthNumber(date) {
+  var d = new Date(date),
+    month = "" + d.getMonth()
+
+  if (month.length < 2) month = "0" + month;
+
+  switch (month) {
+    case "de Janeiro de":
+      return 1;
+      break;
+
+    case "Fevereiro":
+      return 2;
+      break;
+
+    case "Marco":
+      return 3;
+      break;
+    case "Abril":
+      return 4;
+      break;
+    case "Maio":
+      return 5;
+      break;
+    case "Junho":
+      return 6;
+      break;
+    case "Julho":
+      return 7;
+      break;
+    case "Agosto":
+      return 8;
+      break;
+    case "Setembro":
+      return 9;
+      break;
+    case "Outubro":
+      return 10;
+      break;
+    default:
+      break;
+  }
+}
