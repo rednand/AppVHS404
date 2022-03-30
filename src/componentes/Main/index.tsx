@@ -14,8 +14,8 @@ import {
 const Main = () => {
   const [movieData, setMovieData] = useState({ movies: [] as any[] });
 
-  const itemDataHoje = new Date();
-  const itemMes = formatMonth(itemDataHoje);
+  const todaysDate = new Date();
+  const monthDate = formatMonth(todaysDate);
 
   useEffect(() => {
     commingSoonMovies.get("").then((response) => {
@@ -23,67 +23,30 @@ const Main = () => {
     });
   }, []);
 
-  movieData.movies?.sort((a, b) =>
-    a["release_date"] > b["release_date"]
+  movieData.movies?.sort((menor, maior) =>
+    menor["release_date"] > maior["release_date"]
       ? -1
-      : b["release_date"] > a["release_date"]
+      : menor["release_date"] > maior["release_date"]
       ? 1
       : 0
   );
 
-  console.log("movieData", movieData.movies);
-
-  const xxxxxx = movieData.movies.map((item) => {
-    const itemData = formatDate(item["release_date"]);
-    const id = item["_id"];
-    if (!itemData.includes(itemMes)) {
-      let data2 = { data: formatDate(item["release_date"]), movies: item };
-      return data2;
-    }
+  const ListMovieWithDataIdName = movieData.movies.map((item) => {
+    return {
+      movie: item["name"],
+      data: formatDate(item["release_date"]),
+      id: item["_id"],
+    };
   });
 
-  console.log("xxx", xxxxxx);
-
-  function groupBy(data, key) {
-    return data.reduce(function (acc, item) {
-      (acc[item[key]] = acc[item[key]] || []).push(item);
-      return acc;
+  const groupBy = (movies, key) => {
+    return movies.reduce(function (index, item) {
+      (index[item[key]] = index[item[key]] || []).push(item);
+      return index;
     }, {});
-  }
-
-  const data = groupBy(movieData.movies, "release_date");
-
-  console.log("data", data);
-
-  Object.keys(data).map(function (key, value) {
-    console.log("A chave é: " + formatDate(key));
-    console.log("O valor é: " + value);
-  });
-
-  const testea = movieData.movies.map((item) => {
-    return formatDate(item["release_date"]);
-  });
-
-  console.log(testea);
-
-  let uniqueNames = new Array();
-
-  for (let i = 0; i < testea.length; i++) {
-    if (uniqueNames.indexOf(testea[i]) === -1) {
-      uniqueNames.push(testea[i]);
-    }
-  }
-
-  var obj = {
-    nome: "Matheus",
-    idade: 30,
-    profissao: "Programador",
   };
-  Object.keys(obj).map(function (key, value) {
-    console.log("A chave é: " + key);
-    console.log("O valor é: " + value);
-  });
-  console.log("uniqueNames", uniqueNames);
+
+  const GroupedMoviesByData = groupBy(ListMovieWithDataIdName, "data");
 
   return (
     <MainContainer>
@@ -92,43 +55,45 @@ const Main = () => {
         <Container>
           <>
             <h1 className="h2Class">
-              Lançamentos de <span className="itemMes">{itemMes}</span>
+              Lançamentos de <span className="itemMes">{monthDate}</span>
             </h1>
             {movieData.movies.length > 0 ? (
               <>
-                {movieData.movies.map((item) => {
-                  const itemData = formatDate(item["release_date"]);
+                {movieData.movies.map((film) => {
+                  const itemData = formatDate(film["release_date"]);
 
-                  if (itemData.includes(itemMes)) {
+                  if (itemData.includes(monthDate)) {
                     return (
-                      <Card key={item["id"]}>
+                      <Card key={film["id"]}>
                         <div className="card">
-                          <h2 className="titleItem">{item["name"]}</h2>
+                          <h2 className="titleItem">{film["name"]}</h2>
                           <p className="releaseItem"> {itemData}</p>
-                          <p className="overviewItem">{item["overview"]}</p>
+                          <p className="overviewItem">{film["overview"]}</p>
                         </div>
                         <div className="cardMedia">
                           <img
                             className="posterItem"
-                            src={`${item["poster"]}`}
-                            alt={`poster${item["poster"]}`}
+                            src={`${film["poster"]}`}
+                            alt={`poster${film["poster"]}`}
                           />
                           <iframe
                             className="videoItem"
-                            src={`https://www.youtube.com/embed/${item["trailer"]}`}
+                            src={`https://www.youtube.com/embed/${film["trailer"]}`}
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           ></iframe>
                         </div>
                         <div className="buttonGenre">
-                          {item["genre"].map((x, index) => {
+                          {film["genre"].map((x, index) => {
                             return (
-                              <p key={item["genre"][index]}>
+                              <p key={film["genre"][index]}>
                                 <button
                                   className="pbuttonGenre"
-                                  onClick={() => console.log("teste")}
+                                  onClick={() =>
+                                    console.log("pegar filmes por gênero")
+                                  }
                                 >
-                                  {item["genre"][index]}
+                                  {film["genre"][index]}
                                 </button>
                               </p>
                             );
@@ -158,13 +123,27 @@ const Main = () => {
       <Section>
         <div className="divSection">
           <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
-
-          {Object.keys(data).map(function (key, value) {
-            return (
-              <div className="OldMovieList" key={value}>
-                {formatDate(key)}
-              </div>
+          {Object.keys(GroupedMoviesByData).map((filmValue) => {
+            const filmValuetoString = JSON.stringify(
+              GroupedMoviesByData[filmValue]
             );
+            const filmValuetoJson = JSON.parse(filmValuetoString);
+            const filmValueMap = filmValuetoJson.map((item) => {
+              return (
+                <a className="MovieLink" href={"/" + item?.id}>
+                  {item["movie"]}
+                </a>
+              );
+            });
+
+            if (!filmValue.includes(monthDate)) {
+              return (
+                <div className="OldMovieList">
+                  <p className="OldMovieData">{filmValue}</p>
+                  {filmValueMap}
+                </div>
+              );
+            }
           })}
         </div>
       </Section>

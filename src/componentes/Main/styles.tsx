@@ -38,7 +38,7 @@ export const Section = styled.div`
 
   .OldMovieList {
     position: relative;
-    height: 7rem;
+    min-height: 10rem;
     margin-left: 10%;
     font-size: 1.5rem;
   }
@@ -59,13 +59,19 @@ export const Section = styled.div`
   }
 
   .MovieLink {
-    position: absolute;
-    top: 45%;
+    text-transform: uppercase;
     font-weight: 600;
-    height: 2.5rem;
-    left: 0%;
+    margin: 5%;
+    display: block;
     padding: 0.5rem;
     color: var(--bg200);
+
+    :hover {
+      background-color: var(--bg200);
+      color: var(--bg900);
+      text-decoration: none;
+      margin-right: 0%;
+    }
   }
 `;
 
