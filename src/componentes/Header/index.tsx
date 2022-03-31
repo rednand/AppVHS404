@@ -22,7 +22,10 @@ const Header = (props) => {
   return (
     <HeaderBackground>
       <TitleBackground showComponent={showNormalHeader}>
-        <ImagemFundo src={img} alt="imagem_de_sangue_escorrendo" />
+        {showNormalHeader && (
+          <ImagemFundo src={img} alt="imagem_de_sangue_escorrendo" />
+        )}
+
         <Title showComponent={showNormalHeader} />
         <BiggerHeader
           onClick={() => handleBiggerHeader()}

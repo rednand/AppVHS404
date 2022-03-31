@@ -22,8 +22,7 @@ export const TitleBackground = styled("div")<IHeadingStyled>`
 `;
 
 export const ImagemFundo = styled.img`
-  width: 35%;
-  height: 40rem;
+  width: 25%;
   position: absolute;
   right: -2%;
 `;

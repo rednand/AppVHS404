@@ -52,14 +52,9 @@ export function formatMonth(date) {
   return `${months[Number(month)]}`;
 }
 
-export function formatMonthNumber(date) {
-  var d = new Date(date),
-    month = "" + d.getMonth()
-
-  if (month.length < 2) month = "0" + month;
-
+export function formatMonthNumber(month) {
   switch (month) {
-    case "de Janeiro de":
+    case "Janeiro":
       return 1;
       break;
 
@@ -67,7 +62,7 @@ export function formatMonthNumber(date) {
       return 2;
       break;
 
-    case "Marco":
+    case "Março":
       return 3;
       break;
     case "Abril":

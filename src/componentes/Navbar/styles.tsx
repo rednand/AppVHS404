@@ -15,7 +15,7 @@ export const List = styled.ul`
   list-style: none;
   text-align: center;
   width: 50%;
-  margin: auto 34.2%;
+  margin: auto 75vh;
 `;
 
 export const ItemLink = styled(NavLink)`

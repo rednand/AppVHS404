@@ -1,5 +1,35 @@
 import styled from "styled-components";
 
+export const NextReleases = styled.div`
+  margin: 5% 2% 1%;
+  height: max-content;
+  background-color: #ffffff;
+  justify-content: space-around;
+
+  h3 {
+    text-align: center;
+    font-family: "Bebas Neue", cursive;
+    font-size: 2rem;
+  }
+  .soon {
+    width: 15%;
+    display: inline-block;
+    padding: 2% 2%;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .nameSoon {
+    margin: 1% auto;
+    text-transform: uppercase;
+  }
+  .soonPoster {
+    height: 15rem;
+  }
+  .soonData {
+    margin: 1% auto;
+  }
+`;
+
 export const MainContainer = styled.div`
   width: 100%;
   display: inline-flex;
@@ -11,7 +41,7 @@ export const MainLeft = styled.div`
   position: relative;
   display: inline-flex;
   width: 60%;
-  margin: 4% 8%;
+  margin: 2% 8%;
 `;
 
 export const TimeLine = styled.div`
@@ -24,7 +54,7 @@ export const Section = styled.div`
   width: 25%;
   font-family: "Bebas Neue", cursive;
   background: var(--bg200);
-  margin: 4% 8%;
+  margin: 2% 8%;
   color: var(--bg900);
   word-spacing: 2px;
   letter-spacing: 0.3ch;
