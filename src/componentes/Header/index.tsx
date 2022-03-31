@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const img = "./assets/imagens/blood.png";
+const img = "./assets/imagens/sangue33.png";
 import {
   Title,
   HeaderBackground,

@@ -16,17 +16,19 @@ export const MainLeft = styled.div`
 
 export const TimeLine = styled.div`
   width: 3%;
-  z-index: 5;
   margin: 0;
   background-color: #d41d24;
 `;
 
 export const Section = styled.div`
   width: 25%;
-  background: var(--bg900);
+  font-family: "Bebas Neue", cursive;
+  background: var(--bg200);
   margin: 4% 8%;
-  color: var(--bg200);
+  color: var(--bg900);
   word-spacing: 2px;
+  letter-spacing: 0.3ch;
+
   .sectionH3 {
     letter-spacing: 0.2ch;
     width: 100%;
@@ -34,6 +36,9 @@ export const Section = styled.div`
     margin: 8% 0;
     text-align: center;
     font-size: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    position: relative;
+    z-index: 8;
   }
 
   .OldMovieList {
@@ -44,9 +49,7 @@ export const Section = styled.div`
   }
 
   .OldMovieData {
-    font-family: "Bebas Neue", cursive;
     padding: 2%;
-    letter-spacing: 0.2ch;
     text-align: start;
     left: -11%;
     margin: 10% 0;
@@ -60,15 +63,16 @@ export const Section = styled.div`
 
   .MovieLink {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 500;
     margin: 5%;
     display: block;
     padding: 0.5rem;
-    color: var(--bg200);
+    color: var(--bg900);
+    background-color: rgba(255, 255, 255, 0.8);
 
     :hover {
-      background-color: var(--bg200);
-      color: var(--bg900);
+      background-color: var(--bg900);
+      color: var(--bg200);
       text-decoration: none;
       margin-right: 0%;
     }
@@ -83,11 +87,11 @@ export const Container = styled.div`
   flex-direction: column;
 
   .h2Class {
-    color: var(--bg200);
+    color: var(--bg900);
     letter-spacing: 0.2ch;
     font-size: 3rem;
     text-align: center;
-    background: var(--bg900);
+    background: var(--bg200);
     margin: 0 0 1rem 0;
   }
   .itemMes {
@@ -100,15 +104,15 @@ export const Card = styled.div`
   flex: 1;
   margin: 8% 0;
   word-spacing: 5px;
-  color: var(--bg200);
+  color: var(--bg900);
   outline: none;
-  background: var(--bg900);
+  background-color: var(--bg200);
   display: flex;
   flex-wrap: wrap;
 
   .card {
     border: none;
-    background: var(--bg900);
+    background: var(--bg200);
   }
   .titleItem {
     font-size: 2rem;
@@ -140,19 +144,19 @@ export const Card = styled.div`
   }
   .posterItem {
     width: 30%;
-    height: 25rem;
+    height: 20rem;
     margin: auto 2%;
   }
   .videoItem {
     width: 60%;
-    height: 25rem;
+    height: 20rem;
     margin: auto 3%;
   }
   .buttonGenre {
     display: inline-flex;
-    margin: 4%;
+    margin: 2% 0 4% 4%;
     .pbuttonGenre {
-      margin-right: 3rem;
+      margin-right: 2rem;
       font-family: "Barlow Condensed", sans-serif;
       font-weight: 700;
       font-size: 19px;

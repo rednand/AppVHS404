@@ -61,6 +61,7 @@ const Main = () => {
               <>
                 {movieData.movies.map((film) => {
                   const itemData = formatDate(film["release_date"]);
+                  console.log(film["trailer"]);
 
                   if (itemData.includes(monthDate)) {
                     return (

@@ -22,10 +22,10 @@ export const TitleBackground = styled("div")<IHeadingStyled>`
 `;
 
 export const ImagemFundo = styled.img`
-  width: 25%;
+  width: 35%;
+  height: 40rem;
   position: absolute;
-  right: 2%;
-  top: -50%;
+  right: -2%;
 `;
 
 interface IHeadingStyled {
