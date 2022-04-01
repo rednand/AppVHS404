@@ -43,9 +43,7 @@ const UserForm = () => {
       return false;
     }
   };
-  console.log("errors", errors);
-  console.log("form", form);
-
+  
   const validate = async () => {
     try {
       await FormValidations.validate(form, { abortEarly: false });
@@ -64,10 +62,6 @@ const UserForm = () => {
   useEffect(() => {
     validate();
   }, [form]);
-
-  console.log(errors);
-
-  console.log("form", form);
 
   const onChange = (e) => {
     e.persist();

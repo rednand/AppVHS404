@@ -4,32 +4,51 @@ export const NextReleases = styled.div`
   margin: 5% 2% 1%;
   height: max-content;
   background-color: #ffffff;
-  justify-content: space-around;
 
-  div.div { 
-    margin: 0 5%;
+  .allMoviesDiv {
+    display: flex;
+    justify-content: space-evenly;
   }
 
   h3 {
     text-align: center;
     font-family: "Bebas Neue", cursive;
     font-size: 2rem;
+    padding: 1%;
   }
   .soon {
-    width: 20%;
-    padding-left: 3%;
     display: inline-block;
     font-size: 1.5rem;
     font-weight: 600;
+    position: relative;
+    z-index: 6;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    a {
+      text-decoration: none;
+    }
   }
+
   .nameSoon {
-    margin: 1% auto;
+    color: var(--bg900);
+    text-decoration: none;
+    padding: 3% 0;
+    text-align: center;
     text-transform: uppercase;
   }
   .soonPoster {
-    height: 15rem;
+    height: 18rem;
+
+    :hover {
+      filter: inherit;
+      -webkit-filter: grayscale(1000%);
+    }
+  }
+  .soonPoster2 {
+    text-align: center;
   }
   .soonData {
-    margin: 1% auto;
+    text-align: center;
+    padding: 0.1% 0% 10%;
   }
 `;

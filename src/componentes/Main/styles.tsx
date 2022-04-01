@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-
 export const MainContainer = styled.div`
   width: 100%;
   display: inline-flex;
-  min-height: 100vh;
-  justify-content: space-around;
 `;
 
 export const MainLeft = styled.div`
@@ -21,70 +18,11 @@ export const TimeLine = styled.div`
   background-color: #d41d24;
 `;
 
-export const Section = styled.div`
-  width: 25%;
-  font-family: "Bebas Neue", cursive;
-  background: var(--bg200);
-  margin: 2% 8%;
-  color: var(--bg900);
-  word-spacing: 2px;
-  letter-spacing: 0.3ch;
-
-  .sectionH3 {
-    letter-spacing: 0.2ch;
-    width: 100%;
-    font-family: "Bebas Neue", cursive;
-    margin: 8% 0;
-    text-align: center;
-    font-size: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.85);
-    position: relative;
-    z-index: 8;
-  }
-
-  .OldMovieList {
-    position: relative;
-    min-height: 10rem;
-    margin-left: 10%;
-    font-size: 1.5rem;
-  }
-
-  .OldMovieData {
-    padding: 2%;
-    text-align: start;
-    left: -11%;
-    margin: 10% 0;
-    height: 2.5rem;
-    text-indent: 4%;
-    background-color: #d41d24;
-  }
-  .NoOldMovieData {
-    display: none;
-  }
-
-  .MovieLink {
-    text-transform: uppercase;
-    font-weight: 500;
-    margin: 5%;
-    display: block;
-    padding: 0.5rem;
-    color: var(--bg900);
-    background-color: rgba(255, 255, 255, 0.8);
-
-    :hover {
-      background-color: var(--bg900);
-      color: var(--bg200);
-      text-decoration: none;
-      margin-right: 0%;
-    }
-  }
-`;
-
 export const Container = styled.div`
   font-family: "Bebas Neue", cursive;
   font-weight: 100;
   width: 100%;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
 
   .h2Class {
@@ -103,13 +41,14 @@ export const Container = styled.div`
 export const Card = styled.div`
   width: 100%;
   flex: 1;
+  height: 45rem;
   margin: 8% 0;
   word-spacing: 5px;
   color: var(--bg900);
   outline: none;
   background-color: var(--bg200);
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
 
   .card {
     border: none;
@@ -119,6 +58,11 @@ export const Card = styled.div`
     font-size: 2rem;
     margin: 3rem 0 0 2rem;
     width: 50%;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
   .releaseItem {
     position: absolute;
@@ -140,18 +84,34 @@ export const Card = styled.div`
     margin: 1rem 2rem;
   }
   .cardMedia {
-    width: 100%;
-    margin: 2%;
+    margin: 2% 0;
+    display: flex;
+    justify-content: space-evenly;
   }
   .posterItem {
-    width: 30%;
-    height: 20rem;
-    margin: auto 2%;
+    align-items: center;
+    img {
+      width: fit-content;
+      height: 25rem;
+
+      :hover {
+        filter: inherit;
+        -webkit-filter: contrast(150%);
+      }
+    }
   }
   .videoItem {
-    width: 60%;
-    height: 20rem;
-    margin: auto 3%;
+    width: auto;
+    iframe {
+      width: 32rem;
+      height: 22rem;
+      transform: translateY(6%);
+
+      :hover {
+        filter: inherit;
+        -webkit-filter: contrast(150%);
+      }
+    }
   }
   .buttonGenre {
     display: inline-flex;
