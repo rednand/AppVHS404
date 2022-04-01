@@ -1,34 +1,5 @@
 import styled from "styled-components";
 
-export const NextReleases = styled.div`
-  margin: 5% 2% 1%;
-  height: max-content;
-  background-color: #ffffff;
-  justify-content: space-around;
-
-  h3 {
-    text-align: center;
-    font-family: "Bebas Neue", cursive;
-    font-size: 2rem;
-  }
-  .soon {
-    width: 15%;
-    display: inline-block;
-    padding: 2% 2%;
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  .nameSoon {
-    margin: 1% auto;
-    text-transform: uppercase;
-  }
-  .soonPoster {
-    height: 15rem;
-  }
-  .soonData {
-    margin: 1% auto;
-  }
-`;
 
 export const MainContainer = styled.div`
   width: 100%;

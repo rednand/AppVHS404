@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { commingSoonMovies } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
+import OtherReleases from "../OtherReleases";
 import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import {
   MainContainer,
@@ -8,7 +9,6 @@ import {
   MainLeft,
   Card,
   TimeLine,
-  NextReleases,
   Section,
 } from "./styles";
 
@@ -40,7 +40,6 @@ const Main = () => {
       poster: item["poster"],
     };
   });
-  console.log(ListMovieWithDataIdName);
 
   const groupBy = (movies, key) => {
     return movies.reduce(function (index, item) {
@@ -53,47 +52,7 @@ const Main = () => {
 
   return (
     <>
-      <NextReleases>
-        <h3>Em breve</h3>
-        {movieData.movies
-          .sort((menor, maior) =>
-            menor["name"] < maior["name"]
-              ? -1
-              : menor["release_date"] > maior["release_date"]
-              ? 1
-              : 0
-          )
-          .map((film) => {
-            const itemData = formatDate(film["release_date"]);
-            const actualMonth = formatMonthNumber(monthDate);
-            const filmMonth = formatMonthNumber(
-              itemData
-                .replaceAll("de", "")
-                .replace(/[^a-zA-ZçÇ]/gi, " ")
-                .replace(/ /g, "")
-            );
-
-            const monthCompareData = () => {
-              if (actualMonth < filmMonth) {
-                return true;
-              }
-            };
-
-            if (monthCompareData()) {
-              return (
-                <div className="soon" key={film["id"]}>
-                  <h2 className="nameSoon">{film["name"]}</h2>
-                  <img
-                    className="soonPoster"
-                    src={`${film["poster"]}`}
-                    alt={`poster${film["poster"]}`}
-                  />
-                  <p className="soonData"> {itemData}</p>
-                </div>
-              );
-            }
-          })}
-      </NextReleases>
+    <OtherReleases/>
       <MainContainer>
         <MainLeft>
           <TimeLine />
