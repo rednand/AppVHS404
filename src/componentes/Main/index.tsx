@@ -8,7 +8,7 @@ import { ordenationArrayData } from "../../utils/ordenation";
 import { MainContainer, Container, MainLeft, Card, TimeLine } from "./styles";
 
 const Main = () => {
-  const [movieData, setMovieData] = useState({ movies: [] as any[] });
+  const [movieData, setMovieData] = useState([]);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
@@ -19,7 +19,7 @@ const Main = () => {
     });
   }, []);
 
-  ordenationArrayData(movieData.movies, ["release_date"]);
+  ordenationArrayData(movieData, ["release_date"]);
 
   return (
     <>
@@ -32,9 +32,9 @@ const Main = () => {
               <h1 className="h2Class">
                 Filmes de <span className="itemMes">{monthDate}</span>
               </h1>
-              {movieData.movies.length > 0 ? (
+              {movieData.length > 0 ? (
                 <>
-                  {movieData.movies.map((film) => {
+                  {movieData.map((film) => {
                     const itemData = formatDate(film["release_date"]);
                     if (itemData.includes(monthDate)) {
                       return (

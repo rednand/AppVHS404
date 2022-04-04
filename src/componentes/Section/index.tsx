@@ -6,7 +6,7 @@ import { SectionStyled } from "./styles";
 import { CircularProgress, Box } from "@material-ui/core";
 
 const Section = () => {
-  const [movieData, setMovieData] = useState({ movies: [] as any[] });
+  const [movieData, setMovieData] = useState([]);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
@@ -17,9 +17,9 @@ const Section = () => {
     });
   }, []);
 
-  ordenationArrayData(movieData.movies, ["release_date"]);
+  ordenationArrayData(movieData, ["release_date"]);
 
-  const ListMovieWithDataIdName = movieData.movies.map((item) => {
+  const ListMovieWithDataIdName = movieData.map((item) => {
     return {
       movie: item["name"],
       data: formatDate(item["release_date"]),
@@ -34,7 +34,7 @@ const Section = () => {
     <SectionStyled>
       <div className="divSection">
         <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
-        {movieData.movies.length > 0 ? (
+        {movieData.length > 0 ? (
           <>
             {Object.keys(GroupedMoviesByData).map((filmValue) => {
               const filmValuetoString = JSON.stringify(

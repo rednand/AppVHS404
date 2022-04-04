@@ -6,7 +6,7 @@ import { randomMovies } from "../../utils/ordenation";
 import { NextReleases } from "./styles";
 
 const OtherReleases = () => {
-  const [movieData, setMovieData] = useState({ movies: [] as any[] });
+  const [movieData, setMovieData] = useState([]);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
@@ -23,8 +23,7 @@ const OtherReleases = () => {
     getMovies();
   }, []);
 
-  const ListMovieWithDataIdName = movieData.movies
-    .map((item) => {
+  const ListMovieWithDataIdName = movieData.map((item) => {
       const itemData = formatDate(item["release_date"]);
       const actualMonth = formatMonthNumber(monthDate);
       const filmMonth = formatMonthNumber(
@@ -51,7 +50,7 @@ const OtherReleases = () => {
     })
     .filter((item) => !!item);
 
-  randomMovies(movieData.movies);
+  randomMovies(movieData);
 
   ListMovieWithDataIdName.length = 6;
 
@@ -59,7 +58,7 @@ const OtherReleases = () => {
     <NextReleases>
       <h3>Lançamentos futuros</h3>
       <div className="allMoviesDiv">
-        {movieData.movies.length > 0 ? (
+        {movieData.length > 0 ? (
           <>
             {ListMovieWithDataIdName.map((film) => {
               return (

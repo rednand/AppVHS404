@@ -21,7 +21,7 @@ export const TimeLine = styled.div`
 export const Container = styled.div`
   font-family: "Bebas Neue", cursive;
   font-weight: 100;
-  width: 100%;
+  width: 97%;
   /* display: flex; */
   flex-direction: column;
 
@@ -91,9 +91,8 @@ export const Card = styled.div`
   .posterItem {
     align-items: center;
     img {
-      width: fit-content;
-      height: 25rem;
-
+      height: 22rem;
+      width: 15rem;
       :hover {
         filter: inherit;
         -webkit-filter: contrast(150%);
@@ -102,9 +101,10 @@ export const Card = styled.div`
   }
   .videoItem {
     width: auto;
+
     iframe {
-      width: 32rem;
-      height: 22rem;
+      width: 25rem;
+      height: 20rem;
       transform: translateY(6%);
 
       :hover {
