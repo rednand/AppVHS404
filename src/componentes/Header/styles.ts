@@ -15,6 +15,7 @@ export const TitleBackground = styled("div")<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
+    z-index: 1;
     position: relative;
   background-color: var(--bg900);
   height: 12rem;
@@ -35,7 +36,7 @@ export const BiggerHeader = styled("div")<IHeadingStyled>`
     props.showComponent &&
     `
 height: 155vh;
-margin-top: -25%;
+margin-top: -15%;
 background-color: inherit;
 background-image: url("assets/imagens/initialAlert.png");
 background-position: 50%;
@@ -61,22 +62,32 @@ export const Title = styled("div")<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
-  width: 30%;
+  width: 100%;
   height: 12rem;
-  background-image: url("assets/imagens/titletrans.png");
+  background-image: url("assets/imagens/titletrans2.png");
   background-repeat: no-repeat;
-  background-position: -1% 37%;
+  background-position: 5% 70%;
 `}
 
-  @media screen and (min-width: 900px) and (max-width: 1500px) {
-    width: 30%;
-    background-position: 60% 37%;
+  @media (max-width: 700px) {
+    background-size: 40%;
+    background-position: 5% 50%;
+  }
+
+  @media (max-width: 400px) {
+    background-size: 50%;
+    background-position: 50% 50%;
   }
 `;
 
 export const Menu = styled.div`
   width: 100%;
   height: 3rem;
-  float: left;
+  display: flex;
+  justify-content: center;
   background: linear-gradient(5rad, var(--bg900), #d41d24, var(--bg900));
+
+  @media (max-width: 400px) {
+    float: left;
+  }
 `;

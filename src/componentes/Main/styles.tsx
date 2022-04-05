@@ -28,7 +28,7 @@ export const Container = styled.div`
   .h2Class {
     color: var(--bg900);
     letter-spacing: 0.2ch;
-    font-size: 3rem;
+    font-size: 3vw;
     text-align: center;
     background: var(--bg200);
     margin: 0 0 1rem 0;
@@ -41,7 +41,7 @@ export const Container = styled.div`
 export const Card = styled.div`
   width: 100%;
   flex: 1;
-  height: 45rem;
+  height: 40rem;
   margin: 8% 0;
   word-spacing: 5px;
   color: var(--bg900);
@@ -55,8 +55,8 @@ export const Card = styled.div`
     background: var(--bg200);
   }
   .titleItem {
-    font-size: 2rem;
-    margin: 3rem 0 0 2rem;
+    font-size: 2vw;
+    margin: 7% 0 0 4%;
     width: 50%;
 
     a {
@@ -67,13 +67,13 @@ export const Card = styled.div`
   .releaseItem {
     position: absolute;
     top: -10%;
-    left: -3%;
+    left: -2%;
     width: 50%;
     text-align: center;
     background: #d41d24;
     color: var(--bg200);
     letter-spacing: 0.2ch;
-    font-size: 1.9rem;
+    font-size: 2vw;
   }
 
   .overviewItem {
@@ -84,15 +84,16 @@ export const Card = styled.div`
     margin: 1rem 2rem;
   }
   .cardMedia {
-    margin: 2% 0;
-    display: flex;
-    justify-content: space-evenly;
+    width: 92%;
+    margin: 2% 4%;
+    display: inline-flex;
   }
   .posterItem {
-    align-items: center;
+    width: 40%;
     img {
-      height: 22rem;
-      width: 15rem;
+      width: 90%;
+      margin: 0;
+      height: 20rem;
       :hover {
         filter: inherit;
         -webkit-filter: contrast(150%);
@@ -100,13 +101,11 @@ export const Card = styled.div`
     }
   }
   .videoItem {
-    width: auto;
-
+    width: 60%;
     iframe {
-      width: 25rem;
+      width: 100%;
+      margin: 0;
       height: 20rem;
-      transform: translateY(6%);
-
       :hover {
         filter: inherit;
         -webkit-filter: contrast(150%);

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SectionStyled = styled.div`
   width: 25%;
+  font-size: 1.5vw;
   font-family: "Bebas Neue", cursive;
   background: var(--bg200);
   margin: 2% 8%;
@@ -15,18 +16,17 @@ export const SectionStyled = styled.div`
     font-family: "Bebas Neue", cursive;
     margin: 8% 0;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3vw;
   }
 
   .OldMovieList {
     position: relative;
     min-height: 10rem;
     margin-left: 10%;
-    font-size: 1.5rem;
   }
 
   .OldMovieData {
-    padding: 2%;
+        padding: 2%;
     text-align: start;
     left: -11%;
     margin: 10% 0;

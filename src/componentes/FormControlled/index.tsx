@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Input from "./Input";
-import TextArea from './TextArea'
+import TextArea from "./TextArea";
 import { ValidationError } from "yup";
 import * as yup from "yup";
 import { Form, ButtonForm } from "./styles";
@@ -9,41 +9,28 @@ import { date } from "yup/lib/locale";
 
 export const FormValidations = yup.object().shape({
   name: yup.string().required("Nome é obrigatório"),
-  overview: yup.string().required("Sinopse é obrigatório"),
-  release_date: yup.date().notRequired(),
-  trailer: yup.string().required("Trailer é obrigatório"),
-  original_language: yup.string(),
-  original_title: yup.string(),
+  overview: yup.string(),
+  release_date: yup.date().required().typeError("Data é obrigatória"),
+  trailer: yup.string(),
+  other_infos: yup.string(),
   poster: yup.string(),
   genre: yup.array().notRequired().nullable(),
 });
 
 const initialFormState = {
   name: "",
-  original_language: "",
-  original_title: "",
   overview: "",
-  release_date: date,
+  release_date: yup.date,
   trailer: "",
   poster: "",
-  genre: [],
+  other_infos: "",
+  genre: "",
 };
 
 const UserForm = () => {
   const [form, setForm] = useState(initialFormState);
   const [errors, setErrors] = useState({});
-  const [picture, setPicture] = useState({});
 
-  const onChangePicture = (e) => {
-    console.log("picture: ", picture);
-    if (e.target.files.length) {
-      setPicture(URL.createObjectURL(e.target.files[0]));
-      setForm({ ...form, [e.target.name]: e.target.value });
-    } else {
-      return false;
-    }
-  };
-  
   const validate = async () => {
     try {
       await FormValidations.validate(form, { abortEarly: false });
@@ -70,41 +57,31 @@ const UserForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
-    var bodyFormData = new FormData();
-    for (let key in form) {
-      bodyFormData.append(key, form[key]);
-    }
-
-    await axios({
-      method: "post",
-      url: "http://localhost:3000/create",
-      data: bodyFormData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-      .then(function (response) {
-        //handle success
-        console.log(response);
-      })
-      .catch(function (response) {
-        //handle error
-        console.log(response);
-      });
+    console.log(form);
   };
+
   return (
     <>
-      <Form action="/profile" method="post" encType="multipart/form-data">
+      <Form method="post">
         <h2 className="formInfo">
           Conte o que sabe sobre o lançamento de um filme:
         </h2>
         <div className="form-group">
           <Input
             name="name"
+            type="text"
             error={errors["name"]}
             onChange={onChange}
             label="Título"
+          />
+        </div>
+        <div className="form-group">
+          <Input
+            type="text"
+            name="overview"
+            onChange={onChange}
+            label="Overview"
+            error={errors["overview"]}
           />
         </div>
         <div className="form-group">
@@ -122,7 +99,7 @@ const UserForm = () => {
             type="file"
             accept="image/*"
             name="poster"
-            onChange={onChangePicture}
+            onChange={onChange}
             label="Poster"
             error={errors["poster"]}
           />
@@ -147,10 +124,10 @@ const UserForm = () => {
         <div className="form-group">
           <TextArea
             type="textArea"
-            name="trailer"
+            name="other_infos"
             onChange={onChange}
             label="Outras Informações"
-            error={errors["trailer"]}
+            error={errors["other_infos"]}
           />
         </div>
         <div className="form-group">
