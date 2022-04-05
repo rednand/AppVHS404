@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  width: 100%;
-  display: inline-flex;
+  display: flex;
+  justify-content: space-evenly;
 `;
 
 export const MainLeft = styled.div`
   position: relative;
+  width: 50%;
   display: inline-flex;
-  width: 60%;
-  margin: 2% 8%;
+
+  @media (max-width: 1200px) {
+    width: 60%;
+  }
+  @media (max-width: 900px) {
+    width: 65%;
+  }
 `;
 
 export const TimeLine = styled.div`
@@ -32,6 +38,7 @@ export const Container = styled.div`
     text-align: center;
     background: var(--bg200);
     margin: 0 0 1rem 0;
+
   }
   .itemMes {
     color: var(--palletered4);
@@ -40,8 +47,7 @@ export const Container = styled.div`
 
 export const Card = styled.div`
   width: 100%;
-  flex: 1;
-  height: 40rem;
+  height: auto;
   margin: 8% 0;
   word-spacing: 5px;
   color: var(--bg900);
@@ -63,6 +69,10 @@ export const Card = styled.div`
       text-decoration: none;
       color: inherit;
     }
+
+    @media (max-width: 900px) {
+      font-size: 3vw;
+    }
   }
   .releaseItem {
     position: absolute;
@@ -74,41 +84,52 @@ export const Card = styled.div`
     color: var(--bg200);
     letter-spacing: 0.2ch;
     font-size: 2vw;
+
+    @media (max-width: 900px) {
+      font-size: 2.5vw;
+    }
   }
 
   .overviewItem {
     font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.3vw;
+    margin: 2% 4% 2% 4%;
     font-weight: 700;
-    font-size: 19px;
-    width: 93%;
-    margin: 1rem 2rem;
+
+    @media (max-width: 900px) {
+      font-size: 1.8vw;
+    }
   }
   .cardMedia {
-    width: 92%;
     margin: 2% 4%;
-    display: inline-flex;
+    display: flex;
+    justify-content: space-around;
   }
   .posterItem {
-    width: 40%;
+    width: 35%;
     img {
       width: 90%;
-      margin: 0;
-      height: 20rem;
+      height: 40vh;
       :hover {
         filter: inherit;
         -webkit-filter: contrast(150%);
       }
+      @media (max-width: 900px) {
+        height: 35vh;
+      }
     }
   }
   .videoItem {
-    width: 60%;
+    width: 65%;
     iframe {
       width: 100%;
-      margin: 0;
-      height: 20rem;
+      height: 40vh;
       :hover {
         filter: inherit;
         -webkit-filter: contrast(150%);
+      }
+      @media (max-width: 900px) {
+        height: 35vh;
       }
     }
   }
@@ -119,7 +140,7 @@ export const Card = styled.div`
       margin-right: 2rem;
       font-family: "Barlow Condensed", sans-serif;
       font-weight: 700;
-      font-size: 19px;
+      font-size: 1.3vw;
       padding: 0.6rem 1.2rem;
       color: var(--bg100);
       background-color: var(--bg900);

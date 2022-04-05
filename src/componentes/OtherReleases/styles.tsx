@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NextReleases = styled.div`
-  margin: 5% 2% 1%;
+  margin: 5% 2% 4%;
   height: max-content;
   background-color: #ffffff;
   width: 96%;
@@ -37,7 +37,7 @@ export const NextReleases = styled.div`
     text-transform: uppercase;
   }
   .soonPoster {
-    height: 18rem;
+    height: 38vh;
     width: 95%;
     object-fit: cover;
     object-position: center;
@@ -62,7 +62,7 @@ export const NextReleases = styled.div`
     }
   }
   @media (max-width: 900px) {
-    margin: 10% 2% 1%;
+    margin: 10% 2% 4%;
     h3 {
       font-size: 3vw;
       padding: 2%;
@@ -75,6 +75,11 @@ export const NextReleases = styled.div`
     }
   }
   @media (max-width: 700px) {
+    margin: 12% 2% 4%;
+    h3 {
+      font-size: 4vw;
+      padding: 3%;
+    }
     .allMoviesDiv > div:nth-child(5),
     div:nth-child(6) {
       display: none;
@@ -84,12 +89,27 @@ export const NextReleases = styled.div`
       height: 12rem;
     }
     .soon {
-      font-size: 2.5vw;
+      font-size: 2.6vw;
     }
   }
   @media (max-width: 400px) {
+    margin: 16% 2% 4%;
+    h3 {
+      font-size: 6vw;
+      padding: 4%;
+    }
     .allMoviesDiv {
       display: block;
+    }
+    .soon {
+      width: 50%;
+      font-size: 4.5vw;
+    }
+    .soonPoster {
+      width: 90%;
+      height: 15rem;
+      object-fit: cover;
+      object-position: center;
     }
   }
 `;

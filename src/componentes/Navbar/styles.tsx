@@ -47,13 +47,17 @@ export const ItemLink = styled(NavLink)`
     border-color: var(--bg100);
     transform: translateY(0.5rem);
   }
+
+  @media (max-width: 900px) {
+    font-size: 2vw;
+  }
 `;
 
 export const NavbarDropdown = styled.div`
   font-size: 4vw;
   font-weight: 900;
   background-color: var(--bg900);
-  text-align:center ;
+  text-align: center;
   font-size: 2rem;
   width: 100px;
   color: #ffffff;
@@ -100,7 +104,7 @@ export const ItemLinkDrop = styled(NavLink)`
   font-weight: 900;
   text-decoration: none;
   color: ${COLORS.primaryDark};
-  padding: .6rem 2rem;
+  padding: 0.6rem 2rem;
   background-image: linear-gradient(
     120deg,
     transparent 0%,

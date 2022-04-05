@@ -4,7 +4,7 @@ export const Bottom = styled.div`
   width: 100%;
   justify-content: space-around;
   display: inline-flex;
-  margin: 0;
+  margin: 4% 0 0 0;
   background: #212223;
   height: 15rem;
   color: #c7c7c7;

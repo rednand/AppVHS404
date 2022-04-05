@@ -1,19 +1,16 @@
 import styled from "styled-components";
 
 export const SectionStyled = styled.div`
-  width: 25%;
+  width: 20%;
   font-size: 1.5vw;
   font-family: "Bebas Neue", cursive;
   background: var(--bg200);
-  margin: 2% 8%;
   color: var(--bg900);
-  word-spacing: 2px;
   letter-spacing: 0.3ch;
 
   .sectionH3 {
     letter-spacing: 0.2ch;
     width: 100%;
-    font-family: "Bebas Neue", cursive;
     margin: 8% 0;
     text-align: center;
     font-size: 3vw;
@@ -21,18 +18,20 @@ export const SectionStyled = styled.div`
 
   .OldMovieList {
     position: relative;
-    min-height: 10rem;
     margin-left: 10%;
   }
 
   .OldMovieData {
-        padding: 2%;
+    padding: 2%;
     text-align: start;
     left: -11%;
     margin: 10% 0;
-    height: 2.5rem;
     text-indent: 4%;
     background-color: #d41d24;
+
+    @media (max-width: 900px) {
+      font-size: 2vw;
+    }
   }
   .NoOldMovieData {
     display: none;
@@ -52,5 +51,12 @@ export const SectionStyled = styled.div`
       text-decoration: none;
       margin-right: 0%;
     }
+
+    @media (max-width: 900px) {
+      font-size: 2vw;
+    }
+  }
+  @media (max-width: 1200px) {
+    width: 25%;
   }
 `;
