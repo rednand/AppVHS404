@@ -6,20 +6,21 @@ import Section from "../Section";
 import { formatMonth, formatDate } from "../../utils/data";
 import { ordenationArrayData } from "../../utils/ordenation";
 import { MainContainer, Container, MainLeft, Card, TimeLine } from "./styles";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { getAllMovies } from "../../store/redux/actions";
 
 const Main = () => {
-  const [movieData, setMovieData] = useState([]);
-
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
+  const dispatch = useDispatch();
+  const movies = useSelector((state) => state["movies"]);
 
   useEffect(() => {
-    commingSoonMovies.get("").then((response) => {
-      setMovieData(response.data);
-    });
-  }, []);
+    dispatch(getAllMovies());
+  }, [dispatch]);
 
-  ordenationArrayData(movieData, ["release_date"]);
+  ordenationArrayData(movies, ["release_date"]);
 
   return (
     <>
@@ -32,9 +33,9 @@ const Main = () => {
               <h1 className="h2Class">
                 Filmes de <span className="itemMes">{monthDate}</span>
               </h1>
-              {movieData.length > 0 ? (
+              {movies.length > 0 ? (
                 <>
-                  {movieData.map((film) => {
+                  {movies.map((film) => {
                     const itemData = formatDate(film["release_date"]);
                     if (itemData.includes(monthDate)) {
                       return (

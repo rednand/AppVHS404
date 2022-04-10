@@ -4,26 +4,16 @@ import { CircularProgress, Box } from "@material-ui/core";
 import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import { randomMovies } from "../../utils/ordenation";
 import { NextReleases } from "./styles";
+import { useSelector } from "react-redux";
 
 const OtherReleases = () => {
-  const [movieData, setMovieData] = useState([]);
+  const movies = useSelector((state) => state["movies"]);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
 
-  useEffect(() => {
-    const getMovies = async () => {
-      try {
-        const { data } = await commingSoonMovies.get("");
-        setMovieData(data);
-      } catch (error) {
-        console.log(error, "não foi possível conectar");
-      }
-    };
-    getMovies();
-  }, []);
-
-  const ListMovieWithDataIdName = movieData.map((item) => {
+  const ListMovieWithDataIdName = movies
+    .map((item) => {
       const itemData = formatDate(item["release_date"]);
       const actualMonth = formatMonthNumber(monthDate);
       const filmMonth = formatMonthNumber(
@@ -50,7 +40,7 @@ const OtherReleases = () => {
     })
     .filter((item) => !!item);
 
-  randomMovies(movieData);
+  randomMovies(movies);
 
   ListMovieWithDataIdName.length = 6;
 
@@ -58,7 +48,7 @@ const OtherReleases = () => {
     <NextReleases>
       <h3>Lançamentos futuros</h3>
       <div className="allMoviesDiv">
-        {movieData.length > 0 ? (
+        {movies.length > 0 ? (
           <>
             {ListMovieWithDataIdName.map((film) => {
               return (

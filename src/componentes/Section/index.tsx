@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import { ordenationArrayData, groupBy } from "../../utils/ordenation";
 import { commingSoonMovies } from "../../api/axios";
@@ -6,20 +7,17 @@ import { SectionStyled } from "./styles";
 import { CircularProgress, Box } from "@material-ui/core";
 
 const Section = () => {
-  const [movieData, setMovieData] = useState([]);
+    
+  const movies = useSelector((state) => state["movies"]);
+  console.log("todosMain", movies);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
 
-  useEffect(() => {
-    commingSoonMovies.get("").then((response) => {
-      setMovieData(response.data);
-    });
-  }, []);
+  ordenationArrayData(movies, ["release_date"]);
 
-  ordenationArrayData(movieData, ["release_date"]);
-
-  const ListMovieWithDataIdName = movieData.map((item) => {
+  const ListMovieWithDataIdName = movies.map((item, key) => {
+    key = item["_id"];
     return {
       movie: item["name"],
       data: formatDate(item["release_date"]),
@@ -34,7 +32,7 @@ const Section = () => {
     <SectionStyled>
       <div className="divSection">
         <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
-        {movieData.length > 0 ? (
+        {movies.length > 0 ? (
           <>
             {Object.keys(GroupedMoviesByData).map((filmValue) => {
               const filmValuetoString = JSON.stringify(
@@ -43,7 +41,7 @@ const Section = () => {
               const filmValuetoJson = JSON.parse(filmValuetoString);
               const filmValueMap = filmValuetoJson.map((item) => {
                 return (
-                  <a className="MovieLink" href={"/" + item?.id}>
+                  <a key={item.id} className="MovieLink" href={"/" + item?.id}>
                     {item["movie"]}
                   </a>
                 );
