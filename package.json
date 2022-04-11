@@ -8,7 +8,6 @@
     "start": "webpack server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production"
-
   },
   "keywords": [],
   "author": "",
