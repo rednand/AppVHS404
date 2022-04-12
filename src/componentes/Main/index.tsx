@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { commingSoonMovies } from "../../api/axios";
 import { CircularProgress, Box } from "@material-ui/core";
 import OtherReleases from "../OtherReleases";
 import Section from "../Section";

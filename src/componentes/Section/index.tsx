@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import { ordenationArrayData, groupBy } from "../../utils/ordenation";
-import { commingSoonMovies } from "../../api/axios";
 import { SectionStyled } from "./styles";
 import { CircularProgress, Box } from "@material-ui/core";
 

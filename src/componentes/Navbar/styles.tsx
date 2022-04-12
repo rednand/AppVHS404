@@ -26,7 +26,7 @@ export const ItemLink = styled(NavLink)`
   height: 3rem;
   float: left;
   border-color: var(--bg900);
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   font-weight: 900;
   text-decoration: none;
   color: ${COLORS.primaryDark};
@@ -48,8 +48,12 @@ export const ItemLink = styled(NavLink)`
     transform: translateY(0.5rem);
   }
 
+  @media (max-width: 1200px) {
+    font-size: 1.5vw;
+  }
+
   @media (max-width: 900px) {
-    font-size: 2vw;
+    font-size: 1rem;
   }
 `;
 
