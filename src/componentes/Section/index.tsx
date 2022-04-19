@@ -4,17 +4,24 @@ import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import { ordenationArrayData, groupBy } from "../../utils/ordenation";
 import { SectionStyled } from "./styles";
 import { CircularProgress, Box } from "@material-ui/core";
-
+import { getSomeMovies } from "../../store/redux/actions";
+import { useDispatch } from "react-redux";
 const Section = () => {
-  const movies = useSelector((state) => state["movies"]);
-  console.log("todosMain", movies);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSomeMovies());
+  }, [dispatch]);
+
+  const moviesSection = useSelector((state) => state["movies"]);
+  console.log("todosMainSection", moviesSection);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
 
-  ordenationArrayData(movies, ["release_date"]);
+  ordenationArrayData(moviesSection, ["release_date"]);
 
-  const ListMovieWithDataIdName = movies.map((item, key) => {
+  const ListMovieWithDataIdName = moviesSection.map((item, key) => {
     key = item["_id"];
     return {
       movie: item["name"],
@@ -30,7 +37,7 @@ const Section = () => {
     <SectionStyled>
       <div className="divSection">
         <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
-        {movies.length > 0 ? (
+        {moviesSection.length > 0 ? (
           <>
             {Object.keys(GroupedMoviesByData).map((filmValue) => {
               const filmValuetoString = JSON.stringify(

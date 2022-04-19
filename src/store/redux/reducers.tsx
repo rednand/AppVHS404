@@ -8,6 +8,7 @@ const todoReducer = (state = initialState, action) => {
     //   return action.todos.data;
     case "GET_MOVIES":
       return action.movies.data;
+
     case "ADD_TODO":
       console.log(action);
       return [action.todo.data, ...state.movies];
@@ -16,4 +17,16 @@ const todoReducer = (state = initialState, action) => {
   }
 };
 
+const initialStateSection = {
+  moviesSection: [],
+  
+};
+export const reducerSection = (state = initialStateSection, action) => {
+  switch (action.type) {
+    case "GET_MOVIES_SECTION":
+      return action.moviesSection.data;
+    default:
+      return state.moviesSection;
+  }
+};
 export default todoReducer;

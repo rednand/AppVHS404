@@ -27,6 +27,19 @@ export const getAllMovies = () => {
   };
 };
 
+export const getSomeMovies = () => {
+  return (dispatch) => {
+    commingSoonMovies
+      .get(`?page=1&limit=10`)
+      .then((movies) => {
+        dispatch({ type: "GET_MOVIES_SECTION", movies });
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
+};
+
 export const addTodo = (todo) => {
   return (dispatch, getState) => {
     axios
