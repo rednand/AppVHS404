@@ -6,7 +6,6 @@ import { SectionStyled } from "./styles";
 import { CircularProgress, Box } from "@material-ui/core";
 
 const Section = () => {
-    
   const movies = useSelector((state) => state["movies"]);
   console.log("todosMain", movies);
 
