@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export const commingSoonMovies = axios.create({
-  baseURL: "http://localhost:3000/total",
+  baseURL: "https://api-appquarto237.up.railway.app/total",
 });
 
 export const MovieGetId = axios.create({
-  baseURL: "https://api-horror-movies.herokuapp.com/",
+  baseURL: "https://api-appquarto237.up.railway.app/",
 });

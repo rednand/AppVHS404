@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { CircularProgress, Box } from "@material-ui/core";
 import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import { randomMovies } from "../../utils/ordenation";
 import { NextReleases } from "./styles";
 import { useSelector } from "react-redux";
+import { Box, CircularProgress } from "@mui/material";
 
 const OtherReleases = () => {
   const movies = useSelector((state) => state["movies"]);

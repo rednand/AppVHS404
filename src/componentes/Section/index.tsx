@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
 import { ordenationArrayData, groupBy } from "../../utils/ordenation";
 import { SectionStyled } from "./styles";
-import { CircularProgress, Box } from "@material-ui/core";
 import { getSomeMovies } from "../../store/redux/actions";
 import { useDispatch } from "react-redux";
+import { Box, CircularProgress } from "@mui/material";
 const Section = () => {
   const dispatch = useDispatch();
 
