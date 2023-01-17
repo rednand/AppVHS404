@@ -15,6 +15,7 @@ const OtherReleases = () => {
     .map((item) => {
       const itemData = formatDate(item["release_date"]);
       const actualMonth = formatMonthNumber(monthDate);
+      const actualYear = new Date().getFullYear().toString();
       const filmMonth = formatMonthNumber(
         itemData
           .replaceAll("de", "")
@@ -23,7 +24,7 @@ const OtherReleases = () => {
       );
 
       const monthCompareData = () => {
-        if (actualMonth < filmMonth) {
+        if (actualMonth < filmMonth && itemData.slice(-4) >= actualYear) {
           return true;
         }
       };
