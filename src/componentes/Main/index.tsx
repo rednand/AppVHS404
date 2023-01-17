@@ -40,13 +40,11 @@ const Main = () => {
                     if (itemData.includes(monthDate)) {
                       return (
                         <Card key={film["_id"]}>
-                          <div className="card">
-                            <h2 className="titleItem">
-                              <a href={`/${film["_id"]}`}>{film["name"]}</a>{" "}
-                            </h2>
-                            <p className="releaseItem"> {itemData}</p>
-                            <p className="overviewItem">{film["overview"]}</p>
-                          </div>
+                          <p className="releaseItem"> {itemData}</p>
+                          <h2 className="titleItem">
+                            <a href={`/${film["_id"]}`}>{film["name"]}</a>{" "}
+                          </h2>
+                          <p className="overviewItem">{film["overview"]}</p>
                           <div className="cardMedia">
                             <div className="posterItem">
                               <img

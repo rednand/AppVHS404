@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SectionStyled = styled.div`
-  width: 20%;
   font-size: 1.5vw;
   font-family: "Bebas Neue", cursive;
   background: var(--bg200);
@@ -56,7 +55,5 @@ export const SectionStyled = styled.div`
       font-size: 2vw;
     }
   }
-  @media (max-width: 1200px) {
-    width: 25%;
-  }
+
 `;
