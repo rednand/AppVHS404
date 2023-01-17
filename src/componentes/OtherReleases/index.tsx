@@ -23,7 +23,7 @@ const OtherReleases = () => {
       );
 
       const monthCompareData = () => {
-        if (actualMonth > filmMonth && itemData.slice(-4) > actualYear) {
+        if (actualMonth < filmMonth && itemData.slice(-4) >= actualYear) {
           return true;
         }
       };
