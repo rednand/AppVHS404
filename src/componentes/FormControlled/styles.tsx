@@ -4,12 +4,10 @@ export const Form = styled.form`
   width: 50%;
   margin: auto;
   padding: 5%;
-  font-family: "Bebas Neue", cursive;
-
+  font-family: "Barlow Condensed",sans-serif;
   .formInfo {
     color: var(--bg200);
     font-size: 2rem;
-    letter-spacing: 0.2rem;
     margin: 5% auto;
   }
 `;
@@ -20,9 +18,9 @@ export const ButtonForm = styled.button`
   border-radius: 0;
   border-color: var(--bg900);
   color: var(--bg200);
-  font-size: 2rem;
+  font-family: "Bebas Neue", cursive;
+
   background-color: var(--palletered5);
-  letter-spacing: 1rem;
   max-width: 100%;
   min-width: 100%;
 

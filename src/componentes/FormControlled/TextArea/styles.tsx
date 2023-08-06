@@ -12,10 +12,7 @@ export const SingleTextarea = styled.textarea`
 `;
 
 export const Label = styled.label`
-  font-size: 1.2rem;
   color: var(--bg100);
-  font-weight: 900;
-  letter-spacing: 0.6rem;
 `;
 
 export const Span = styled.span`
