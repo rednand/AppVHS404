@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Input from "./Input";
-import TextArea from "./TextArea";
-import { ValidationError } from "yup";
-import * as yup from "yup";
 import { Form, ButtonForm } from "./styles";
-import axios from "axios";
-import { date } from "yup/lib/locale";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../../store/redux/actions";
+import { addInfoMovie } from "../../store/redux/actions";
 import { getAllMovies } from "../../store/redux/actions";
 
 // export const FormValidations = yup.object().shape({
@@ -34,9 +29,11 @@ const UserForm = () => {
   // const [form, setForm] = useState(initialFormState);
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
-  const [todo, setTodo] = useState({
-    title: "",
-    body: "",
+  const [infomovie, setInfomovie] = useState({
+    name: "",
+    release_date: "",
+    overview: "",
+    fonte: "",
   });
   const todos = useSelector((state) => state["movies"]);
   console.log("todos", todos);
@@ -45,7 +42,7 @@ const UserForm = () => {
     dispatch(getAllMovies());
   }, [dispatch]);
 
-  console.log("todo", todo);
+  console.log("infomovie", infomovie);
 
   // const validate = async () => {
   //   try {
@@ -78,16 +75,18 @@ const UserForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTodo(todo));
-    setTodo({
-      title: "",
-      body: "",
+    dispatch(addInfoMovie(infomovie));
+    setInfomovie({
+      name: "",
+      overview: "",
+      release_date: "",
+      fonte: "",
     });
   };
 
   return (
     <>
-      {/* <Form method="post">
+      <Form method="post">
         <h2 className="formInfo">
           Conte o que sabe sobre o lançamento de um filme:
         </h2>
@@ -99,77 +98,49 @@ const UserForm = () => {
             error={errors["name"]}
             // onChange={onChange}
             label="Título"
-            value={todo.title}
-            onChange={(e) => setTodo({ ...todo, title: e.target.value })}
+            value={infomovie.name}
+            onChange={(e) =>
+              setInfomovie({ ...infomovie, name: e.target.value })
+            }
           />
         </div>
         <div className="form-group">
           <Input
-            name="body"
-            type="text"
-            error={errors["body"]}
-            // onChange={onChange}
-            label="Body"
-            value={todo.body}
-            onChange={(e) => setTodo({ ...todo, body: e.target.value })}
-          />
-        </div>
-        {/* <div className="form-group">
-          <Input
-            type="text"
             name="overview"
-            onChange={onChange}
-            label="Overview"
-            error={errors["overview"]}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            type="date"
-            name="release_date"
-            onChange={onChange}
-            label="Lançamento"
-            error={errors["release_date"]}
-          />
-        </div>
-
-        <div className="form-group">
-          <Input
-            type="file"
-            accept="image/*"
-            name="poster"
-            onChange={onChange}
-            label="Poster"
-            error={errors["poster"]}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            name="genre"
-            onChange={onChange}
-            label="Genero"
-            error={errors["genre"]}
-          />
-        </div>
-        <div className="form-group">
-          <Input
             type="text"
-            name="trailer"
-            onChange={onChange}
-            label="Trailer - link"
-            error={errors["trailer"]}
+            error={errors["overview"]}
+            label="Detalhes"
+            value={infomovie.overview}
+            onChange={(e) =>
+              setInfomovie({ ...infomovie, overview: e.target.value })
+            }
           />
         </div>
         <div className="form-group">
-          <TextArea
-            type="textArea"
-            name="other_infos"
-            onChange={onChange}
-            label="Outras Informações"
-            error={errors["other_infos"]}
+          <Input
+            name="overview"
+            type="date"
+            error={errors["release_date"]}
+            label="Data provável de lançamento"
+            value={infomovie.release_date}
+            onChange={(e) =>
+              setInfomovie({ ...infomovie, release_date: e.target.value })
+            }
           />
-        </div> */}
-      {/* <div className="form-group">
+        </div>
+        <div className="form-group">
+          <Input
+            name="overview"
+            type="text"
+            error={errors["release_date"]}
+            label="Fonte (site)"
+            value={infomovie.fonte}
+            onChange={(e) =>
+              setInfomovie({ ...infomovie, fonte: e.target.value })
+            }
+          />
+        </div>
+        <div className="form-group">
           <ButtonForm
             type="button"
             onClick={handleSubmit}
@@ -177,14 +148,25 @@ const UserForm = () => {
           >
             Cadastrar
           </ButtonForm>
-        </div> */}
-      {/* </Form> */}
-      <iframe
-        src="https://api-quarto237.onrender.com"
-        height="1000"
-        style={{ marginTop: "5%" }}
-        width="100%"
-      ></iframe>
+        </div>
+      </Form>
+      {/* <p style={{ color: "#ffffff", textAlign: "center" }}>
+        {todos.length > 0 ? "veio aí" : "não veio aí"}
+        <div>
+          {todos &&
+            todos.map((infomovie) => {
+              return (
+                <div key={infomovie.id}>
+                  <span>
+                    <div>{infomovie.id}</div>
+                    <div style={{ color: "yellow" }}>{infomovie.name}</div>
+                    <div> {infomovie.original_title}</div>
+                  </span>
+                </div>
+              );
+            })}
+        </div>
+      </p> */}
     </>
   );
 };

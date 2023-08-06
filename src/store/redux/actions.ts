@@ -40,10 +40,10 @@ export const getSomeMovies = () => {
   };
 };
 
-export const addTodo = (todo) => {
+export const addInfoMovie = (infos) => {
   return (dispatch, getState) => {
     axios
-      .post(`https://jsonplaceholder.typicode.com/posts`, todo)
+      .post(`https://api-quarto237.onrender.com/inform`, infos)
       .then((todo) => {
         dispatch({ type: "ADD_TODO", todo });
       })

@@ -15,6 +15,12 @@ const Main = () => {
   const monthDate = formatMonth(todaysDate);
   const dispatch = useDispatch();
   const movies = useSelector((state) => state["movies"]);
+  console.log(
+    "🚀 ~ file: index.tsx:18 ~ Main ~ movies:",
+    movies.map((film) => {
+      film;
+    })
+  );
 
   useEffect(() => {
     dispatch(getAllMovies());
