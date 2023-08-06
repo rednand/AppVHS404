@@ -21,11 +21,11 @@ const Navbar = () => {
             Home
           </ItemLink>
         </li>
-        <li>
+        {/* <li>
           <ItemLink onClick={handleClick} to="/reviews">
             Reviews
           </ItemLink>
-        </li>
+        </li> */}
         <li>
           <ItemLink onClick={handleClick} to="/cadastro">
             Informe um filme

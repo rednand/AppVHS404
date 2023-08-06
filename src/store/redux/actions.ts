@@ -17,7 +17,7 @@ import axios from "axios";
 export const getAllMovies = () => {
   return (dispatch) => {
     commingSoonMovies
-      .get(`?page=1&limit=50`)
+      .get(`?page=1`)
       .then((movies) => {
         dispatch({ type: "GET_MOVIES", movies });
       })
@@ -30,7 +30,7 @@ export const getAllMovies = () => {
 export const getSomeMovies = () => {
   return (dispatch) => {
     commingSoonMovies
-      .get(`?page=1&limit=10`)
+      .get(`?page=1`)
       .then((movies) => {
         dispatch({ type: "GET_MOVIES_SECTION", movies });
       })

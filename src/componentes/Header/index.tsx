@@ -11,7 +11,7 @@ import {
 import Navbar from "../Navbar";
 
 const Header = (props) => {
-  const [showBiggerHeader, setshowBiggerHeaderd] = useState(true);
+  const [showBiggerHeader, setshowBiggerHeaderd] = useState(false);
   const [showNormalHeader, setShowNormalHeader] = useState(true);
 
   function handleBiggerHeader() {

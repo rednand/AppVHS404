@@ -87,7 +87,7 @@ const UserForm = () => {
 
   return (
     <>
-      <Form method="post">
+      {/* <Form method="post">
         <h2 className="formInfo">
           Conte o que sabe sobre o lançamento de um filme:
         </h2>
@@ -169,7 +169,7 @@ const UserForm = () => {
             error={errors["other_infos"]}
           />
         </div> */}
-        <div className="form-group">
+      {/* <div className="form-group">
           <ButtonForm
             type="button"
             onClick={handleSubmit}
@@ -177,25 +177,14 @@ const UserForm = () => {
           >
             Cadastrar
           </ButtonForm>
-        </div>
-      </Form>
-      <p style={{ color: "#ffffff", textAlign: "center" }}>
-        {todos.length > 0 ? "veio aí" : "não veio aí"}
-        <div>
-          {todos &&
-            todos.map((todo) => {
-              return (
-                <div key={todo.id}>
-                  <span>
-                    <div>{todo.id}</div>
-                    <div style={{ color: "yellow" }}>{todo.name}</div>
-                    <div> {todo.original_title}</div>
-                  </span>
-                </div>
-              );
-            })}
-        </div>
-      </p>
+        </div> */}
+      {/* </Form> */}
+      <iframe
+        src="https://api-quarto237.onrender.com"
+        height="1000"
+        style={{ marginTop: "5%" }}
+        width="100%"
+      ></iframe>
     </>
   );
 };

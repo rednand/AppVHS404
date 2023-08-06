@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@material-ui/core";
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 import OtherReleases from "../OtherReleases";
 import Section from "../Section";
 import { formatMonth, formatDate } from "../../utils/data";
