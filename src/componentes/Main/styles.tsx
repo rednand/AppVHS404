@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainContainer = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ export const TimeLine = styled.div`
 `;
 
 export const Container = styled.div`
-  font-family: "Bebas Neue", cursive;
+  font-family: 'Bebas Neue', cursive;
   font-weight: 100;
   width: 97%;
   /* display: flex; */
@@ -38,7 +38,6 @@ export const Container = styled.div`
     text-align: center;
     background: var(--bg200);
     margin: 0 0 1rem 0;
-
   }
   .itemMes {
     color: var(--palletered4);
@@ -91,7 +90,7 @@ export const Card = styled.div`
   }
 
   .overviewItem {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3vw;
     margin: 2% 4% 2% 4%;
     font-weight: 700;
@@ -138,7 +137,7 @@ export const Card = styled.div`
     margin: 2% 0 4% 4%;
     .pbuttonGenre {
       margin-right: 2rem;
-      font-family: "Barlow Condensed", sans-serif;
+      font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
       font-size: 1.3vw;
       padding: 0.6rem 1.2rem;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Navigation,
   List,
@@ -6,8 +6,8 @@ import {
   NavbarDropdown,
   NavbarDropdownContent,
   ListDrop,
-  ItemLinkDrop
-} from "./styles";
+  ItemLinkDrop,
+} from './styles';
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -21,11 +21,6 @@ const Navbar = () => {
             Home
           </ItemLink>
         </li>
-        {/* <li>
-          <ItemLink onClick={handleClick} to="/reviews">
-            Reviews
-          </ItemLink>
-        </li> */}
         <li>
           <ItemLink onClick={handleClick} to="/cadastro">
             Informe um filme

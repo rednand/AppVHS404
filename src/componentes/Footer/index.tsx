@@ -1,6 +1,6 @@
-import React from "react";
-import { Bottom, FooterCenter, FooterA, UnorderedList } from "./styles";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import React from 'react';
+import { Bottom, FooterCenter, FooterA, UnorderedList } from './styles';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (

@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Form = styled.form`
   width: 50%;
   margin: auto;
   padding: 5%;
-  font-family: "Barlow Condensed",sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   .formInfo {
     color: var(--bg200);
     font-size: 2rem;
@@ -18,7 +18,7 @@ export const ButtonForm = styled.button`
   border-radius: 0;
   border-color: var(--bg900);
   color: var(--bg200);
-  font-family: "Bebas Neue", cursive;
+  font-family: 'Bebas Neue', cursive;
 
   background-color: var(--palletered5);
   max-width: 100%;

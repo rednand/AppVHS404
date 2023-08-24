@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NextReleases = styled.div`
   margin: 5% 2% 4%;
@@ -13,7 +13,7 @@ export const NextReleases = styled.div`
 
   h3 {
     text-align: center;
-    font-family: "Bebas Neue", cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 2rem;
     padding: 1%;
   }

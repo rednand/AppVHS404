@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Input from "./Input";
-import { Form, ButtonForm } from "./styles";
-import { useDispatch, useSelector } from "react-redux";
-import { addInfoMovie } from "../../store/redux/actions";
-import { getAllMovies } from "../../store/redux/actions";
+import React, { useEffect, useState } from 'react';
+import Input from './Input';
+import { Form, ButtonForm } from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { addInfoMovie } from '../../store/redux/actions';
+import { getAllMovies } from '../../store/redux/actions';
 
 // export const FormValidations = yup.object().shape({
 //   name: yup.string().required("Nome é obrigatório"),
@@ -30,19 +30,19 @@ const UserForm = () => {
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const [infomovie, setInfomovie] = useState({
-    name: "",
-    release_date: "",
-    overview: "",
-    fonte: "",
+    name: '',
+    release_date: '',
+    overview: '',
+    fonte: '',
   });
-  const todos = useSelector((state) => state["movies"]);
-  console.log("todos", todos);
+  const todos = useSelector((state) => state['movies']);
+  console.log('todos', todos);
 
   useEffect(() => {
     dispatch(getAllMovies());
   }, [dispatch]);
 
-  console.log("infomovie", infomovie);
+  console.log('infomovie', infomovie);
 
   // const validate = async () => {
   //   try {
@@ -77,10 +77,10 @@ const UserForm = () => {
     e.preventDefault();
     dispatch(addInfoMovie(infomovie));
     setInfomovie({
-      name: "",
-      overview: "",
-      release_date: "",
-      fonte: "",
+      name: '',
+      overview: '',
+      release_date: '',
+      fonte: '',
     });
   };
 
@@ -95,7 +95,7 @@ const UserForm = () => {
           <Input
             name="name"
             type="text"
-            error={errors["name"]}
+            error={errors['name']}
             // onChange={onChange}
             label="Título"
             value={infomovie.name}
@@ -108,7 +108,7 @@ const UserForm = () => {
           <Input
             name="overview"
             type="text"
-            error={errors["overview"]}
+            error={errors['overview']}
             label="Detalhes"
             value={infomovie.overview}
             onChange={(e) =>
@@ -120,7 +120,7 @@ const UserForm = () => {
           <Input
             name="overview"
             type="date"
-            error={errors["release_date"]}
+            error={errors['release_date']}
             label="Data provável de lançamento"
             value={infomovie.release_date}
             onChange={(e) =>
@@ -132,7 +132,7 @@ const UserForm = () => {
           <Input
             name="overview"
             type="text"
-            error={errors["release_date"]}
+            error={errors['release_date']}
             label="Fonte (site)"
             value={infomovie.fonte}
             onChange={(e) =>

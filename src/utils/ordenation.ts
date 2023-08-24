@@ -1,6 +1,6 @@
 export const ordenationArrayData = (array, index) => {
   array?.sort((menor, maior) =>
-    menor[index] > maior[index] ? -1 : menor[index] > maior[index] ? 1 : 0
+    menor[index] > maior[index] ? -1 : menor[index] > maior[index] ? 1 : 0,
   );
 };
 

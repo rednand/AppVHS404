@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-const img = "./assets/imagens/sangue33.png";
+import React, { useState } from 'react';
+const img = './assets/imagens/sangue33.png';
 import {
   Title,
   HeaderBackground,
@@ -7,8 +7,8 @@ import {
   Menu,
   TitleBackground,
   ImagemFundo,
-} from "./styles";
-import Navbar from "../Navbar";
+} from './styles';
+import Navbar from '../Navbar';
 
 const Header = (props) => {
   const [showBiggerHeader, setshowBiggerHeaderd] = useState(false);

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainMovieId = styled.div`
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   letter-spacing: 0.2ch;
   font-weight: 900;
   height: auto;
@@ -15,7 +15,7 @@ export const MainMovieId = styled.div`
     font-size: 4rem;
     text-align: center;
     padding: 6rem 0 3rem;
-    font-family: "Bebas Neue", cursive;
+    font-family: 'Bebas Neue', cursive;
     font-weight: 100;
   }
 `;
@@ -31,9 +31,9 @@ export const ImageInfos = styled.div`
 
     span {
       font-size: 1.3rem;
-      font-weight:300;
+      font-weight: 300;
       letter-spacing: 0.3ch;
-      font-family: "Bebas Neue", cursive;
+      font-family: 'Bebas Neue', cursive;
     }
   }
   iframe {

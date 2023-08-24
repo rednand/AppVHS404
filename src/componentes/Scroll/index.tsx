@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { FaAngleDoubleUp } from "react-icons/fa";
-import { ScrollLink } from "./styles";
+import { useState } from 'react';
+import { FaAngleDoubleUp } from 'react-icons/fa';
+import { ScrollLink } from './styles';
 export default function ScrollPage() {
   const [pageYPosition, setPageYPosition] = useState(0);
 
@@ -8,7 +8,7 @@ export default function ScrollPage() {
     setPageYPosition(window.scrollY);
   }
 
-  window.addEventListener("scroll", getPageYAfterScroll);
+  window.addEventListener('scroll', getPageYAfterScroll);
 
   return (
     <>

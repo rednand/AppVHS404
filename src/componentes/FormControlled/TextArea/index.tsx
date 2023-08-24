@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { SingleTextarea, Label } from "./styles";
+import React, { useState } from 'react';
+import { SingleTextarea, Label } from './styles';
 
 const TextArea = ({ error, label, ...rest }) => {
   const [touched, setTouched] = useState(false);

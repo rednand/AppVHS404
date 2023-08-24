@@ -5,15 +5,10 @@ import UserForm from '../../componentes/FormControlled';
 import Input from 'componentes/FormControlled/Input';
 import { Menu } from '../../componentes/Header/styles';
 
-const Cadastro = () => {
+const Contato = () => {
   const [input, setInput] = useState('');
 
-  return (
-    <>
-      <UserForm></UserForm>
-      <Footer></Footer>
-    </>
-  );
+  return <p>Em desenvolvimento</p>;
 };
 
-export default Cadastro;
+export default Contato;
