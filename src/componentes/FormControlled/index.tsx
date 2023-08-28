@@ -93,11 +93,13 @@ const UserForm = () => {
 
         <div className="form-group">
           <Input
+          style={{color: "#1C1C1C1"}}
             name="name"
             type="text"
             error={errors['name']}
             // onChange={onChange}
             label="Título"
+            placeholder="Título"
             value={infomovie.name}
             onChange={(e) =>
               setInfomovie({ ...infomovie, name: e.target.value })
@@ -110,6 +112,7 @@ const UserForm = () => {
             type="text"
             error={errors['overview']}
             label="Detalhes"
+            placeholder="Detalhes"
             value={infomovie.overview}
             onChange={(e) =>
               setInfomovie({ ...infomovie, overview: e.target.value })

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deve renderizar um campo de input  1`] = `
+<input
+  class="sc-aXZVg iUtDJs form-control"
+  name="name"
+  placeholder="Título"
+  style="color: rgb(28, 28, 28);"
+  type="text"
+  value="teste"
+/>
+`;
+
+exports[`Deve renderizar um campo de input  2`] = `
+<input
+  class="sc-aXZVg iUtDJs form-control"
+  name="overview"
+  placeholder="Detalhes"
+  type="text"
+  value="DetalhesDetalhesDetalhes"
+/>
+`;

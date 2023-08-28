@@ -42,11 +42,6 @@ const Navbar = () => {
               </ItemLinkDrop>
             </li>
             <li>
-              <ItemLinkDrop onClick={handleClick} to="/reviews">
-                Reviews
-              </ItemLinkDrop>
-            </li>
-            <li>
               <ItemLinkDrop onClick={handleClick} to="/cadastro">
                 Informe um filme
               </ItemLinkDrop>
