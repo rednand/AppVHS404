@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testando funções utils Agrupa filmes 1`] = `
+{
+  "01 de Abril de 2022": [
+    {
+      "data": "01 de Abril de 2022",
+      "id": "62449edee7b7631887de44b3",
+      "movie": "Barbarians ",
+      "poster": "https://images2.imgbox.com/4e/ae/LtK18ttr_o.jpg",
+    },
+  ],
+  "03 de Agosto de 2023": [
+    {
+      "data": "03 de Agosto de 2023",
+      "id": "64ca4a6bbdab9e384f7894c2",
+      "movie": "Megatubarão 2",
+      "poster": "https://cinepop.com.br/wp-content/uploads/2023/05/megatubarao2_1.jpg",
+    },
+  ],
+  "07 de Setembro de 2023": [
+    {
+      "data": "07 de Setembro de 2023",
+      "id": "64cfe9bfa14b929c1e29e6db",
+      "movie": "A Freira 2",
+      "poster": "https://images2.imgbox.com/02/54/5yPAPSOh_o.jpeg",
+    },
+  ],
+  "08 de Agosto de 2023": [
+    {
+      "data": "08 de Agosto de 2023",
+      "id": "64cfe708a14b929c1e29e6d0",
+      "movie": "Summoning the Spirit",
+      "poster": "https://images2.imgbox.com/d7/2b/dxT90c3v_o.jpg",
+    },
+  ],
+  "09 de Fevereiro de 2023": [
+    {
+      "data": "09 de Fevereiro de 2023",
+      "id": "63ef77742fc555602a81313c",
+      "movie": "Oferenda ao Demônio",
+      "poster": "https://www.atoupeira.com.br/wp-content/uploads/2023/01/oferenda-ao-demonio-poster.jpg",
+    },
+  ],
+  "24 de Agosto de 2023": [
+    {
+      "data": "24 de Agosto de 2023",
+      "id": "64e645afb318a0f058a0bed2",
+      "movie": "A Última Viagem de Demeter",
+      "poster": "https://dx35vtwkllhj9.cloudfront.net/universalstudios/the-last-voyage-of-the-demeter/images/regions/us/onesheet.jpg",
+    },
+  ],
+  "25 de Março de 2022": [
+    {
+      "data": "25 de Março de 2022",
+      "id": "62333038ebe66ae54e6215fc",
+      "movie": "So cold the river",
+      "poster": "https://images2.imgbox.com/0a/e7/UtveBbAE_o.jpg",
+    },
+  ],
+}
+`;
+
+exports[`Testando funções utils Ordena filmes por datas 1`] = `
+[
+  {
+    "name": "A Freira 2",
+    "release_date": "2023-09-07T00:00:00.000Z",
+  },
+  {
+    "name": "A Última Viagem de Demeter",
+    "release_date": "2023-08-24T00:00:00.000Z",
+  },
+  {
+    "name": "Summoning the Spirit",
+    "release_date": "2023-08-08T03:00:00.000Z",
+  },
+  {
+    "name": "Megatubarão 2",
+    "release_date": "2023-08-03T03:00:00.000Z",
+  },
+  {
+    "name": "Oferenda ao Demônio",
+    "release_date": "2023-02-09T00:00:00.000Z",
+  },
+  {
+    "name": "Barbarians ",
+    "release_date": "2022-04-01T03:00:00.000Z",
+  },
+  {
+    "name": "So cold the river",
+    "release_date": "2022-03-25T00:00:00.000Z",
+  },
+]
+`;
+
+exports[`Testando funções utils Randomiza filmes 1`] = `
+[
+  {
+    "__v": 0,
+    "_id": "64e645afb318a0f058a0bed2",
+    "genre": [
+      "vampiro",
+    ],
+    "name": "A Última Viagem de Demeter",
+    "original_language": "English",
+    "original_title": "Dracula - The last voyage of the demeter",
+    "overview": "A presença profana de Drácula condena a tripulação do navio mercante Demeter.",
+    "poster": "https://dx35vtwkllhj9.cloudfront.net/universalstudios/the-last-voyage-of-the-demeter/images/regions/us/onesheet.jpg",
+    "release_date": "2023-08-24T00:00:00.000Z",
+    "trailer": "FwgF3-3LYsg",
+  },
+  {
+    "__v": 0,
+    "_id": "62333038ebe66ae54e6215fc",
+    "genre": [
+      "Sobrenatural",
+      "Thriller",
+      "Mistério",
+    ],
+    "name": "So cold the river",
+    "original_language": "english",
+    "original_title": "So cold the river",
+    "overview": "A pesquisa de um documentarista sobre o misterioso benfeitor de uma cidade revela um mal inexplicável enquanto está hospedado em um resort local",
+    "poster": "https://images2.imgbox.com/0a/e7/UtveBbAE_o.jpg",
+    "release_date": "2022-03-25T00:00:00.000Z",
+    "trailer": "XQzilDUfWmk",
+  },
+]
+`;

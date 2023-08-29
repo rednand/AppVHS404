@@ -14,7 +14,6 @@ const Section = () => {
   }, [dispatch]);
 
   const moviesSection = useSelector((state) => state['movies']);
-  console.log('todosMainSection', moviesSection);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);

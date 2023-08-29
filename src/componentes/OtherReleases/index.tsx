@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { formatMonth, formatDate, formatMonthNumber } from '../../utils/data';
-import { randomMovies } from '../../utils/ordenation';
 import { NextReleases } from './styles';
 import { useSelector } from 'react-redux';
 import { Box, CircularProgress } from '@mui/material';
@@ -18,7 +17,7 @@ const OtherReleases = () => {
       const actualYear = new Date().getFullYear().toString();
       const filmMonth = formatMonthNumber(
         itemData
-          .replaceAll('de', '')
+          .replace(/de/g, '')
           .replace(/[^a-zA-ZçÇ]/gi, ' ')
           .replace(/ /g, ''),
       );
@@ -40,15 +39,13 @@ const OtherReleases = () => {
     })
     .filter((item) => !!item);
 
-  randomMovies(movies);
-
   ListMovieWithDataIdName.length = 6;
 
   return (
     <NextReleases>
       <h3>Lançamentos futuros</h3>
       <div className="allMoviesDiv">
-        {movies.length > 0 ? (
+        {movies?.length > 0 ? (
           <>
             {ListMovieWithDataIdName.map((film) => {
               return (

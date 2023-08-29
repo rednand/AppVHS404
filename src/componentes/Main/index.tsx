@@ -15,12 +15,11 @@ const Main = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state['movies']);
 
-
   useEffect(() => {
     dispatch(getAllMovies());
   }, [dispatch]);
 
-  ordenationArrayData(movies, ['release_date']);
+  const moviesOrdenation = ordenationArrayData(movies, ['release_date']);
 
   return (
     <>
@@ -31,18 +30,26 @@ const Main = () => {
           <Container>
             <>
               <h1 className="h2Class">
-                Filmes de <span className="itemMes">{monthDate}</span>
+                Filmes de{' '}
+                <span className="itemMes" role="month">
+                  {monthDate}
+                </span>
               </h1>
-              {movies.length > 0 ? (
+              {moviesOrdenation.length > 0 ? (
                 <>
-                  {movies.map((film) => {
+                  {moviesOrdenation.map((film) => {
                     const itemData = formatDate(film['release_date']);
                     if (itemData.includes(monthDate)) {
                       return (
                         <Card key={film['_id']}>
                           <div className="card">
                             <h2 className="titleItem">
-                              <a href={`/${film['_id']}`}>{film['name']}</a>{' '}
+                              <a
+                                data-testid="nomeFilme"
+                                href={`/${film['_id']}`}
+                              >
+                                {film['name']}
+                              </a>{' '}
                             </h2>
                             <p className="releaseItem"> {itemData}</p>
                             <p className="overviewItem">{film['overview']}</p>

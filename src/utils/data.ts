@@ -1,12 +1,4 @@
 export function formatDate(date) {
-  var d = new Date(date),
-    month = '' + d.getMonth(),
-    day = '' + d.getDate(),
-    year = d.getFullYear();
-
-  if (month.length < 2) month = '0' + month;
-  if (day.length < 2) day = '0' + day;
-
   const months = [
     'Janeiro',
     'Fevereiro',
@@ -21,8 +13,11 @@ export function formatDate(date) {
     'Novembro',
     'Dezembro',
   ];
+  const dateWithoutTime = date.split('T')[0];
+  const [year, monthIndex, day] = dateWithoutTime.split('-');
+  const month = months[Number(monthIndex) - 1];
 
-  return `${day} de ${months[Number(month)]} de ${year}`;
+  return `${day} de ${month} de ${year}`;
 }
 
 export function formatMonth(date) {
@@ -49,7 +44,7 @@ export function formatMonth(date) {
     'Dezembro',
   ];
 
-  return `${months[Number(month)]}`;
+  return months[Number(month)];
 }
 
 export function formatMonthNumber(month) {
@@ -83,6 +78,12 @@ export function formatMonthNumber(month) {
 
     case 'Outubro':
       return 10;
+
+    case 'Novembro':
+      return 11;
+
+    case 'Dezembro':
+      return 12;
 
     default:
       break;

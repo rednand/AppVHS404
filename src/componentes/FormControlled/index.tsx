@@ -36,13 +36,10 @@ const UserForm = () => {
     fonte: '',
   });
   const todos = useSelector((state) => state['movies']);
-  console.log('todos', todos);
 
   useEffect(() => {
     dispatch(getAllMovies());
   }, [dispatch]);
-
-  console.log('infomovie', infomovie);
 
   // const validate = async () => {
   //   try {
@@ -121,9 +118,10 @@ const UserForm = () => {
         </div>
         <div className="form-group">
           <Input
-            name="overview"
+            name="release_date"
             type="date"
             error={errors['release_date']}
+            placeholder="release_date"
             label="Data provável de lançamento"
             value={infomovie.release_date}
             onChange={(e) =>
@@ -133,10 +131,11 @@ const UserForm = () => {
         </div>
         <div className="form-group">
           <Input
-            name="overview"
+            name="fonte"
             type="text"
-            error={errors['release_date']}
+            error={errors['fonte']}
             label="Fonte (site)"
+            placeholder="Fonte"
             value={infomovie.fonte}
             onChange={(e) =>
               setInfomovie({ ...infomovie, fonte: e.target.value })
