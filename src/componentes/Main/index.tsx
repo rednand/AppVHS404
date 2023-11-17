@@ -20,6 +20,7 @@ const Main = () => {
   }, [dispatch]);
 
   const moviesOrdenation = ordenationArrayData(movies, ['release_date']);
+  console.log("🚀 ~ file: index.tsx:23 ~ Main ~ moviesOrdenation:", moviesOrdenation.length)
 
   return (
     <>

@@ -3,7 +3,7 @@ import Footer from '../../componentes/Footer';
 import { MovieGetId } from '../../api/axios';
 import { useParams } from 'react-router-dom';
 import { MainMovieId, ImageMovieId, ImageInfos, MovieInfos } from './styles';
-import { formatDate } from '../../utils/data';
+import { formatDate, formatDateMovieId } from '../../utils/data';
 
 const MovieId = () => {
   const [movieInfo, setMovieInfo] = useState({ movies: [] });
@@ -27,7 +27,7 @@ const MovieId = () => {
             <div className="infos">
               <p>
                 <span>Lançamento: </span>
-                {formatDate(movieInfo.movies['release_date'])}
+                {formatDateMovieId(movieInfo.movies['release_date'])}
               </p>
               <p>
                 <span>Sinopse: </span> {movieInfo.movies['overview']}

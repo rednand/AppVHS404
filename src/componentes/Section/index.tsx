@@ -72,7 +72,7 @@ const Section = () => {
                 }
               };
 
-              if (!filmValue.includes(monthDate) && monthCompare()) {
+              if (!filmValue.includes(monthDate) && filmValue.includes(String(new Date().getFullYear())) && monthCompare()) {
                 return (
                   <div className="OldMovieList">
                     <>
