@@ -1,23 +1,14 @@
 export function formatDate(date) {
-  const months = [
-    'Janeiro',
-    'Fevereiro',
-    'Março',
-    'Abril',
-    'Maio',
-    'Junho',
-    'Julho',
-    'Agosto',
-    'Setembro',
-    'Outubro',
-    'Novembro',
-    'Dezembro',
-  ];
-  const dateWithoutTime = date.split('T')[0];
-  const [year, monthIndex, day] = dateWithoutTime.split('-');
-  const month = months[Number(monthIndex) - 1];
 
-  return `${day} de ${month} de ${year}`;
+  const dataString = date
+  const data = new Date(dataString);
+
+  const dia = data.getDate();
+  const mes = data.getMonth() + 1;
+  const ano = data.getFullYear();
+
+  const dataFormatada = `${dia}/${mes}/${ano}`;
+  return dataFormatada
 }
 
 export function formatMonth(date) {
