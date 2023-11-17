@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filtro de lançamentos novos 1`] = `
+[
+  {
+    "data": "07 de Setembro de 2023",
+    "id": "64cfe9bfa14b929c1e29e6db",
+    "movie": "A Freira 2",
+    "poster": "https://images2.imgbox.com/02/54/5yPAPSOh_o.jpeg",
+  },
+]
+`;

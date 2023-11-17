@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deve renderizar uma lista de links com a classe link 1`] = `
+[
+  <a
+    aria-current="page"
+    class="sc-eqUAAy CARKJ active"
+    href="/"
+  >
+    Home
+  </a>,
+  <a
+    class="sc-eqUAAy CARKJ"
+    href="/cadastro"
+  >
+    Informe um filme
+  </a>,
+  <a
+    class="sc-eqUAAy CARKJ"
+    href="/blog"
+  >
+    Contato
+  </a>,
+]
+`;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SingleTextarea = styled.textarea`
   box-shadow: var(--shd, 0 0 0 transparent);

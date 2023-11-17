@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Input from "./Input";
-import { Form, ButtonForm } from "./styles";
-import { useDispatch, useSelector } from "react-redux";
-import { addInfoMovie } from "../../store/redux/actions";
-import { getAllMovies } from "../../store/redux/actions";
+import React, { useEffect, useState } from 'react';
+import Input from './Input';
+import { Form, ButtonForm } from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { addInfoMovie } from '../../store/redux/actions';
+import { getAllMovies } from '../../store/redux/actions';
 
 // export const FormValidations = yup.object().shape({
 //   name: yup.string().required("Nome é obrigatório"),
@@ -30,19 +30,16 @@ const UserForm = () => {
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const [infomovie, setInfomovie] = useState({
-    name: "",
-    release_date: "",
-    overview: "",
-    fonte: "",
+    name: '',
+    release_date: '',
+    overview: '',
+    fonte: '',
   });
-  const todos = useSelector((state) => state["movies"]);
-  console.log("todos", todos);
+  const todos = useSelector((state) => state['movies']);
 
   useEffect(() => {
     dispatch(getAllMovies());
   }, [dispatch]);
-
-  console.log("infomovie", infomovie);
 
   // const validate = async () => {
   //   try {
@@ -77,10 +74,10 @@ const UserForm = () => {
     e.preventDefault();
     dispatch(addInfoMovie(infomovie));
     setInfomovie({
-      name: "",
-      overview: "",
-      release_date: "",
-      fonte: "",
+      name: '',
+      overview: '',
+      release_date: '',
+      fonte: '',
     });
   };
 
@@ -93,11 +90,13 @@ const UserForm = () => {
 
         <div className="form-group">
           <Input
+          style={{color: "#1C1C1C1"}}
             name="name"
             type="text"
-            error={errors["name"]}
+            error={errors['name']}
             // onChange={onChange}
             label="Título"
+            placeholder="Título"
             value={infomovie.name}
             onChange={(e) =>
               setInfomovie({ ...infomovie, name: e.target.value })
@@ -108,8 +107,9 @@ const UserForm = () => {
           <Input
             name="overview"
             type="text"
-            error={errors["overview"]}
+            error={errors['overview']}
             label="Detalhes"
+            placeholder="Detalhes"
             value={infomovie.overview}
             onChange={(e) =>
               setInfomovie({ ...infomovie, overview: e.target.value })
@@ -118,9 +118,10 @@ const UserForm = () => {
         </div>
         <div className="form-group">
           <Input
-            name="overview"
+            name="release_date"
             type="date"
-            error={errors["release_date"]}
+            error={errors['release_date']}
+            placeholder="release_date"
             label="Data provável de lançamento"
             value={infomovie.release_date}
             onChange={(e) =>
@@ -130,10 +131,11 @@ const UserForm = () => {
         </div>
         <div className="form-group">
           <Input
-            name="overview"
+            name="fonte"
             type="text"
-            error={errors["release_date"]}
+            error={errors['fonte']}
             label="Fonte (site)"
+            placeholder="Fonte"
             value={infomovie.fonte}
             onChange={(e) =>
               setInfomovie({ ...infomovie, fonte: e.target.value })

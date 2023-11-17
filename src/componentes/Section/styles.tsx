@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SectionStyled = styled.div`
   width: 20%;
   font-size: 1.5vw;
-  font-family: "Bebas Neue", cursive;
+  font-family: 'Bebas Neue', cursive;
   background: var(--bg200);
   color: var(--bg900);
   letter-spacing: 0.3ch;

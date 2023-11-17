@@ -1,5 +1,5 @@
-import { commingSoonMovies } from "../../api/axios";
-import axios from "axios";
+import { commingSoonMovies } from '../../api/axios';
+import axios from 'axios';
 
 // export const getTodos = () => {
 //   return (dispatch) => {
@@ -19,7 +19,7 @@ export const getAllMovies = () => {
     commingSoonMovies
       .get(`?page=1`)
       .then((movies) => {
-        dispatch({ type: "GET_MOVIES", movies });
+        dispatch({ type: 'GET_MOVIES', movies });
       })
       .catch((error) => {
         console.log(error.response);
@@ -32,7 +32,7 @@ export const getSomeMovies = () => {
     commingSoonMovies
       .get(`?page=1`)
       .then((movies) => {
-        dispatch({ type: "GET_MOVIES_SECTION", movies });
+        dispatch({ type: 'GET_MOVIES_SECTION', movies });
       })
       .catch((error) => {
         console.log(error.response);
@@ -45,7 +45,7 @@ export const addInfoMovie = (infos) => {
     axios
       .post(`https://api-quarto237.onrender.com/inform`, infos)
       .then((todo) => {
-        dispatch({ type: "ADD_TODO", todo });
+        dispatch({ type: 'ADD_TODO', todo });
       })
       .catch((error) => {
         console.log(error.response);

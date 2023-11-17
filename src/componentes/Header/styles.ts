@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderBackground = styled.div`
-  background: url("assets/imagens/initialwall2.png") repeat;
+  background: url('assets/imagens/initialwall2.png') repeat;
   background-size: contain;
   background-position: 100% 100%;
   box-shadow: inset -30px 380px 400px 200px var(--bg900);
@@ -11,7 +11,7 @@ interface IHeadingStyled {
   showComponent: boolean;
 }
 
-export const TitleBackground = styled("div")<IHeadingStyled>`
+export const TitleBackground = styled('div')<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -31,7 +31,7 @@ export const ImagemFundo = styled.img`
 interface IHeadingStyled {
   showComponent: boolean;
 }
-export const BiggerHeader = styled("div")<IHeadingStyled>`
+export const BiggerHeader = styled('div')<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -58,7 +58,7 @@ animation: transform 3s linear infinite;
 }
 `}
 `;
-export const Title = styled("div")<IHeadingStyled>`
+export const Title = styled('div')<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `

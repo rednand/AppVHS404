@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { SingleInput, Label } from "./styles";
+import React, { useState } from 'react';
+import { SingleInput, Label } from './styles';
 
 const Input = ({ error, label, ...rest }) => {
   const [touched, setTouched] = useState(false);

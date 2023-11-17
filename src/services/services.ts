@@ -1,1 +1,1 @@
-import { commingSoonMovies } from "api/axios";
+import { commingSoonMovies } from 'api/axios';

@@ -1,14 +1,16 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 const COLORS = {
-  primaryDark: "var(--bg200)",
-  primaryLight: "#d44d24",
+  primaryDark: 'var(--bg200)',
+  primaryLight: '#d44d24',
 };
 
 export const Navigation = styled.nav`
-  opacity: ${(props) => (props ? "1" : "0")};
-  transition: width 0.8s, opacity 0.8s;
+  opacity: ${(props) => (props ? '1' : '0')};
+  transition:
+    width 0.8s,
+    opacity 0.8s;
 `;
 
 export const List = styled.ul`

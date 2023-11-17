@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ScrollLink = styled.a`
   text-align: center;
@@ -13,12 +13,11 @@ export const ScrollLink = styled.a`
   border: 2px solid var(--bg900);
   bottom: 20px;
 
-  :active{
+  :active {
     color: var(--bg900);
   }
-  :hover{
+  :hover {
     color: var(--bg800);
     background-color: var(--bg200);
-
   }
 `;

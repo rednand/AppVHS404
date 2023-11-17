@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
-import { randomMovies } from "../../utils/ordenation";
-import { NextReleases } from "./styles";
-import { useSelector } from "react-redux";
-import { Box, CircularProgress } from "@mui/material";
+import React, { useEffect, useState } from 'react';
+import { formatMonth, formatDate, formatMonthNumber } from '../../utils/data';
+import { NextReleases } from './styles';
+import { useSelector } from 'react-redux';
+import { Box, CircularProgress } from '@mui/material';
 
 const OtherReleases = () => {
-  const movies = useSelector((state) => state["movies"]);
+  const movies = useSelector((state) => state['movies']);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
 
   const ListMovieWithDataIdName = movies
     .map((item) => {
-      const itemData = formatDate(item["release_date"]);
+      const itemData = formatDate(item['release_date']);
       const actualMonth = formatMonthNumber(monthDate);
       const actualYear = new Date().getFullYear().toString();
       const filmMonth = formatMonthNumber(
         itemData
-          .replaceAll("de", "")
-          .replace(/[^a-zA-ZçÇ]/gi, " ")
-          .replace(/ /g, "")
+          .replace(/de/g, '')
+          .replace(/[^a-zA-ZçÇ]/gi, ' ')
+          .replace(/ /g, ''),
       );
 
       const monthCompareData = () => {
@@ -31,16 +30,14 @@ const OtherReleases = () => {
 
       if (monthCompareData()) {
         return {
-          movie: item["name"],
-          data: formatDate(item["release_date"]),
-          id: item["_id"],
-          poster: item["poster"],
+          movie: item['name'],
+          data: formatDate(item['release_date']),
+          id: item['_id'],
+          poster: item['poster'],
         };
       }
     })
     .filter((item) => !!item);
-
-  randomMovies(movies);
 
   ListMovieWithDataIdName.length = 6;
 
@@ -48,7 +45,7 @@ const OtherReleases = () => {
     <NextReleases>
       <h3>Lançamentos futuros</h3>
       <div className="allMoviesDiv">
-        {movies.length > 0 ? (
+        {movies?.length > 0 ? (
           <>
             {ListMovieWithDataIdName.map((film) => {
               return (

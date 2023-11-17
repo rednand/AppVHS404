@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { formatMonth, formatDate, formatMonthNumber } from "../../utils/data";
-import { ordenationArrayData, groupBy } from "../../utils/ordenation";
-import { SectionStyled } from "./styles";
-import { getSomeMovies } from "../../store/redux/actions";
-import { useDispatch } from "react-redux";
-import { Box, CircularProgress } from "@mui/material";
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { formatMonth, formatDate, formatMonthNumber } from '../../utils/data';
+import { ordenationArrayData, groupBy } from '../../utils/ordenation';
+import { SectionStyled } from './styles';
+import { getSomeMovies } from '../../store/redux/actions';
+import { useDispatch } from 'react-redux';
+import { Box, CircularProgress } from '@mui/material';
 const Section = () => {
   const dispatch = useDispatch();
 
@@ -13,25 +13,24 @@ const Section = () => {
     dispatch(getSomeMovies());
   }, [dispatch]);
 
-  const moviesSection = useSelector((state) => state["movies"]);
-  console.log("todosMainSection", moviesSection);
+  const moviesSection = useSelector((state) => state['movies']);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
 
-  ordenationArrayData(moviesSection, ["release_date"]);
+  ordenationArrayData(moviesSection, ['release_date']);
 
   const ListMovieWithDataIdName = moviesSection.map((item, key) => {
-    key = item["_id"];
+    key = item['_id'];
     return {
-      movie: item["name"],
-      data: formatDate(item["release_date"]),
-      id: item["_id"],
-      poster: item["poster"],
+      movie: item['name'],
+      data: formatDate(item['release_date']),
+      id: item['_id'],
+      poster: item['poster'],
     };
   });
 
-  const GroupedMoviesByData = groupBy(ListMovieWithDataIdName, "data");
+  const GroupedMoviesByData = groupBy(ListMovieWithDataIdName, 'data');
 
   return (
     <SectionStyled>
@@ -41,13 +40,13 @@ const Section = () => {
           <>
             {Object.keys(GroupedMoviesByData).map((filmValue) => {
               const filmValuetoString = JSON.stringify(
-                GroupedMoviesByData[filmValue]
+                GroupedMoviesByData[filmValue],
               );
               const filmValuetoJson = JSON.parse(filmValuetoString);
               const filmValueMap = filmValuetoJson.map((item) => {
                 return (
-                  <a key={item.id} className="MovieLink" href={"/" + item?.id}>
-                    {item["movie"]}
+                  <a key={item.id} className="MovieLink" href={'/' + item?.id}>
+                    {item['movie']}
                   </a>
                 );
               });
@@ -55,15 +54,15 @@ const Section = () => {
               const actualMonth = formatMonthNumber(monthDate);
               const filmMonth = formatMonthNumber(
                 filmValue
-                  .replaceAll("de", "")
-                  .replace(/[^a-zA-ZçÇ]/gi, " ")
-                  .replace(/ /g, "")
+                  .replaceAll('de', '')
+                  .replace(/[^a-zA-ZçÇ]/gi, ' ')
+                  .replace(/ /g, ''),
               );
 
               const monthCompare = () => {
                 if (
-                  typeof actualMonth === "number" &&
-                  typeof filmMonth === "number"
+                  typeof actualMonth === 'number' &&
+                  typeof filmMonth === 'number'
                 ) {
                   if (actualMonth >= filmMonth) {
                     return true;

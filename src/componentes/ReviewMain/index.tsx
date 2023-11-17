@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Back, MainReview, CardReview, InputButton } from "./styles";
+import React, { useEffect, useState } from 'react';
+import { Back, MainReview, CardReview, InputButton } from './styles';
 
 const ReviewMain = () => {
   return (
@@ -7,7 +7,7 @@ const ReviewMain = () => {
       <MainReview>
         <InputButton>
           <input type="text" />
-          <button onClick={(e) => console.log("teste")}></button>
+          <button onClick={(e) => console.log('teste')}></button>
         </InputButton>
         <CardReview>
           <div className="card">teste</div>
