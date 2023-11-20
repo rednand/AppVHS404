@@ -7,6 +7,7 @@ import {
   Menu,
   TitleBackground,
   ImagemFundo,
+  ImagemFundoText,
 } from './styles';
 import Navbar from '../Navbar';
 
@@ -23,7 +24,10 @@ const Header = (props) => {
     <HeaderBackground>
       <TitleBackground showComponent={showNormalHeader}>
         {showNormalHeader && (
-          <ImagemFundo src={img} alt="imagem_de_sangue_escorrendo" />
+          <>
+            <ImagemFundo src={img} alt="imagem_de_sangue_escorrendo" />
+            <ImagemFundoText>Suas estreias de filmes de terror no Brasil </ImagemFundoText>
+          </>
         )}
 
         <Title showComponent={showNormalHeader} />

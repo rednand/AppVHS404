@@ -20,7 +20,6 @@ const Main = () => {
   }, [dispatch]);
 
   const moviesOrdenation = ordenationArrayData(movies, ['release_date']);
-  console.log("🚀 ~ file: index.tsx:23 ~ Main ~ moviesOrdenation:", moviesOrdenation.length)
 
   return (
     <>
@@ -72,20 +71,20 @@ const Main = () => {
                           </div>
                           <div className="buttonGenre">
                             {film['genre'].map((x, index) => {
-                              return (
-                                <p key={film['genre'][index]}>
-                                  <button
-                                    className="pbuttonGenre"
-                                    onClick={() =>
-                                      console.log('pegar filmes por gênero')
-                                    }
-                                  >
-                                    {film['genre'][index]}
-                                  </button>
+                              const genresString = x;
+                              const genresArray = genresString.split(',');
+
+                              return genresArray.map((item) => (
+                                <p key={item}
+                                  style={{ fontWeight: 'bold' }}
+                                  className="pbuttonGenre"
+                                >
+                                  {item}
                                 </p>
-                              );
+                              ));
                             })}
                           </div>
+
                         </Card>
                       );
                     }
@@ -95,7 +94,7 @@ const Main = () => {
                 <Box
                   component="div"
                   sx={{
-                    margin: 50,
+                    margin: 10,
                   }}
                 >
                   <CircularProgress

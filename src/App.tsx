@@ -6,7 +6,7 @@ import Exclusao from './pages/Exclusao';
 import Home from './pages/Home';
 import MovieId from './pages/Movie';
 import Review from './pages/Reviews';
-import Contato from './pages/Contato';
+import Filmes from './pages/Filmes';
 import Header from './componentes/Header';
 import ScrollPage from './componentes/Scroll';
 
@@ -27,7 +27,7 @@ const App = () => {
           <Route element={<Exclusao />} path="/buscar"></Route>
           <Route element={<Cadastro />} path="/cadastro"></Route>
           <Route element={<Review />} path="/reviews"></Route>
-          <Route element={<Contato />} path="/contato"></Route>
+          <Route element={<Filmes />} path="/filmes"></Route>
           <Route element={<MovieId />} path="/:id"></Route>
         </Routes>
       </Router>

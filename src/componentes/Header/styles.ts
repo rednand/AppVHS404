@@ -11,7 +11,7 @@ interface IHeadingStyled {
   showComponent: boolean;
 }
 
-export const TitleBackground = styled('div')<IHeadingStyled>`
+export const TitleBackground = styled('div') <IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -23,15 +23,27 @@ export const TitleBackground = styled('div')<IHeadingStyled>`
 `;
 
 export const ImagemFundo = styled.img`
-  width: 25%;
+  width: 20%;
   position: absolute;
-  right: 2%;
+  right: 0;
+  margin-right: 0;
+`;
+
+export const ImagemFundoText = styled.p`
+  width: 15%;
+  position: absolute;
+  color: white;
+  right: -4%;
+  margin-top: 2%;
+  text-align: right;
+  font-size: 35px;
+  margin-right: 19%;
 `;
 
 interface IHeadingStyled {
   showComponent: boolean;
 }
-export const BiggerHeader = styled('div')<IHeadingStyled>`
+export const BiggerHeader = styled('div') <IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -58,15 +70,15 @@ animation: transform 3s linear infinite;
 }
 `}
 `;
-export const Title = styled('div')<IHeadingStyled>`
+export const Title = styled('div') <IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
-  width: 100%;
+  width: 50%;
   height: 12rem;
   background-image: url("assets/imagens/titletrans2.png");
   background-repeat: no-repeat;
-  background-position: 5% 70%;
+  background-position: 12% 70%;
 `}
 
   @media (max-width: 700px) {
