@@ -27,8 +27,8 @@ const Navbar = () => {
           </ItemLink>
         </li>
         <li>
-          <ItemLink onClick={handleClick} to="/blog">
-            Contato
+          <ItemLink onClick={handleClick} to="/filmes">
+            Filmes
           </ItemLink>
         </li>
       </List>
@@ -48,7 +48,7 @@ const Navbar = () => {
             </li>
             <li>
               <ItemLinkDrop onClick={handleClick} to="/blog">
-                Contato
+                Filmes
               </ItemLinkDrop>
             </li>
           </ListDrop>

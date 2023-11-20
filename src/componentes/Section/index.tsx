@@ -88,7 +88,7 @@ const Section = () => {
           <Box
             component="div"
             sx={{
-              margin: 50,
+              marginLeft: 5,
             }}
           >
             <CircularProgress color="secondary" thickness={10} size={90} />

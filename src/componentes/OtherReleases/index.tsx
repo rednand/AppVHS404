@@ -69,7 +69,7 @@ const OtherReleases = () => {
           <Box
             component="div"
             sx={{
-              margin: 50,
+              margin: 10,
             }}
           >
             <CircularProgress color="secondary" thickness={10} size={90} />
