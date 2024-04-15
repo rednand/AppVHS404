@@ -7,8 +7,9 @@ export const NextReleases = styled.div`
   width: 96%;
 
   .allMoviesDiv {
-    display: flex;
-    justify-content: space-evenly;
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, auto));
   }
 
   h3 {
@@ -17,6 +18,7 @@ export const NextReleases = styled.div`
     font-size: 2rem;
     padding: 1%;
   }
+
   .soon {
     display: inline-block;
     font-size: 1.5vw;
@@ -38,7 +40,7 @@ export const NextReleases = styled.div`
   }
   .soonPoster {
     height: 38vh;
-    width: 95%;
+    width: 55%;
     object-fit: cover;
     object-position: center;
 
