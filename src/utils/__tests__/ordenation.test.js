@@ -446,5 +446,6 @@ describe('Testando funções utils', () => {
       expect(novaData[1]).not.toEqual(retorno[1]);
     expect(novaData).toHaveLength(7);
     expect(novaData).toMatchSnapshot();
+    expect(retorno).toMatchSnapshot();
   });
 });
