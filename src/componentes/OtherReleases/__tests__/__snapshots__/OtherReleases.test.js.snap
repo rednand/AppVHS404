@@ -3,10 +3,10 @@
 exports[`Filtro de lançamentos novos 1`] = `
 [
   {
-    "data": "07 de Setembro de 2023",
-    "id": "64cfe9bfa14b929c1e29e6db",
-    "movie": "A Freira 2",
-    "poster": "https://images2.imgbox.com/02/54/5yPAPSOh_o.jpeg",
+    "data": "03 de Agosto de 2024",
+    "id": "64ca4a6bbdab9e384f7894c2",
+    "movie": "Megatubarão 2",
+    "poster": "https://cinepop.com.br/wp-content/uploads/2023/05/megatubarao2_1.jpg",
   },
 ]
 `;

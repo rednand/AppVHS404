@@ -17,9 +17,9 @@ exports[`Deve renderizar uma lista de links com a classe link 1`] = `
   </a>,
   <a
     class="sc-eqUAAy CARKJ"
-    href="/blog"
+    href="/filmes"
   >
-    Contato
+    Filmes
   </a>,
 ]
 `;
