@@ -11,7 +11,7 @@ interface IHeadingStyled {
   showComponent: boolean;
 }
 
-export const TitleBackground = styled('div') <IHeadingStyled>`
+export const TitleBackground = styled('div')<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -38,12 +38,20 @@ export const ImagemFundoText = styled.p`
   text-align: right;
   font-size: 35px;
   margin-right: 19%;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+    width: 55%;
+    margin-top: 30%;
+    text-align: right;
+    margin-right: 19%;
+  }
 `;
 
 interface IHeadingStyled {
   showComponent: boolean;
 }
-export const BiggerHeader = styled('div') <IHeadingStyled>`
+export const BiggerHeader = styled('div')<IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -70,25 +78,32 @@ animation: transform 3s linear infinite;
 }
 `}
 `;
-export const Title = styled('div') <IHeadingStyled>`
+export const Title = styled('div')<IHeadingStyled>`
+  @font-face {
+    font-family: 'MinhaFonte';
+    src: url('../../assets/fonts/KindlyRewind-BOon.ttf') format('truetype');
+  }
+
   ${(props) =>
     props.showComponent &&
     `
   width: 50%;
   height: 12rem;
-  background-image: url("assets/imagens/titletrans2.png");
+  font-family: 'MinhaFonte', sans-serif;
+  // background-image: url("assets/imagens/titletrans2.png");
   background-repeat: no-repeat;
   background-position: 12% 70%;
 `}
 
   @media (max-width: 700px) {
     background-size: 40%;
-    background-position: 5% 50%;
+    width: 80%;
+    background-repeat: no-repeat;
+    background-position: 25% 1%;
   }
 
   @media (max-width: 400px) {
     background-size: 50%;
-    background-position: 50% 50%;
   }
 `;
 

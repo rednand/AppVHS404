@@ -58,7 +58,6 @@ const Main = () => {
                             <div className="posterItem">
                               <img
                                 src={`${film['poster']}`}
-                                alt={`poster${film['poster']}`}
                               />
                             </div>
                             <div className="videoItem">

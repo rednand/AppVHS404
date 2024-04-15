@@ -1,5 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bebas+Neue&display=swap");
-@import "./../node_modules/bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bebas+Neue&display=swap');
+@import './../node_modules/bootstrap/dist/css/bootstrap.css';
+
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('./assets/fonts/KindlyRewind-BOon.ttf') format('truetype');
+}
 
 html {
   height: 100%;
@@ -134,7 +139,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -164,7 +169,6 @@ table {
   --palletered2: #d3d3d3;
   --palletered1: #f5f3f4;
   --palletered0: #ffffff;
-
 
   --shd: -5px 5px 0px 0px #a4161a;
   --buttonForm: -5px 5px 0px 0px rgb(255, 255, 255);

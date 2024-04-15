@@ -56,7 +56,6 @@ const OtherReleases = () => {
                       <img
                         className="soonPoster"
                         src={`${film.poster}`}
-                        alt={`poster${film.poster}`}
                       />
                     </div>
                   </a>

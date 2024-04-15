@@ -79,6 +79,10 @@ export const NavbarDropdown = styled.div`
     }
   }
 
+  @media (max-width: 600px) {
+    padding: .5rem 2rem;
+    font-size: 1.5rem;
+  }
   @media (max-width: 400px) {
     display: block;
   }
