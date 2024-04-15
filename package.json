@@ -9,7 +9,8 @@
     "build": "webpack --mode production",
     "format": "prettier --write \"src/**/*{.ts,.tsx}\"",
     "lint": "eslint \"src/**/*{.ts,.tsx}\" --quiet",
-    "test": "jest -u"
+    "test": "jest -u",
+    "test:coverage": "jest -u --coverage"
   },
   "keywords": [],
   "author": "",
