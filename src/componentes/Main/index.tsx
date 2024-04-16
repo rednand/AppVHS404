@@ -24,10 +24,15 @@ const Main = () => {
   const width = window.innerWidth;
 
   return (
-    <div style={width && { marginTop: "35%" }}>
+    <div style={{ marginTop: width && '35%' }}>
       <OtherReleases />
       <MainContainer>
-        <MainLeft style={width < 700 && { width: '80%', margin: '10%' }}>
+        <MainLeft
+          style={{
+            width: width > 700 ? 'inherit' : '80%',
+            margin: width > 700 ? 'inherit' : '10%',
+          }}
+        >
           <TimeLine />
           <Container>
             <>
