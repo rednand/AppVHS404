@@ -11,7 +11,7 @@ interface IHeadingStyled {
   showComponent: boolean;
 }
 
-export const TitleBackground = styled('div')<IHeadingStyled>`
+export const TitleBackground = styled('div') <IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -30,28 +30,27 @@ export const ImagemFundo = styled.img`
 `;
 
 export const ImagemFundoText = styled.p`
-  width: 15%;
+  width: 50%;
   position: absolute;
   color: white;
-  right: -4%;
-  margin-top: 2%;
+  right: 3%;
+  margin-top: 4%;
   text-align: right;
   font-size: 35px;
-  margin-right: 19%;
+  margin-right: 0;
 
   @media only screen and (max-width: 600px) {
     font-size: 20px;
-    width: 55%;
-    margin-top: 30%;
-    text-align: right;
-    margin-right: 19%;
+    width: 95%;
+    margin-top: 40%;
+    text-align: center;
   }
 `;
 
 interface IHeadingStyled {
   showComponent: boolean;
 }
-export const BiggerHeader = styled('div')<IHeadingStyled>`
+export const BiggerHeader = styled('div') <IHeadingStyled>`
   ${(props) =>
     props.showComponent &&
     `
@@ -78,7 +77,7 @@ animation: transform 3s linear infinite;
 }
 `}
 `;
-export const Title = styled('div')<IHeadingStyled>`
+export const Title = styled('div') <IHeadingStyled>`
   @font-face {
     font-family: 'MinhaFonte';
     src: url('../../assets/fonts/KindlyRewind-BOon.ttf') format('truetype');
@@ -96,10 +95,7 @@ export const Title = styled('div')<IHeadingStyled>`
 `}
 
   @media (max-width: 700px) {
-    background-size: 40%;
-    width: 80%;
-    background-repeat: no-repeat;
-    background-position: 25% 1%;
+    width: 100%;
   }
 
   @media (max-width: 400px) {

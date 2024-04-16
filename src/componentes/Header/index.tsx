@@ -35,9 +35,15 @@ const Header = (props) => {
 
         <Title showComponent={showNormalHeader}>
           <Typography
-            style={{ color: 'white', fontFamily: 'MinhaFonte', fontSize: 50 }}
+            style={{
+              paddingTop: 60,
+              paddingLeft: 20,
+              color: 'white',
+              fontFamily: 'MinhaFonte',
+              fontSize: 50,
+            }}
           >
-          &#9205;VHS 180
+            &#9205;VHS 404
           </Typography>
         </Title>
         <BiggerHeader

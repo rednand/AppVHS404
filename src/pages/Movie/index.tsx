@@ -15,8 +15,6 @@ const MovieId = () => {
     });
   }, []);
 
-  console.log(movieInfo.movies);
-
   return (
     <>
       <MainMovieId>

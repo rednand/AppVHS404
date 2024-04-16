@@ -41,7 +41,8 @@ export const NextReleases = styled.div`
   .soonPoster {
     height: 38vh;
     width: 55%;
-    object-fit: cover;
+    min-width: 100%;
+    object-fit: contain;
     object-position: center;
 
     :hover {
@@ -87,8 +88,11 @@ export const NextReleases = styled.div`
       display: none;
     }
     .soonPoster {
-      width: 90%;
       height: 12rem;
+      width: 55%;
+      min-width: 100%;
+      object-fit: contain;
+      object-position: center;
     }
     .soon {
       font-size: 2.6vw;
@@ -106,12 +110,6 @@ export const NextReleases = styled.div`
     .soon {
       width: 50%;
       font-size: 4.5vw;
-    }
-    .soonPoster {
-      width: 90%;
-      height: 15rem;
-      object-fit: cover;
-      object-position: center;
     }
   }
 `;
