@@ -6,7 +6,8 @@ import { SectionStyled } from './styles';
 import { getSomeMovies } from '../../store/redux/actions';
 import { useDispatch } from 'react-redux';
 import { Box, CircularProgress } from '@mui/material';
-const Section = () => {
+
+const Section = ({ mobile = false }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const Section = () => {
   const GroupedMoviesByData = groupBy(ListMovieWithDataIdName, 'data');
 
   return (
-    <SectionStyled>
+    <SectionStyled style={mobile && { width: '80%', marginLeft: '10%' }}>
       <div className="divSection">
         <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
         {moviesSection.length > 0 ? (
@@ -72,7 +73,11 @@ const Section = () => {
                 }
               };
 
-              if (!filmValue.includes(monthDate) && filmValue.includes(String(new Date().getFullYear())) && monthCompare()) {
+              if (
+                !filmValue.includes(monthDate) &&
+                filmValue.includes(String(new Date().getFullYear())) &&
+                monthCompare()
+              ) {
                 return (
                   <div className="OldMovieList">
                     <>

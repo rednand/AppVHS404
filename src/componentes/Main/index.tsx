@@ -21,11 +21,13 @@ const Main = () => {
 
   const moviesOrdenation = ordenationArrayData(movies, ['release_date']);
 
+  const width = window.innerWidth;
+
   return (
-    <>
+    <div style={width && { marginTop: "35%" }}>
       <OtherReleases />
       <MainContainer>
-        <MainLeft>
+        <MainLeft style={width < 700 && { width: '80%', margin: '10%' }}>
           <TimeLine />
           <Container>
             <>
@@ -56,9 +58,7 @@ const Main = () => {
                           </div>
                           <div className="cardMedia">
                             <div className="posterItem">
-                              <img
-                                src={`${film['poster']}`}
-                              />
+                              <img src={`${film['poster']}`} />
                             </div>
                             <div className="videoItem">
                               <iframe
@@ -74,7 +74,8 @@ const Main = () => {
                               const genresArray = genresString.split(',');
 
                               return genresArray.map((item) => (
-                                <p key={item}
+                                <p
+                                  key={item}
                                   style={{ fontWeight: 'bold' }}
                                   className="pbuttonGenre"
                                 >
@@ -83,7 +84,6 @@ const Main = () => {
                               ));
                             })}
                           </div>
-
                         </Card>
                       );
                     }
@@ -106,9 +106,10 @@ const Main = () => {
             </>
           </Container>
         </MainLeft>
-        <Section />
+        {width > 700 && <Section />}
       </MainContainer>
-    </>
+      {width < 700 && <Section mobile />}
+    </div>
   );
 };
 

@@ -42,7 +42,16 @@ const OtherReleases = () => {
   ListMovieWithDataIdName.length = 6;
 
   return (
-    <NextReleases>
+    <NextReleases
+      style={
+        window.innerWidth < 700 && {
+          marginTop: '20%',
+          padding: '10%',
+          width: '80%',
+          margin: '10%',
+        }
+      }
+    >
       <h3>Lançamentos futuros</h3>
       <div className="allMoviesDiv">
         {movies?.length > 0 ? (
@@ -53,10 +62,7 @@ const OtherReleases = () => {
                   <a href={`/${film.id}`}>
                     <h2 className="nameSoon"> {film.movie}</h2>
                     <div className="soonPoster2">
-                      <img
-                        className="soonPoster"
-                        src={`${film.poster}`}
-                      />
+                      <img className="soonPoster" src={`${film.poster}`} />
                     </div>
                   </a>
                   <p className="soonData"> {film.data}</p>

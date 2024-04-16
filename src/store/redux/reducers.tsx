@@ -10,7 +10,6 @@ const todoReducer = (state = initialState, action) => {
       return action.movies.data;
 
     case 'ADD_TODO':
-      console.log(action);
       return [action.todo.data, ...state.movies];
     default:
       return state.movies;
