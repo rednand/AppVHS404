@@ -44,11 +44,11 @@ const OtherReleases = () => {
   return (
     <NextReleases
       style={
-        window.innerWidth < 700 && {
-          marginTop: '20%',
-          padding: '10%',
-          width: '80%',
-          margin: '10%',
+        {
+          marginTop: window.innerWidth < 700 && '20%',
+          padding: window.innerWidth < 700 && '10%',
+          width: window.innerWidth < 700 && '80%',
+          margin: window.innerWidth < 700 && '10%',
         }
       }
     >

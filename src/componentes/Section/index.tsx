@@ -34,7 +34,9 @@ const Section = ({ mobile = false }) => {
   const GroupedMoviesByData = groupBy(ListMovieWithDataIdName, 'data');
 
   return (
-    <SectionStyled style={mobile && { width: '80%', marginLeft: '10%' }}>
+    <SectionStyled
+      style={{ width: mobile && '80%', marginLeft: mobile && '10%' }}
+    >
       <div className="divSection">
         <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
         {moviesSection.length > 0 ? (
