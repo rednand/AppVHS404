@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 export const NextReleases = styled.div`
-  margin: 5% 2% 4%;
+  margin: 8% 2% 8%;
   height: max-content;
   background-color: #ffffff;
   width: 96%;
+  padding: 2%;
 
   .allMoviesDiv {
     grid-gap: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   h3 {
@@ -36,7 +37,9 @@ export const NextReleases = styled.div`
     text-decoration: none;
     padding: 3% 0;
     text-align: center;
+    font-size: 1.2vw;
     text-transform: uppercase;
+    white-space: nowrap;
   }
   .soonPoster {
     height: 38vh;
@@ -52,16 +55,22 @@ export const NextReleases = styled.div`
   }
   .soonPoster2 {
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
   .soonData {
     text-align: center;
-    padding: 0.1% 0% 10%;
+    padding: 0.1% 0% 2%;
   }
 
   @media (max-width: 1200px) {
     .soonPoster {
       height: 15rem;
       width: 85%;
+    }
+
+    .nameSoon {
+      font-size: 1.8vw;
     }
   }
   @media (max-width: 900px) {
@@ -80,8 +89,9 @@ export const NextReleases = styled.div`
   @media (max-width: 700px) {
     margin: 12% 2% 4%;
     h3 {
-      font-size: 4vw;
+      font-size: 8vw;
       padding: 3%;
+      margin-bottom: 10%;
     }
     .allMoviesDiv > div:nth-child(5),
     div:nth-child(6) {
@@ -95,21 +105,16 @@ export const NextReleases = styled.div`
       object-position: center;
     }
     .soon {
-      font-size: 2.6vw;
+      font-size: 4vw;
+    }
+    .nameSoon {
+      font-size: 4vw;
     }
   }
   @media (max-width: 400px) {
-    margin: 16% 2% 4%;
     h3 {
-      font-size: 6vw;
+      font-size: 8vw;
       padding: 4%;
-    }
-    .allMoviesDiv {
-      display: block;
-    }
-    .soon {
-      width: 50%;
-      font-size: 4.5vw;
     }
   }
 `;

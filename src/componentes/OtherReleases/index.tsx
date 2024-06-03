@@ -3,6 +3,8 @@ import { formatMonth, formatDate, formatMonthNumber } from '../../utils/data';
 import { NextReleases } from './styles';
 import { useSelector } from 'react-redux';
 import { Box, CircularProgress } from '@mui/material';
+import useWindowWidth from '../../utils/windowWidth';
+import { Typography } from '@material-ui/core';
 
 const OtherReleases = () => {
   const movies = useSelector((state) => state['movies']);
@@ -41,20 +43,20 @@ const OtherReleases = () => {
 
   ListMovieWithDataIdName.length = 6;
 
+  const windowWidth = useWindowWidth();
+
   return (
     <NextReleases
-      style={
-        {
-          marginTop: window.innerWidth < 700 && '20%',
-          padding: window.innerWidth < 700 && '10%',
-          width: window.innerWidth < 700 && '80%',
-          margin: window.innerWidth < 700 && '10%',
-        }
-      }
+      style={{
+        marginTop: windowWidth < 700 && '20%',
+        padding: windowWidth < 700 && '10%',
+        width: windowWidth < 700 && '80%',
+        margin: windowWidth < 700 && '10%',
+      }}
     >
       <h3>Lançamentos futuros</h3>
       <div className="allMoviesDiv">
-        {movies?.length > 0 ? (
+        {ListMovieWithDataIdName?.length > 0 ? (
           <>
             {ListMovieWithDataIdName.map((film) => {
               return (
@@ -62,7 +64,15 @@ const OtherReleases = () => {
                   <a href={`/${film.id}`}>
                     <h2 className="nameSoon"> {film.movie}</h2>
                     <div className="soonPoster2">
-                      <img className="soonPoster" src={`${film.poster}`} />
+                      <div
+                        style={{
+                          backgroundImage: `url(${film.poster})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          width: 150,
+                          height: 220,
+                        }}
+                      ></div>
                     </div>
                   </a>
                   <p className="soonData"> {film.data}</p>

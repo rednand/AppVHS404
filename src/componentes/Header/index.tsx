@@ -8,6 +8,8 @@ import {
   TitleBackground,
   ImagemFundo,
   ImagemFundoText,
+  BlinkingText,
+  TitleText,
 } from './styles';
 import Navbar from '../Navbar';
 import { Typography } from '@material-ui/core';
@@ -34,17 +36,17 @@ const Header = (props) => {
         )}
 
         <Title showComponent={showNormalHeader}>
-          <Typography
+          <div
             style={{
-              paddingTop: 60,
+              display: 'flex',
+              height: '20vh',
+              alignItems: 'center',
               paddingLeft: 20,
-              color: 'white',
-              fontFamily: 'MinhaFonte',
-              fontSize: 50,
             }}
           >
-            &#9205;VHS 404
-          </Typography>
+            <BlinkingText>Â</BlinkingText>
+            <TitleText>VHS 404</TitleText>
+          </div>
         </Title>
         <BiggerHeader
           onClick={() => handleBiggerHeader()}
