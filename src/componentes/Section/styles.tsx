@@ -14,6 +14,11 @@ export const SectionStyled = styled.div`
     margin: 8% 0;
     text-align: center;
     font-size: 3vw;
+
+    
+    @media (max-width: 900px) {
+      font-size: 6vw;
+    }
   }
 
   .OldMovieList {
@@ -30,7 +35,7 @@ export const SectionStyled = styled.div`
     background-color: #d41d24;
 
     @media (max-width: 900px) {
-      font-size: 2vw;
+      font-size: 5vw;
     }
   }
   .NoOldMovieData {
@@ -53,7 +58,7 @@ export const SectionStyled = styled.div`
     }
 
     @media (max-width: 900px) {
-      font-size: 2vw;
+      font-size: 5vw;
     }
   }
   @media (max-width: 1200px) {

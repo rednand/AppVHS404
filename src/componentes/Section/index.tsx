@@ -35,7 +35,7 @@ const Section = ({ mobile = false }) => {
 
   return (
     <SectionStyled
-      style={{ width: mobile && '80%', marginLeft: mobile && '10%' }}
+      style={{ width: mobile && '80%', marginLeft: mobile && '10%', paddingTop: mobile && '5%', paddingBottom: mobile && '5%' }}
     >
       <div className="divSection">
         <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
