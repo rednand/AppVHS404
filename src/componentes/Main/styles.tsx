@@ -38,6 +38,12 @@ export const Container = styled.div`
     text-align: center;
     background: var(--bg200);
     margin: 0 0 1rem 0;
+
+    
+    @media (max-width: 900px) {
+      font-size: 6vw;
+      padding: 5% 0;
+    }
   }
   .itemMes {
     color: var(--palletered4);

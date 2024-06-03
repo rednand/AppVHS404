@@ -152,23 +152,6 @@ const UserForm = () => {
           </ButtonForm>
         </div>
       </Form>
-      {/* <p style={{ color: "#ffffff", textAlign: "center" }}>
-        {todos.length > 0 ? "veio aí" : "não veio aí"}
-        <div>
-          {todos &&
-            todos.map((infomovie) => {
-              return (
-                <div key={infomovie.id}>
-                  <span>
-                    <div>{infomovie.id}</div>
-                    <div style={{ color: "yellow" }}>{infomovie.name}</div>
-                    <div> {infomovie.original_title}</div>
-                  </span>
-                </div>
-              );
-            })}
-        </div>
-      </p> */}
     </>
   );
 };

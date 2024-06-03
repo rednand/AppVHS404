@@ -14,8 +14,8 @@ export const SingleInput = styled.input`
 export const Label = styled.label`
   font-size: 1.2rem;
   color: var(--bg100);
-  font-weight: 900;
-  letter-spacing: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
 `;
 
 export const Span = styled.span`
