@@ -8,6 +8,7 @@ import { ordenationArrayData } from '../../utils/ordenation';
 import { MainContainer, Container, MainLeft, Card, TimeLine } from './styles';
 import { getAllMovies } from '../../store/redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import useWindowWidth from '../../utils/windowWidth';
 
 const Main = () => {
   const todaysDate = new Date();
@@ -19,18 +20,18 @@ const Main = () => {
     dispatch(getAllMovies());
   }, [dispatch]);
 
+  const windowWidth = useWindowWidth();
+
   const moviesOrdenation = ordenationArrayData(movies, ['release_date']);
 
-  const width = window.innerWidth;
-
   return (
-    <div style={{ marginTop: width && '35%' }}>
+    <div style={{ marginTop: windowWidth < 700 && '35%' }}>
       <OtherReleases />
       <MainContainer>
         <MainLeft
           style={{
-            width: width > 700 ? 'inherit' : '80%',
-            margin: width > 700 ? 'inherit' : '10%',
+            width: windowWidth < 700 && '80%',
+            margin: windowWidth < 700 && '10%',
           }}
         >
           <TimeLine />
@@ -111,9 +112,9 @@ const Main = () => {
             </>
           </Container>
         </MainLeft>
-        {width > 700 && <Section />}
+        {windowWidth > 700 && <Section />}
       </MainContainer>
-      {width < 700 && <Section mobile />}
+      {windowWidth < 700 && <Section mobile />}
     </div>
   );
 };
