@@ -26,6 +26,7 @@ export const TimeLine = styled.div`
 
 export const Container = styled.div`
   font-family: 'Bebas Neue', cursive;
+
   font-weight: 100;
   width: 97%;
   /* display: flex; */
@@ -47,6 +48,10 @@ export const Container = styled.div`
   }
   .itemMes {
     color: var(--palletered4);
+  }
+
+  .noMovies {
+    background-color: var(--bg200);
   }
 `;
 

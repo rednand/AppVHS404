@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, Typography } from '@material-ui/core';
 import Box from '@mui/material/Box';
 import OtherReleases from '../OtherReleases';
 import Section from '../Section';
@@ -24,6 +24,13 @@ const Main = () => {
 
   const moviesOrdenation = ordenationArrayData(movies, ['release_date']);
 
+  const monthMovies = moviesOrdenation.map((film) => {
+    const itemData = formatDate(film['release_date']);
+    if (itemData.includes(monthDate)) {
+      return film
+    }
+  }).filter(item => item != undefined);
+
   return (
     <div style={{ marginTop: windowWidth < 700 && '35%' }}>
       <OtherReleases />
@@ -43,70 +50,56 @@ const Main = () => {
                   {monthDate}
                 </span>
               </h1>
-              {moviesOrdenation.length > 0 ? (
+              {monthMovies.length > 0 && (
                 <>
-                  {moviesOrdenation.map((film) => {
-                    const itemData = formatDate(film['release_date']);
-                    if (itemData.includes(monthDate)) {
-                      return (
-                        <Card key={film['_id']}>
-                          <div className="card">
-                            <h2 className="titleItem">
-                              <a
-                                data-testid="nomeFilme"
-                                href={`/${film['_id']}`}
-                              >
-                                {film['name']}
-                              </a>{' '}
-                            </h2>
-                            <p className="releaseItem"> {itemData}</p>
-                            <p className="overviewItem">{film['overview']}</p>
-                          </div>
-                          <div className="cardMedia">
-                            <div className="posterItem">
-                              <img src={`${film['poster']}`} />
-                            </div>
-                            <div className="videoItem">
-                              <iframe
-                                src={`https://www.youtube.com/embed/${film['trailer']}`}
-                                title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              ></iframe>
-                            </div>
-                          </div>
-                          <div className="buttonGenre">
-                            {film['genre'].map((x, index) => {
-                              const genresString = x;
-                              const genresArray = genresString.split(',');
+                  <Card key={monthMovies['_id']}>
+                    <div className="card">
+                      <h2 className="titleItem">
+                        <a data-testid="nomeFilme" href={`/${monthMovies['_id']}`}>
+                          {monthMovies['name']}
+                        </a>{' '}
+                      </h2>
+                      <p className="releaseItem"> {monthMovies}</p>
+                      <p className="overviewItem">{monthMovies['overview']}</p>
+                    </div>
+                    <div className="cardMedia">
+                      <div className="posterItem">
+                        <img src={`${monthMovies['poster']}`} />
+                      </div>
+                      <div className="videoItem">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${monthMovies['trailer']}`}
+                          title="YouTube video player"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        ></iframe>
+                      </div>
+                    </div>
+                    <div className="buttonGenre">
+                      {monthMovies['genre'].map((x, index) => {
+                        const genresString = x;
+                        const genresArray = genresString.split(',');
 
-                              return genresArray.map((item) => (
-                                <p
-                                  key={item}
-                                  style={{ fontWeight: 'bold' }}
-                                  className="pbuttonGenre"
-                                >
-                                  {item}
-                                </p>
-                              ));
-                            })}
-                          </div>
-                        </Card>
-                      );
-                    }
-                  })}
+                        return genresArray.map((item) => (
+                          <p
+                            key={item}
+                            style={{ fontWeight: 'bold' }}
+                            className="pbuttonGenre"
+                          >
+                            {item}
+                          </p>
+                        ));
+                      })}
+                    </div>
+                  </Card>
                 </>
-              ) : (
+              )}
+              {monthMovies.length === 0 && (
                 <Box
                   component="div"
-                  sx={{
-                    margin: 10,
-                  }}
+                  className='noMovies'
                 >
-                  <CircularProgress
-                    color="secondary"
-                    thickness={10}
-                    size={90}
-                  />
+                  <Typography
+                    style={{ margin: "6%", padding: "6%" }}>Nenhum filme este mês</Typography>
                 </Box>
               )}
             </>
@@ -115,7 +108,7 @@ const Main = () => {
         {windowWidth > 700 && <Section />}
       </MainContainer>
       {windowWidth < 700 && <Section mobile />}
-    </div>
+    </div >
   );
 };
 
