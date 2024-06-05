@@ -8,11 +8,26 @@ export const Bottom = styled.div`
   background: #212223;
   height: 15rem;
   color: #c7c7c7;
+
+  @media (max-width: 600px) {
+    display: block;
+    padding: 6%;
+    }
 `;
 export const FooterCenter = styled.div`
   padding: 5%;
   font-size: 20px;
   font-weight: 900;
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+    width: 60%;
+    padding-left: 6%;
+    }
+
+  @media (max-width: 400px) {
+    width: 100%;
+    }
 `;
 
 export const FooterA = styled.a`
