@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const NextReleases = styled.div`
   margin: 8% 2% 8%;
   height: max-content;
-  background-color: #ffffff;
   width: 96%;
   padding: 2%;
 
   .allMoviesDiv {
     grid-gap: 20px;
+    background-color: #ffffff;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -19,6 +19,8 @@ export const NextReleases = styled.div`
     font-family: 'Bebas Neue', cursive;
     font-size: 2rem;
     padding: 1%;
+    margin-bottom: 1%;
+    background-color: #ffffff;
   }
 
   .soon {
@@ -54,7 +56,7 @@ export const NextReleases = styled.div`
       -webkit-filter: grayscale(1000%);
     }
   }
-  .soonPoster2 {
+  .soonPoster222 {
     text-align: center;
     display: flex;
     justify-content: center;

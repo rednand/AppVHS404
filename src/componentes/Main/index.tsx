@@ -24,12 +24,24 @@ const Main = () => {
 
   const moviesOrdenation = ordenationArrayData(movies, ['release_date']);
 
-  const monthMovies = moviesOrdenation.map((film) => {
-    const itemData = formatDate(film['release_date']);
-    if (itemData.includes(monthDate)) {
-      return film
+  const monthMovies = moviesOrdenation
+    .map((film) => {
+      const itemData = formatDate(film['release_date']);
+      if (itemData.includes(monthDate)) {
+        return film;
+      }
+    })
+    .filter((item) => item != undefined);
+
+  const getYouTubeEmbedUrl = (trailer) => {
+    if (trailer.includes('youtube.com')) {
+      const urlObj = new URL(trailer);
+      const videoId = urlObj.searchParams.get('v');
+      return `https://www.youtube.com/embed/${videoId}`;
+    } else {
+      return `https://www.youtube.com/embed/${trailer}`;
     }
-  }).filter(item => item != undefined);
+  };
 
   return (
     <div style={{ marginTop: windowWidth < 700 && '35%' }}>
@@ -52,54 +64,59 @@ const Main = () => {
               </h1>
               {monthMovies.length > 0 && (
                 <>
-                  <Card key={monthMovies['_id']}>
-                    <div className="card">
-                      <h2 className="titleItem">
-                        <a data-testid="nomeFilme" href={`/${monthMovies['_id']}`}>
-                          {monthMovies['name']}
-                        </a>{' '}
-                      </h2>
-                      <p className="releaseItem"> {monthMovies}</p>
-                      <p className="overviewItem">{monthMovies['overview']}</p>
-                    </div>
-                    <div className="cardMedia">
-                      <div className="posterItem">
-                        <img src={`${monthMovies['poster']}`} />
-                      </div>
-                      <div className="videoItem">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${monthMovies['trailer']}`}
-                          title="YouTube video player"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        ></iframe>
-                      </div>
-                    </div>
-                    <div className="buttonGenre">
-                      {monthMovies['genre'].map((x, index) => {
-                        const genresString = x;
-                        const genresArray = genresString.split(',');
+                  {monthMovies.map((item) => {
+                    return (
+                      <Card key={item['_id']}>
+                        <div className="card">
+                          <h2 className="titleItem">
+                            <a
+                              data-testid="nomeFilme"
+                              href={`/${item['_id']}`}
+                            >
+                              {item['name']}
+                            </a>{' '}
+                          </h2>
+                          <p className="releaseItem"> {formatDate(item["release_date"])}</p>
 
-                        return genresArray.map((item) => (
-                          <p
-                            key={item}
-                            style={{ fontWeight: 'bold' }}
-                            className="pbuttonGenre"
-                          >
-                            {item}
-                          </p>
-                        ));
-                      })}
-                    </div>
-                  </Card>
+                          <p className="overviewItem">{item['overview']}</p>
+                        </div>
+                        <div className="cardMedia">
+                          <div className="posterItem">
+                            <img src={`${item['poster']}`} />
+                          </div>
+                          <div className="videoItem">
+                            <iframe
+                              src={getYouTubeEmbedUrl(item.trailer)}
+                              title="YouTube video player"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            ></iframe>
+                          </div>
+                        </div>
+                        <div className="buttonGenre">
+                          {item['genre']?.map((x, index) => {
+                            const genresString = x;
+                            const genresArray = genresString.split(',');
+
+                            return genresArray.map((item) => (
+                              <p
+                                key={item}
+                                style={{ fontWeight: 'bold', textTransform: "capitalize" }}
+                                className="pbuttonGenre"
+                              >
+                                {item}
+                              </p>
+                            ));
+                          })}
+                        </div>
+                      </Card>)
+                  })}
                 </>
               )}
               {monthMovies.length === 0 && (
-                <Box
-                  component="div"
-                  className='noMovies'
-                >
-                  <Typography
-                    style={{ margin: "6%", padding: "6%" }}>Nenhum filme este mês</Typography>
+                <Box component="div" className="noMovies">
+                  <Typography style={{ margin: '6%', padding: '6%' }}>
+                    Nenhum filme este mês
+                  </Typography>
                 </Box>
               )}
             </>
@@ -108,7 +125,7 @@ const Main = () => {
         {windowWidth > 700 && <Section />}
       </MainContainer>
       {windowWidth < 700 && <Section mobile />}
-    </div >
+    </div>
   );
 };
 

@@ -17,6 +17,10 @@ export const SectionStyled = styled.div`
 
     
     @media (max-width: 900px) {
+      font-size: 4vw;
+    }
+
+    @media (max-width: 600px) {
       font-size: 6vw;
     }
   }
@@ -35,6 +39,10 @@ export const SectionStyled = styled.div`
     background-color: #d41d24;
 
     @media (max-width: 900px) {
+      font-size: 3vw;
+    }
+
+    @media (max-width: 600px) {
       font-size: 5vw;
     }
   }
@@ -58,6 +66,10 @@ export const SectionStyled = styled.div`
     }
 
     @media (max-width: 900px) {
+      font-size: 3vw;
+    }
+
+    @media (max-width: 600px) {
       font-size: 5vw;
     }
   }
