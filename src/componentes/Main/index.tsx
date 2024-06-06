@@ -9,6 +9,7 @@ import { MainContainer, Container, MainLeft, Card, TimeLine } from './styles';
 import { getAllMovies } from '../../store/redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import useWindowWidth from '../../utils/windowWidth';
+import { getYouTubeEmbedUrl } from '../../utils/youtubelink';
 
 const Main = () => {
   const todaysDate = new Date();
@@ -33,18 +34,8 @@ const Main = () => {
     })
     .filter((item) => item != undefined);
 
-  const getYouTubeEmbedUrl = (trailer) => {
-    if (trailer.includes('youtube.com')) {
-      const urlObj = new URL(trailer);
-      const videoId = urlObj.searchParams.get('v');
-      return `https://www.youtube.com/embed/${videoId}`;
-    } else {
-      return `https://www.youtube.com/embed/${trailer}`;
-    }
-  };
-
   return (
-    <div style={{ marginTop: windowWidth < 700 && '35%' }}>
+    <div style={{ marginTop: windowWidth < 700 && '20%' }}>
       <OtherReleases />
       <MainContainer>
         <MainLeft

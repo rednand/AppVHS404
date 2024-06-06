@@ -9,7 +9,7 @@ export const SectionStyled = styled.div`
   letter-spacing: 0.3ch;
 
   .sectionH3 {
-    letter-spacing: 0.2ch;
+    letter-spacing: 0.1ch;
     width: 100%;
     margin: 8% 0;
     text-align: center;
