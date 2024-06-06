@@ -24,7 +24,7 @@ const Footer = () => {
       </UnorderedList>
       <FooterCenter>
         &copy; {new Date().getFullYear()} Copyright:
-        <FooterA href="/"> QUARTO 237 </FooterA>
+        <FooterA href="/"> VHS 404 </FooterA>
       </FooterCenter>
     </Bottom>
   );

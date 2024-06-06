@@ -63,7 +63,7 @@ const OtherReleases = () => {
                 <div className="soon" key={film.id}>
                   <a href={`/${film.id}`}>
                     <h2 className="nameSoon"> {film.movie}</h2>
-                    <div className="soonPoster2">
+                    <div className="soonPoster222">
                       <div
                         style={{
                           backgroundImage: `url(${film.poster})`,

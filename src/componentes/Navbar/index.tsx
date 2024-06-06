@@ -47,7 +47,7 @@ const Navbar = () => {
               </ItemLinkDrop>
             </li>
             <li>
-              <ItemLinkDrop onClick={handleClick} to="/blog">
+              <ItemLinkDrop onClick={handleClick} to="/filmes">
                 Filmes
               </ItemLinkDrop>
             </li>

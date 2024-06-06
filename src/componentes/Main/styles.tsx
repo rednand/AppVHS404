@@ -26,6 +26,7 @@ export const TimeLine = styled.div`
 
 export const Container = styled.div`
   font-family: 'Bebas Neue', cursive;
+
   font-weight: 100;
   width: 97%;
   /* display: flex; */
@@ -48,6 +49,10 @@ export const Container = styled.div`
   .itemMes {
     color: var(--palletered4);
   }
+
+  .noMovies {
+    background-color: var(--bg200);
+  }
 `;
 
 export const Card = styled.div`
@@ -58,8 +63,10 @@ export const Card = styled.div`
   color: var(--bg900);
   outline: none;
   background-color: var(--bg200);
-  /* display: flex;
-  flex-wrap: wrap; */
+
+  @media (max-width: 600px) {
+    margin: 8% 0 15%;
+  }
 
   .card {
     border: none;
@@ -77,6 +84,11 @@ export const Card = styled.div`
 
     @media (max-width: 900px) {
       font-size: 3vw;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 4vw;
     }
   }
   .releaseItem {
@@ -93,6 +105,13 @@ export const Card = styled.div`
     @media (max-width: 900px) {
       font-size: 2.5vw;
     }
+
+    @media (max-width: 600px) {
+      font-size: 4vw;
+      top: -8%;
+      left: -1%;
+      width: 60%;
+    }
   }
 
   .overviewItem {
@@ -104,11 +123,23 @@ export const Card = styled.div`
     @media (max-width: 900px) {
       font-size: 1.8vw;
     }
+
+    @media (max-width: 600px) {
+      font-size: 2.2vw;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 3vw;
+    }
   }
   .cardMedia {
     margin: 2% 4%;
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
   }
   .posterItem {
     width: 35%;
@@ -122,6 +153,22 @@ export const Card = styled.div`
       @media (max-width: 900px) {
         height: 35vh;
       }
+
+      @media (max-width: 600px) {
+        height: 30vh;
+        width: 70%;
+      }
+
+      @media (max-width: 400px) {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      width: auto;
+      height: auto;
+      display: flex;
+      justify-content: center;
     }
   }
   .videoItem {
@@ -136,6 +183,16 @@ export const Card = styled.div`
       @media (max-width: 900px) {
         height: 35vh;
       }
+
+      @media (max-width: 600px) {
+        width: 100%;
+        height: 20vh;
+      }
+    }
+
+    @media (max-width: 600px) {
+      margin-top: 5%;
+      width: 100%;
     }
   }
   .buttonGenre {
@@ -147,10 +204,12 @@ export const Card = styled.div`
       font-weight: 700;
       font-size: 1.3vw;
       padding: 0.6rem 1.2rem;
-      color: var(--bg100);
-      background-color: var(--bg900);
-      border-width: 1px;
-      border-color: #d41d24;
+      border: 1px solid #212121;
+      border-radius: 5px;
+
+      @media (max-width: 600px) {
+        font-size: 3vw;
+      }
     }
   }
 `;
