@@ -35,9 +35,14 @@ const Section = ({ mobile = false }) => {
 
   return (
     <SectionStyled
-      style={{ width: mobile && '80%', marginLeft: mobile && '10%', paddingTop: mobile && '5%', paddingBottom: mobile && '5%' }}
+      style={{
+        width: mobile && '80%',
+        marginLeft: mobile && '10%',
+        paddingTop: mobile && '5%',
+        paddingBottom: '5%',
+      }}
     >
-      <div className="divSection">
+      <div>
         <h2 className="sectionH3">LANÇAMENTOS ANTERIORES</h2>
         {moviesSection.length > 0 ? (
           <>

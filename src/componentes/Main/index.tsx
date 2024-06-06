@@ -5,7 +5,7 @@ import OtherReleases from '../OtherReleases';
 import Section from '../Section';
 import { formatMonth, formatDate } from '../../utils/data';
 import { ordenationArrayData } from '../../utils/ordenation';
-import { MainContainer, Container, MainLeft, Card, TimeLine } from './styles';
+import { Container, MainLeft, Card, TimeLine } from './styles';
 import { getAllMovies } from '../../store/redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import useWindowWidth from '../../utils/windowWidth';
@@ -37,7 +37,12 @@ const Main = () => {
   return (
     <div style={{ marginTop: windowWidth < 700 && '20%' }}>
       <OtherReleases />
-      <MainContainer>
+      <div
+        style={{
+          display: windowWidth > 700 ? 'flex' : null,
+          justifyContent: windowWidth > 700 ? 'space-evenly' : null,
+        }}
+      >
         <MainLeft
           style={{
             width: windowWidth < 700 && '80%',
@@ -60,14 +65,14 @@ const Main = () => {
                       <Card key={item['_id']}>
                         <div className="card">
                           <h2 className="titleItem">
-                            <a
-                              data-testid="nomeFilme"
-                              href={`/${item['_id']}`}
-                            >
+                            <a data-testid="nomeFilme" href={`/${item['_id']}`}>
                               {item['name']}
                             </a>{' '}
                           </h2>
-                          <p className="releaseItem"> {formatDate(item["release_date"])}</p>
+                          <p className="releaseItem">
+                            {' '}
+                            {formatDate(item['release_date'])}
+                          </p>
 
                           <p className="overviewItem">{item['overview']}</p>
                         </div>
@@ -91,7 +96,10 @@ const Main = () => {
                             return genresArray.map((item) => (
                               <p
                                 key={item}
-                                style={{ fontWeight: 'bold', textTransform: "capitalize" }}
+                                style={{
+                                  fontWeight: 'bold',
+                                  textTransform: 'capitalize',
+                                }}
                                 className="pbuttonGenre"
                               >
                                 {item}
@@ -99,7 +107,8 @@ const Main = () => {
                             ));
                           })}
                         </div>
-                      </Card>)
+                      </Card>
+                    );
                   })}
                 </>
               )}
@@ -113,8 +122,16 @@ const Main = () => {
             </>
           </Container>
         </MainLeft>
-        {windowWidth > 700 && <Section />}
-      </MainContainer>
+        <div
+          style={{
+            width: windowWidth < 700 && '80%',
+            marginLeft: windowWidth < 700 && '10%',
+            paddingBottom: windowWidth < 700 && '5%',
+          }}
+        >
+          {windowWidth > 700 && <Section />}
+        </div>
+      </div>
       {windowWidth < 700 && <Section mobile />}
     </div>
   );

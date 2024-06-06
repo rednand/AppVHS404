@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SectionStyled = styled.div`
-  width: 20%;
+  width: 80%;
   font-size: 1.5vw;
   font-family: 'Bebas Neue', cursive;
   background: var(--bg200);
@@ -11,11 +11,10 @@ export const SectionStyled = styled.div`
   .sectionH3 {
     letter-spacing: 0.1ch;
     width: 100%;
-    margin: 8% 0;
+    padding: 8% 0;
     text-align: center;
     font-size: 3vw;
 
-    
     @media (max-width: 900px) {
       font-size: 4vw;
     }

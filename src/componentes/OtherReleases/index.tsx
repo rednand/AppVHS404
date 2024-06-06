@@ -50,8 +50,8 @@ const OtherReleases = () => {
       style={{
         marginTop: windowWidth < 700 && '20%',
         padding: windowWidth < 700 && '10%',
-        width: windowWidth < 700 && '80%',
-        margin: windowWidth < 700 && '10%',
+        width: windowWidth < 700 && '100%',
+        margin: windowWidth < 700 && '0%',
       }}
     >
       <h3>Lançamentos futuros</h3>

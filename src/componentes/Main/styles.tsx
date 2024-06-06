@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-`;
-
 export const MainLeft = styled.div`
   position: relative;
   width: 50%;
