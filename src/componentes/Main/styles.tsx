@@ -34,7 +34,7 @@ export const Container = styled.div`
 
   .h2Class {
     color: var(--bg900);
-    letter-spacing: 0.2ch;
+    letter-spacing: 0.1ch;
     font-size: 3vw;
     text-align: center;
     background: var(--bg200);
@@ -99,7 +99,7 @@ export const Card = styled.div`
     text-align: center;
     background: #d41d24;
     color: var(--bg200);
-    letter-spacing: 0.2ch;
+    letter-spacing: 0.1ch;
     font-size: 2vw;
 
     @media (max-width: 900px) {

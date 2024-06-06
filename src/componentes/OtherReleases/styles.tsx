@@ -20,6 +20,7 @@ export const NextReleases = styled.div`
     font-size: 2rem;
     padding: 1%;
     margin-bottom: 1%;
+    letter-spacing: 0.1ch;
     background-color: #ffffff;
   }
 
