@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const NextReleases = styled.div`
-  margin: 5% 0% 0%;
+  padding: 5% 0% 0%;
   width: 100%;
-  padding: 5% 10%;
-  background-color: #000000;
-
+  background-color: var(--bg850);
   margin: auto;
 
   .allMoviesDiv {
     grid-gap: 20px;
+    padding: 5%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   }
@@ -18,7 +17,7 @@ export const NextReleases = styled.div`
     text-align: center;
     font-family: 'Bebas Neue', cursive;
     font-size: 2rem;
-    color: #ecebeb;
+    color: var(--bg260);
     padding: 2%;
   }
   .soon {
@@ -38,11 +37,12 @@ export const NextReleases = styled.div`
     overflow-y: hidden;
     height: 8vh;
     text-align: center;
-    color: #ecebeb;
+    color: var(--bg260);
     display: flex;
     justify-content: center;
     text-transform: uppercase;
   }
+
   .soonPoster {
     height: 100%;
     width: 100%;
@@ -54,25 +54,39 @@ export const NextReleases = styled.div`
       -webkit-filter: grayscale(1000%);
     }
   }
+
   .soonPoster2 {
     text-align: center;
     height: 45vh;
     width: 95%;
-  }
-  .soonData {
-    text-align: center;
-    color: #b8b6b6;
-    padding: 0.1% 0% 10%;
+    position: relative;
   }
 
-  @media (max-width: 1200px) {
-    .soonPoster {
-      height: 15rem;
-      width: 85%;
-    }
+  .altText {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    background-color: var(--bg795);
+    color: var(--bg260);
+    padding: 5px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
+  .soonData {
+    text-align: center;
+    color: var(--bg260);
+    padding: 5% 0%;
+  }
+
   @media (max-width: 900px) {
-    margin: 10% 2% 4%;
+    padding: 10% 0%;
+
     h3 {
       font-size: 3vw;
       padding: 2%;
@@ -85,7 +99,8 @@ export const NextReleases = styled.div`
     }
   }
   @media (max-width: 700px) {
-    margin: 12% 2% 4%;
+    padding: 15% 0% 0%;
+
     h3 {
       font-size: 4vw;
       padding: 3%;
@@ -94,33 +109,28 @@ export const NextReleases = styled.div`
     div:nth-child(6) {
       display: none;
     }
-    .soonPoster {
-      width: 90%;
-      height: 12rem;
-    }
+
     .soon {
       font-size: 2.6vw;
     }
   }
-  @media (max-width: 400px) {
-    margin: 16% 2% 4%;
+  @media (max-width: 550px) {
     h3 {
       font-size: 6vw;
       padding: 4%;
     }
-    .allMoviesDiv {
-      display: block;
-    }
+
     .soon {
       width: 50%;
+      margin: 0 25%;
       font-size: 4.5vw;
     }
-    .soonPoster {
-      width: 90%;
-      height: 15rem;
-      object-fit: cover;
-      object-position: center;
+  }
+
+  @media (max-width: 400px) {
+    .soon {
+      width: 80%;
+      margin: 0 10%;
     }
   }
 `;
-

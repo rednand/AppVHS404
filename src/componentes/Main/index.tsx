@@ -6,7 +6,7 @@ import Section from '../Section';
 import { formatMonth, formatDate } from '../../utils/data';
 import { ordenationArrayData } from '../../utils/ordenation';
 import { Container, MainLeft, Card, TimeLine } from './styles';
-import { getAllMovies } from '../../store/redux/actions';
+import { getAllMovies, getMovies } from '../../store/redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import useWindowWidth from '../../utils/windowWidth';
 import { getYouTubeEmbedUrl } from '../../utils/youtubelink';
@@ -17,9 +17,13 @@ const Main = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state['movies']);
 
+  const { data, isLoading } = getMovies();
+
   useEffect(() => {
-    dispatch(getAllMovies());
-  }, [dispatch]);
+    if (!!data) {
+      dispatch(getAllMovies(data));
+    }
+  }, [dispatch, data]);
 
   const windowWidth = useWindowWidth();
 
@@ -89,7 +93,7 @@ const Main = () => {
                           </div>
                         </div>
                         <div className="buttonGenre">
-                          {item['genre']?.map((x, index) => {
+                          {item['genre']?.map((x: string, index: any) => {
                             const genresString = x;
                             const genresArray = genresString.split(',');
 
@@ -112,12 +116,27 @@ const Main = () => {
                   })}
                 </>
               )}
-              {monthMovies.length === 0 && (
-                <Box component="div" className="noMovies">
-                  <Typography style={{ margin: '6%', padding: '6%' }}>
-                    Nenhum filme este mês
-                  </Typography>
+              {isLoading ? (
+                <Box
+                  component="div"
+                  sx={{
+                    margin: 10,
+                  }}
+                >
+                  <CircularProgress
+                    color="secondary"
+                    thickness={10}
+                    size={90}
+                  />
                 </Box>
+              ) : (
+                monthMovies.length === 0 && (
+                  <Box component="div" className="noMovies">
+                    <Typography style={{ margin: '6%', padding: '6%' }}>
+                      Nenhum filme este mês
+                    </Typography>
+                  </Box>
+                )
               )}
             </>
           </Container>

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Back, MainReview, CardReview, InputButton } from './styles';
 
 const ReviewMain = () => {

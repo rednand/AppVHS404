@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const NextReleases = styled.div`
-  margin: 8% 2% 8%;
+  margin: 5% 2% 2%;
   height: max-content;
   width: 96%;
   padding: 2%;
 
   .allMoviesDiv {
     grid-gap: 20px;
-    background-color: #ffffff;
+    background-color: var(--palletered0);
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -21,7 +21,7 @@ export const NextReleases = styled.div`
     padding: 1%;
     margin-bottom: 1%;
     letter-spacing: 0.1ch;
-    background-color: #ffffff;
+    background-color: var(--palletered0);
   }
 
   .soon {
@@ -29,7 +29,7 @@ export const NextReleases = styled.div`
     font-size: 1.5vw;
     font-weight: 600;
     z-index: 6;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--bg220);
 
     a {
       text-decoration: none;
@@ -62,7 +62,7 @@ export const NextReleases = styled.div`
     display: flex;
     justify-content: center;
   }
-  .soonData {
+  .soonDataOtherReleases {
     text-align: center;
     padding: 0.1% 0% 2%;
   }

@@ -4,14 +4,14 @@ export const Bottom = styled.div`
   width: 100%;
   justify-content: space-around;
   display: inline-flex;
-  background: #212223;
+  background: var(--bg780);
   height: 15rem;
-  color: #c7c7c7;
+  color: var(--bg250);
 
   @media (max-width: 600px) {
     display: block;
     padding: 6%;
-    }
+  }
 `;
 export const FooterCenter = styled.div`
   padding: 5%;
@@ -22,11 +22,11 @@ export const FooterCenter = styled.div`
     font-size: 15px;
     width: 60%;
     padding-left: 6%;
-    }
+  }
 
   @media (max-width: 400px) {
     width: 100%;
-    }
+  }
 `;
 
 export const FooterA = styled.a`

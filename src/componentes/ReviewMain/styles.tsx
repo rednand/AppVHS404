@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Back = styled.div`
-  background-color: #ffffff;
+  background-color: var(--palletered0);
   height: 100vh;
   width: 100%;
 `;
 
 export const MainReview = styled.div`
-  background-color: #ffffff;
+  background-color: var(--palletered0);
   min-height: 100vh;
-  color: #000000;
+  color: var(--bg900);
   padding: 5% 0;
   display: flex;
   flex-direction: row;
@@ -27,7 +27,7 @@ export const InputButton = styled.div`
   button {
     width: 50%;
     height: 2rem;
-    background-color: #000000;
+    background-color: var(--bg900);
   }
 `;
 
@@ -37,7 +37,7 @@ export const CardReview = styled.div`
   .card {
     display: flex;
     flex-direction: column;
-    background-color: #000000;
+    background-color: var(--bg900);
     height: 2rem;
     margin: 5%;
   }

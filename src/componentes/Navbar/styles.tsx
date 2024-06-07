@@ -66,7 +66,7 @@ export const NavbarDropdown = styled.div`
   text-align: center;
   font-size: 2rem;
   width: 100px;
-  color: #ffffff;
+  color: var(--palletered0);
   margin-left: 0;
   background-color: var(--bg900);
   height: 3rem;
@@ -80,7 +80,7 @@ export const NavbarDropdown = styled.div`
   }
 
   @media (max-width: 600px) {
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     font-size: 1.5rem;
   }
   @media (max-width: 400px) {
@@ -91,7 +91,12 @@ export const NavbarDropdown = styled.div`
 export const NavbarDropdownContent = styled.div`
   display: none;
   position: absolute;
-  background: linear-gradient(5rad, var(--bg900), #d41d24, var(--bg900));
+  background: linear-gradient(
+    5rad,
+    var(--bg900),
+    var(--palletered45),
+    var(--bg900)
+  );
   min-width: 180%;
   padding: 12px 16px;
   z-index: 1;

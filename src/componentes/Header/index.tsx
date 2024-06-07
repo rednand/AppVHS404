@@ -6,13 +6,12 @@ import {
   BiggerHeader,
   Menu,
   TitleBackground,
-  ImagemFundo,
   ImagemFundoText,
   BlinkingText,
   TitleText,
 } from './styles';
 import Navbar from '../Navbar';
-import { Typography } from '@material-ui/core';
+import useWindowWidth from './../../utils/windowWidth';
 
 const Header = (props) => {
   const [showBiggerHeader, setshowBiggerHeaderd] = useState(false);
@@ -22,6 +21,8 @@ const Header = (props) => {
     setshowBiggerHeaderd(!showBiggerHeader);
     setShowNormalHeader(true);
   }
+
+  const windowWidth = useWindowWidth();
 
   return (
     <HeaderBackground>
@@ -39,9 +40,9 @@ const Header = (props) => {
           <div
             style={{
               display: 'flex',
-              height: '20vh',
+              height: windowWidth < 900 ? '20vh' : '25vh',
               alignItems: 'center',
-              paddingLeft: 20,
+              paddingLeft: '8%',
             }}
           >
             <BlinkingText>Â</BlinkingText>

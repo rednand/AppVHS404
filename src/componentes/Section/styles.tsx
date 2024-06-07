@@ -1,17 +1,22 @@
 import styled from 'styled-components';
 
 export const SectionStyled = styled.div`
-  width: 80%;
+  width: 100%;
   font-size: 1.5vw;
   font-family: 'Bebas Neue', cursive;
   background: var(--bg200);
   color: var(--bg900);
   letter-spacing: 0.3ch;
 
+  @media (max-width: 900px) {
+    width: 77%;
+    margin-left: 10%;
+  }
+
   .sectionH3 {
     letter-spacing: 0.1ch;
     width: 100%;
-    padding: 8% 0;
+    padding: 8% 5%;
     text-align: center;
     font-size: 3vw;
 
@@ -19,7 +24,7 @@ export const SectionStyled = styled.div`
       font-size: 4vw;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       font-size: 6vw;
     }
   }
@@ -35,13 +40,13 @@ export const SectionStyled = styled.div`
     left: -11%;
     margin: 10% 0;
     text-indent: 4%;
-    background-color: #d41d24;
+    background-color: var(--palletered45);
 
     @media (max-width: 900px) {
-      font-size: 3vw;
+      font-size: 2vw;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       font-size: 5vw;
     }
   }
@@ -65,14 +70,11 @@ export const SectionStyled = styled.div`
     }
 
     @media (max-width: 900px) {
-      font-size: 3vw;
+      font-size: 2vw;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       font-size: 5vw;
     }
-  }
-  @media (max-width: 1200px) {
-    width: 25%;
   }
 `;

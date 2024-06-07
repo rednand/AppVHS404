@@ -4,6 +4,12 @@ export const ordenationArrayData = (array, index) => {
   );
 };
 
+export const ordenationArrayDataMajorToManor = (array, index) => {
+  return array?.sort((menor, maior) =>
+    menor[index] > maior[index] ? -1 : menor[index] > maior[index] ? 1 : 0,
+  );
+};
+
 export const groupBy = (movies, key) => {
   return movies.reduce(function (index, item) {
     (index[item[key]] = index[item[key]] || []).push(item);

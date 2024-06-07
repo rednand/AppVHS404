@@ -7,6 +7,7 @@ export const ScrollLink = styled.a`
   color: var(--bg100);
   font-weight: 900;
   right: 1%;
+  border-radius: 5px;
   text-decoration: none;
   background-color: var(--bg800);
   padding: 0.3%;
