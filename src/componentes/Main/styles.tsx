@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 export const MainLeft = styled.div`
   position: relative;
-  width: 50%;
+  width: 61%;
   display: inline-flex;
 
-  @media (max-width: 1200px) {
-    width: 60%;
-  }
   @media (max-width: 900px) {
-    width: 65%;
+    width: 80%;
+    margin-left: 4%;
   }
 `;
 
@@ -35,7 +33,6 @@ export const Container = styled.div`
     background: var(--bg200);
     margin: 0 0 1rem 0;
 
-    
     @media (max-width: 900px) {
       font-size: 6vw;
       padding: 5% 0;
@@ -92,7 +89,7 @@ export const Card = styled.div`
     left: -2%;
     width: 50%;
     text-align: center;
-    background: #d41d24;
+    background: var(--palletered45);
     color: var(--bg200);
     letter-spacing: 0.1ch;
     font-size: 2vw;
@@ -137,9 +134,9 @@ export const Card = styled.div`
     }
   }
   .posterItem {
-    width: 35%;
+    width: 25%;
     img {
-      width: 90%;
+      width: 100%;
       height: 40vh;
       :hover {
         filter: inherit;
@@ -147,16 +144,25 @@ export const Card = styled.div`
       }
       @media (max-width: 900px) {
         height: 35vh;
+        width: 100%;
       }
 
       @media (max-width: 600px) {
-        height: 30vh;
-        width: 70%;
+        height: 35vh;
+        width: 45%;
       }
 
       @media (max-width: 400px) {
         width: 60%;
       }
+
+      @media (max-width: 300px) {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      width: 32%;
     }
 
     @media (max-width: 600px) {
@@ -168,6 +174,7 @@ export const Card = styled.div`
   }
   .videoItem {
     width: 65%;
+
     iframe {
       width: 100%;
       height: 40vh;
@@ -176,11 +183,18 @@ export const Card = styled.div`
         -webkit-filter: contrast(150%);
       }
       @media (max-width: 900px) {
-        height: 35vh;
+        height: 30vh;
+        margin-top: 2.5vh;
       }
 
       @media (max-width: 600px) {
         width: 100%;
+        margin-top: 1vh;
+        height: 30vh;
+      }
+      @media (max-width: 300px) {
+        width: 100%;
+        margin-top: 1vh;
         height: 20vh;
       }
     }
@@ -199,7 +213,7 @@ export const Card = styled.div`
       font-weight: 700;
       font-size: 1.3vw;
       padding: 0.6rem 1.2rem;
-      border: 1px solid #212121;
+      border: 1px solid var(--bg790);
       border-radius: 5px;
 
       @media (max-width: 600px) {

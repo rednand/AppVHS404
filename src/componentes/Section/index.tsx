@@ -1,25 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { formatMonth, formatDate, formatMonthNumber } from '../../utils/data';
-import { ordenationArrayData, groupBy } from '../../utils/ordenation';
+import {
+  groupBy,
+  ordenationArrayDataMajorToManor,
+} from '../../utils/ordenation';
 import { SectionStyled } from './styles';
-import { getSomeMovies } from '../../store/redux/actions';
+import { getMovies, getAllMovies } from '../../store/redux/actions';
 import { useDispatch } from 'react-redux';
-import { Box, CircularProgress } from '@mui/material';
+import { Box } from '@mui/material';
+import { CircularProgress } from '@material-ui/core';
 
 const Section = ({ mobile = false }) => {
   const dispatch = useDispatch();
+  const moviesSection = useSelector((state) => state['movies']);
+
+  const { data, isLoading } = getMovies();
 
   useEffect(() => {
-    dispatch(getSomeMovies());
-  }, [dispatch]);
-
-  const moviesSection = useSelector((state) => state['movies']);
+    if (!!data) {
+      dispatch(getAllMovies(data));
+    }
+  }, [dispatch, data]);
 
   const todaysDate = new Date();
   const monthDate = formatMonth(todaysDate);
 
-  ordenationArrayData(moviesSection, ['release_date']);
+  ordenationArrayDataMajorToManor(moviesSection, ['release_date']);
 
   const ListMovieWithDataIdName = moviesSection.map((item, key) => {
     key = item['_id'];

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { formatMonth, formatDate, formatMonthNumber } from '../../utils/data';
 import { NextReleases } from './styles';
 import { useSelector } from 'react-redux';
-import { Box, CircularProgress } from '@mui/material';
+import { Box } from '@mui/material';
+import { CircularProgress } from '@material-ui/core';
 import useWindowWidth from '../../utils/windowWidth';
-import { Typography } from '@material-ui/core';
 
 const OtherReleases = () => {
   const movies = useSelector((state) => state['movies']);
@@ -75,7 +74,7 @@ const OtherReleases = () => {
                       ></div>
                     </div>
                   </a>
-                  <p className="soonData"> {film.data}</p>
+                  <p className="soonDataOtherReleases"> {film.data}</p>
                 </div>
               );
             })}

@@ -58,7 +58,7 @@ const MovieId = () => {
               </p>
               <p
                 style={{
-                  marginBottom: windowWidth < 1000 ? '15%' : "5%",
+                  marginBottom: windowWidth < 1000 ? '15%' : '5%',
                 }}
               >
                 <span>Título Original: </span>
@@ -74,7 +74,7 @@ const MovieId = () => {
                   height: 0,
                   overflow: 'hidden',
                   maxWidth: '100%',
-                  background: '#000',
+                  background: 'var(--bg900)',
                   marginTop: '1rem',
                 }}
               >

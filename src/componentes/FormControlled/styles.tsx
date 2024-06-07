@@ -1,32 +1,43 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: 50%;
-  margin: auto;
-  padding: 5%;
+  width: 70%;
+  margin: 8% auto;
+  box-shadow: inset 0px 0px 0px 10px var(--palletered5);
+  background-color: var(--bg200);
+  padding: 5% 15%;
   font-family: 'Barlow Condensed', sans-serif;
+
+  .form-group {
+    margin-bottom: 5%;
+  }
+
   .formInfo {
-    color: var(--bg200);
+    color: var(--bg900);
     font-size: 2rem;
+    font-weight: 800;
     margin: 5% auto;
-   
-    
-  @media (max-width: 700px) {
-    font-size: 2rem;
-    margin: 20% auto 15%;
+
+    @media (max-width: 700px) {
+      font-size: 2rem;
+      margin: 20% auto 15%;
     }
   }
 
   @media (max-width: 900px) {
-    padding: 5% 0;
-      width: 80%;
-    }
+    margin: 15% auto;
+  }
 
   @media (max-width: 700px) {
-      padding: 10% 0;
-      width: 80%;
-    }
+    width: 90%;
+    margin: 18% auto;
+    padding: 2% 15%;
+  }
 
+  @media (max-width: 300px) {
+    width: 95%;
+    margin: 25% auto;
+  }
 `;
 
 export const ButtonForm = styled.button`
@@ -45,10 +56,10 @@ export const ButtonForm = styled.button`
   :active,
   :visited {
     background-color: var(--bg900);
-    border-color: var(--bg200);
+    border-color: var(--bg900);
   }
 
   @media (max-width: 700px) {
     margin: 15% 2%;
-    }
+  }
 `;

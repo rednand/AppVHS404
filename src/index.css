@@ -150,13 +150,21 @@ table {
 
 :root {
   --bg900: #06070a;
+  --bg850: #161a1d;
   --bg800: #0e0f0d;
+  --bg795: rgba(0, 0, 0, 0.8);
+  --bg790: #212121;
+  --bg780: #212223;
   --bg750: #353534;
   --bg700: #464745;
   --bg650: #3e3e3e;
   --bg500: #a8a9a6;
   --bg400: #bebfbb;
+  --bg350: #b8b6b6;
   --bg300: #cacac6;
+  --bg260: #ecebeb;
+  --bg250: #c7c7c7;
+  --bg220: rgba(255, 255, 255, 0.6);
   --bg200: rgba(248, 248, 248, 1);
   --bg100: #dfe0dc;
 
@@ -164,6 +172,7 @@ table {
   --palletered7: #161a1d;
   --palletered6: #660708;
   --palletered5: #a4161a;
+  --palletered45: #d41d24;
   --palletered4: #e5383b;
   --palletered3: #b1a7a6;
   --palletered2: #d3d3d3;

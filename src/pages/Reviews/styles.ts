@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Back = styled.div`
-  background-color: #ffffff;
+  background-color: var(--palletered0);
   height: 100vh;
 `;
 
 export const MainReview = styled.div`
-  background-color: #ffffff;
+  background-color: var(--palletered0);
   height: auto;
   min-height: 100vh;
-  color: #000000;
+  color: var(--palletered8);
   margin: 3%;
 `;

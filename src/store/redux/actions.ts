@@ -1,43 +1,21 @@
+import { useQuery } from 'react-query';
 import { commingSoonMovies } from '../../api/axios';
 import axios from 'axios';
 
-// export const getTodos = () => {
-//   return (dispatch) => {
-//     axios
-//       .get(`https://jsonplaceholder.typicode.com/posts`)
-//       .then((todos) => {
-//         dispatch({ type: "GET_TODOS", todos });
-//       })
-//       .catch((error) => {
-//         console.log(error.response);
-//       });
-//   };
-// };
-
-export const getAllMovies = () => {
+export const getAllMovies = (movies) => {
   return (dispatch) => {
-    commingSoonMovies
-      .get(`?page=1`)
-      .then((movies) => {
-        dispatch({ type: 'GET_MOVIES', movies });
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
+    dispatch({ type: 'GET_MOVIES', movies });
   };
 };
 
-export const getSomeMovies = () => {
-  return (dispatch) => {
-    commingSoonMovies
-      .get(`?page=1`)
-      .then((movies) => {
-        dispatch({ type: 'GET_MOVIES_SECTION', movies });
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
-  };
+export const getMovies = () => {
+  return useQuery(['getAllMovies'], async () => {
+    const { data } = await commingSoonMovies.get(`?page=1`);
+
+    return {
+      data,
+    };
+  });
 };
 
 export const addInfoMovie = (infos) => {

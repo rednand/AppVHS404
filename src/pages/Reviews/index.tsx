@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import Footer from '../../componentes/Footer';
 import ReviewMain from '../../componentes/ReviewMain';
-import { Back, MainReview } from './styles';
+import { Back } from './styles';
 
 const Review = () => {
   return (

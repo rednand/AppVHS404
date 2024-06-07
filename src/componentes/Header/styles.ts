@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core';
 import styled, { keyframes } from 'styled-components';
 
 export const HeaderBackground = styled.div`
@@ -35,27 +34,39 @@ export const ImagemFundoText = styled.p`
   position: absolute;
   color: white;
   font-family: 'MinhaFonte';
-  right: 3%;
+  right: 4%;
   margin-top: 6%;
   text-align: right;
   font-size: 15px;
   margin-right: 0;
 
-  @media only screen and (max-width: 600px) {
-    font-size: 20px;
-    width: 95%;
-    margin-top: 30%;
-    font-size: 10px;
-    text-align: center;
+  @media only screen and (max-width: 1200px) {
+    margin-top: 8%;
   }
-  @media only screen and (max-width: 400px) {
-    font-size: 20px;
+  @media only screen and (max-width: 700px) {
     width: 95%;
-    margin-top: 40%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 20%;
+    padding-right: 5%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 25%;
+  }
+  @media only screen and (max-width: 500px) {
+    margin-top: 30%;
+    width: 50%;
+    margin-right: 4%;
+    font-size: 13px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 70%;
+    margin-right: 2%;
+    margin: 35% 1% auto;
     font-size: 10px;
-    text-align: center;
+  }
+  @media only screen and (max-width: 300px) {
+    margin: 45% 1% auto;
   }
 `;
 
@@ -89,6 +100,7 @@ animation: transform 3s linear infinite;
 }
 `}
 `;
+
 export const Title = styled('div')<IHeadingStyled>`
   @font-face {
     font-family: 'MinhaFonte';
@@ -120,7 +132,12 @@ export const Menu = styled.div`
   height: 3rem;
   display: flex;
   justify-content: center;
-  background: linear-gradient(5rad, var(--bg900), #d41d24, var(--bg900));
+  background: linear-gradient(
+    5rad,
+    var(--bg900),
+    var(--palletered45),
+    var(--bg900)
+  );
 
   @media (max-width: 400px) {
     float: left;
